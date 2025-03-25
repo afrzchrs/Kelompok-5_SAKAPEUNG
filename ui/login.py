@@ -1,3 +1,11 @@
+"""
+Author: Mario Julius Christianto
+NIM: 241524014
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Login(object):
