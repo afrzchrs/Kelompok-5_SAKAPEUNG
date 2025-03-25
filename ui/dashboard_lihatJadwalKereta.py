@@ -1,3 +1,8 @@
+# Nama  : Afriza Choirie Saputra
+# NIM   : 241524002
+# Kelas : D4-TIF/1A
+# Progress : Melakukan beberapa perubahan ui 
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'dashboard_lihatJadwalKereta.ui'
