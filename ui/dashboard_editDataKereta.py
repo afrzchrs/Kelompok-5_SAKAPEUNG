@@ -1,3 +1,12 @@
+"""
+Author: Afriza Choirie Saputra
+NIM: 241524002
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'dashboard_editDataKereta.ui'
