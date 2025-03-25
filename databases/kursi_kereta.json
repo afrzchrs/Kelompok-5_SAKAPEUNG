@@ -4,7 +4,7 @@
         "tanggal": "2025-03-29",
         "gerbong": [
             {
-                "gerbong_id": "KA001-G1",
+                "id_gerbong": "KA001-G1",
                 "kapasitas": 80,
                 "kursi": {
                     "A1": true,
@@ -90,7 +90,7 @@
                 }
             },
             {
-                "gerbong_id": "KA001-G2",
+                "id_gerbong": "KA001-G2",
                 "kapasitas": 80,
                 "kursi": {
                     "A1": true,
@@ -176,7 +176,7 @@
                 }
             },
             {
-                "gerbong_id": "KA001-G3",
+                "id_gerbong": "KA001-G3",
                 "kapasitas": 80,
                 "kursi": {
                     "A1": true,
@@ -262,7 +262,7 @@
                 }
             },
             {
-                "gerbong_id": "KA001-G4",
+                "id_gerbong": "KA001-G4",
                 "kapasitas": 80,
                 "kursi": {
                     "A1": true,
@@ -354,7 +354,7 @@
         "tanggal": "2025-05-01",
         "gerbong": [
             {
-                "gerbong_id": "KA002-G1",
+                "id_gerbong": "KA002-G1",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -412,7 +412,7 @@
                 }
             },
             {
-                "gerbong_id": "KA002-G2",
+                "id_gerbong": "KA002-G2",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -470,7 +470,7 @@
                 }
             },
             {
-                "gerbong_id": "KA002-G3",
+                "id_gerbong": "KA002-G3",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -528,7 +528,7 @@
                 }
             },
             {
-                "gerbong_id": "KA002-G4",
+                "id_gerbong": "KA002-G4",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -592,7 +592,7 @@
         "tanggal": "2025-05-05",
         "gerbong": [
             {
-                "gerbong_id": "KA003-G1",
+                "id_gerbong": "KA003-G1",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -650,7 +650,7 @@
                 }
             },
             {
-                "gerbong_id": "KA003-G2",
+                "id_gerbong": "KA003-G2",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
@@ -708,7 +708,7 @@
                 }
             },
             {
-                "gerbong_id": "KA003-G3",
+                "id_gerbog": "KA003-G3",
                 "kapasitas": 52,
                 "kursi": {
                     "A1": true,
