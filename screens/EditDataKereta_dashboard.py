@@ -1,7 +1,11 @@
-# Nama  : Afriza Choirie Saputra
-# NIM   : 241524002
-# Kelas : D4-TIF/1A
-# Progress : Melakukan pemisahan program yang digunakan berulang dan melakukan beberapa perubahan fungsionalitas program
+"""
+Author: Afriza Choirie Saputra
+NIM: 241524002
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
 
 import json
 import os
