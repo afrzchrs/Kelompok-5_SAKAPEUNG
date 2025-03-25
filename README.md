@@ -2,8 +2,6 @@
 
 SAKAPEUNG : Sistem Aplikasi Kereta Api Pemesanan Endah Unggul
 
-Untuk progress pengerjaan kami ada di branch master
-
 Kelompok A5 : 
 Afriza Choirie Saputra - 241524002, 
 Devi Maulani - 241524007, 
