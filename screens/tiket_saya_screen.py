@@ -38,7 +38,7 @@ class TiketSaya(QtWidgets.QMainWindow):
             QtWidgets.QMessageBox.critical(self, "Error", "Database riwayat_pemesanan.json rusak atau tidak valid!")
             return
 
-          # 🔥 Filter hanya tiket yang sesuai dengan email pengguna yang login
+          # Filter hanya tiket yang sesuai dengan email pengguna yang login
         self.tiket_user = [tiket for tiket in data_pemesanan if tiket.get("email_penumpang") == self.main_app.email_pengguna]
 
         # Pastikan tabel cukup besar
