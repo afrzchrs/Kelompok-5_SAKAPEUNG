@@ -1,3 +1,12 @@
+"""
+Nama: Adi Rafi Chaerufarizki
+NIM: 241524001
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
+
 import sys
 import json
 from PyQt5 import QtWidgets
