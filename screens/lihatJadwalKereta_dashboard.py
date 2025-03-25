@@ -1,3 +1,8 @@
+# Nama  : Afriza Choirie Saputra
+# NIM   : 241524002
+# Kelas : D4-TIF/1A
+# Progress : Melakukan beberapa perubahan, penambahan integrasi tombol, dan penyesuain tabel
+
 import sys
 import json
 import os
