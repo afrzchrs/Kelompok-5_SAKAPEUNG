@@ -1,3 +1,12 @@
+"""
+Nama: Adi Rafi Chaerufarizki
+NIM: 241524001
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'detail_tiket.ui'
