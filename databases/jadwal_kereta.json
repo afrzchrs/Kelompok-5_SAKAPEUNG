@@ -1,0 +1,365 @@
+[
+    {
+      "id_kereta": "KA001",
+      "stasiun_transit": [
+        "Gambir",
+        "Bekasi",
+        "Cirebon",
+        "Tegal",
+        "Semarang Tawang",
+        "Solo Balapan",
+        "Surabaya Pasar Turi"
+      ],
+      "waktu_transit": [
+        "07:00",
+        "08:15",
+        "10:30",
+        "12:45",
+        "14:30",
+        "16:15",
+        "18:45"
+      ]
+    },
+    {
+      "id_kereta": "KA002",
+      "stasiun_transit": [
+        "Surabaya Pasar Turi",
+        "Solo Balapan",
+        "Semarang Tawang",
+        "Pekalongan",
+        "Cirebon",
+        "Bekasi",
+        "Gambir"
+      ],
+      "waktu_transit": [
+        "08:00",
+        "10:30",
+        "12:45",
+        "14:15",
+        "16:30",
+        "18:15",
+        "20:45"
+      ]
+    },
+    {
+      "id_kereta": "KA003",
+      "stasiun_transit": [
+        "Bandung",
+        "Tasikmalaya",
+        "Banjar",
+        "Kroya",
+        "Yogyakarta",
+        "Madiun",
+        "Surabaya Gubeng"
+      ],
+      "waktu_transit": [
+        "06:30",
+        "08:15",
+        "09:30",
+        "11:45",
+        "14:00",
+        "16:30",
+        "19:15"
+      ]
+    },
+    {
+      "id_kereta": "KA004",
+      "stasiun_transit": [
+        "Surabaya Gubeng",
+        "Madiun",
+        "Yogyakarta",
+        "Kroya",
+        "Banjar",
+        "Tasikmalaya",
+        "Bandung"
+      ],
+      "waktu_transit": [
+        "07:00",
+        "09:30",
+        "12:00",
+        "14:15",
+        "16:30",
+        "18:15",
+        "21:45"
+      ]
+    },
+    {
+      "id_kereta": "KA005",
+      "stasiun_transit": [
+        "Gambir",
+        "Jatinegara",
+        "Bekasi",
+        "Karawang",
+        "Cikampek",
+        "Purwakarta",
+        "Cimahi",
+        "Bandung"
+      ],
+      "waktu_transit": [
+        "08:30",
+        "08:45",
+        "09:15",
+        "09:45",
+        "10:15",
+        "11:00",
+        "12:30",
+        "13:00"
+      ]
+    },
+    {
+      "id_kereta": "KA006",
+      "stasiun_transit": [
+        "Bandung",
+        "Cimahi",
+        "Purwakarta",
+        "Cikampek",
+        "Karawang",
+        "Bekasi",
+        "Jatinegara",
+        "Gambir"
+      ],
+      "waktu_transit": [
+        "14:00",
+        "14:15",
+        "15:30",
+        "16:00",
+        "16:30",
+        "17:00",
+        "17:45",
+        "18:30"
+      ]
+    },
+    {
+      "id_kereta": "KA007",
+      "stasiun_transit": [
+        "Gambir",
+        "Bekasi",
+        "Cikampek",
+        "Cirebon",
+        "Tegal",
+        "Pekalongan",
+        "Semarang Tawang",
+        "Madiun",
+        "Surabaya Gubeng"
+      ],
+      "waktu_transit": [
+        "09:00",
+        "09:30",
+        "10:15",
+        "12:30",
+        "13:45",
+        "15:00",
+        "16:45",
+        "19:15",
+        "21:00"
+      ]
+    },
+    {
+      "id_kereta": "KA008",
+      "stasiun_transit": [
+        "Surabaya Gubeng",
+        "Madiun",
+        "Semarang Tawang",
+        "Pekalongan",
+        "Tegal",
+        "Cirebon",
+        "Cikampek",
+        "Bekasi",
+        "Gambir"
+      ],
+      "waktu_transit": [
+        "07:30",
+        "09:30",
+        "12:45",
+        "14:00",
+        "15:15",
+        "16:30",
+        "18:15",
+        "19:45",
+        "20:30"
+      ]
+    },
+    {
+      "id_kereta": "KA009",
+      "stasiun_transit": [
+        "Bandung",
+        "Kiaracondong",
+        "Tasikmalaya",
+        "Banjar",
+        "Kroya",
+        "Yogyakarta",
+        "Solo Balapan"
+      ],
+      "waktu_transit": [
+        "05:45",
+        "06:15",
+        "08:30",
+        "09:45",
+        "11:45",
+        "13:00",
+        "16:15"
+      ]
+    },
+    {
+      "id_kereta": "KA010",
+      "stasiun_transit": [
+        "Solo Balapan",
+        "Yogyakarta",
+        "Kroya",
+        "Banjar",
+        "Tasikmalaya",
+        "Kiaracondong",
+        "Bandung"
+      ],
+      "waktu_transit": [
+        "07:15",
+        "08:30",
+        "10:30",
+        "12:30",
+        "15:00",
+        "17:15",
+        "18:45"
+      ]
+    },
+    {
+      "id_kereta": "KA011",
+      "stasiun_transit": [
+        "Bandung",
+        "Cimahi",
+        "Cirebon",
+        "Semarang Tawang",
+        "Cepu",
+        "Surabaya Pasar Turi"
+      ],
+      "waktu_transit": ["06:30", "07:00", "09:45", "14:00", "16:30", "19:00"]
+    },
+    {
+      "id_kereta": "KA012",
+      "stasiun_transit": [
+        "Surabaya Pasar Turi",
+        "Cepu",
+        "Semarang Tawang",
+        "Cirebon",
+        "Cimahi",
+        "Bandung"
+      ],
+      "waktu_transit": ["07:30", "10:00", "12:45", "17:00", "20:30", "21:00"]
+    },
+    {
+      "id_kereta": "KA013",
+      "stasiun_transit": [
+        "Surabaya Pasar Turi",
+        "Cepu",
+        "Semarang Tawang",
+        "Solo Balapan",
+        "Yogyakarta"
+      ],
+      "waktu_transit": ["08:00", "10:30", "12:45", "15:30", "17:00"]
+    },
+    {
+      "id_kereta": "KA014",
+      "stasiun_transit": [
+        "Yogyakarta",
+        "Solo Balapan",
+        "Semarang Tawang",
+        "Cepu",
+        "Surabaya Pasar Turi"
+      ],
+      "waktu_transit": ["06:00", "07:30", "10:15", "13:00", "15:30"]
+    },
+    {
+      "id_kereta": "KA015",
+      "stasiun_transit": [
+        "Lempuyangan",
+        "Klaten",
+        "Solo Balapan",
+        "Madiun",
+        "Surabaya Gubeng"
+      ],
+      "waktu_transit": ["05:00", "05:30", "06:00", "08:15", "10:00"]
+    },
+    {
+      "id_kereta": "KA016",
+      "stasiun_transit": [
+        "Surabaya Gubeng",
+        "Madiun",
+        "Solo Balapan",
+        "Klaten",
+        "Lempuyangan"
+      ],
+      "waktu_transit": ["14:00", "15:45", "17:30", "18:00", "18:30"]
+    },
+    {
+      "id_kereta": "KA017",
+      "stasiun_transit": [
+        "Kiaracondong",
+        "Tasikmalaya",
+        "Banjar",
+        "Kroya",
+        "Yogyakarta",
+        "Solo Balapan"
+      ],
+      "waktu_transit": ["06:30", "08:15", "09:45", "11:30", "14:15", "16:00"]
+    },
+    {
+      "id_kereta": "KA018",
+      "stasiun_transit": [
+        "Solo Balapan",
+        "Yogyakarta",
+        "Kroya",
+        "Banjar",
+        "Tasikmalaya",
+        "Kiaracondong"
+      ],
+      "waktu_transit": ["08:30", "09:45", "12:00", "13:30", "15:00", "16:45"]
+    },
+    {
+      "id_kereta": "KA019",
+      "stasiun_transit": [
+        "Gambir",
+        "Bekasi",
+        "Karawang",
+        "Cirebon",
+        "Semarang Tawang",
+        "Purwosari"
+      ],
+      "waktu_transit": ["07:00", "07:45", "08:30", "10:45", "14:00", "16:30"]
+    },
+    {
+      "id_kereta": "KA020",
+      "stasiun_transit": [
+        "Purwosari",
+        "Semarang Tawang",
+        "Cirebon",
+        "Karawang",
+        "Bekasi",
+        "Gambir"
+      ],
+      "waktu_transit": ["07:00", "09:30", "12:00", "14:15", "15:30", "16:15"]
+    },
+    {
+      "id_kereta": "KA021",
+      "stasiun_transit": [
+        "Purwokerto",
+        "Cilacap",
+        "Kroya",
+        "Cirebon",
+        "Tegal",
+        "Semarang Tawang"
+      ],
+      "waktu_transit": ["05:45", "06:30", "08:00", "10:30", "12:00", "13:30"]
+    },
+    {
+      "id_kereta": "KA022",
+      "stasiun_transit": [
+        "Semarang Tawang",
+        "Tegal",
+        "Cirebon",
+        "Kroya",
+        "Cilacap",
+        "Purwokerto"
+      ],
+      "waktu_transit": ["07:00", "08:30", "10:00", "12:30", "14:00", "15:30"]
+    }
+  ]
+  

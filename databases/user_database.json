@@ -1,0 +1,58 @@
+[
+    {
+        "email": "sakapeung@admin.com",
+        "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "nama_lengkap": "Admin Sakapeung",
+        "alamat": "Jln. Yang lurus dan Benar",
+        "nomor_telepon": "081234567890",
+        "is_admin": true
+    },
+    {
+        "email": "asep@mail.com",
+        "password": "bc9122817c69bad28db7c97f5ee45e2ea94108fd95f00463352f81053ae0311b",
+        "nama_lengkap": "Asep Hungkul",
+        "alamat": "jalan yang lurus dan benar",
+        "nomor_telepon": "081290210900",
+        "is_admin": false
+    },
+    {
+        "email": "riza@mail.com",
+        "password": "0b8089ef39e1e77a062b707f29f64509ec60abf31a3ec9e0472a13e63ce66bb0",
+        "nama_lengkap": "A",
+        "alamat": "a",
+        "nomor_telepon": "08123212341",
+        "is_admin": false
+    },
+    {
+        "email": "Rizaanjay@mail.com",
+        "password": "e0debb9c02bc21d241842ece6d38537eaed5c050191c9f851673e09e5aff6780",
+        "nama_lengkap": "Afriza",
+        "alamat": "Bandung",
+        "nomor_telepon": "081210637272",
+        "is_admin": false
+    },
+    {
+        "email": "Riz@mail.com",
+        "password": "8de13ef15548073a504a97a935afd52e46071e2ecc994a3b8b987f755fe0c49c",
+        "nama_lengkap": "D",
+        "alamat": "bdg",
+        "nomor_telepon": "081210637211",
+        "is_admin": false
+    },
+    {
+        "email": "carmen@mail.com",
+        "password": "097d82604c351a6d2523185a85227b300bf85b9ff3dd2ab2fd5533f6c89f877a",
+        "nama_lengkap": "Carmenita",
+        "alamat": "Bali",
+        "nomor_telepon": "081234567878",
+        "is_admin": false
+    },
+    {
+        "email": "freya@mail.com",
+        "password": "b20462360e11ec509e39961fcd6a49d1612557e585dda11bb507077b14cea9cb",
+        "nama_lengkap": "Freya Jayawardhana",
+        "alamat": "Jogja",
+        "nomor_telepon": "089765432123",
+        "is_admin": false
+    }
+]

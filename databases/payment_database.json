@@ -1,0 +1,44 @@
+[
+    {
+        "email": "sakapeung@admin.com",
+        "nomor_rekening": "1234567890",
+        "saldo": 300000000.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "asep@mail.com",
+        "nomor_rekening": "1234567890",
+        "saldo": 345343533.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "riza@mail.com",
+        "nomor_rekening": "123456754132",
+        "saldo": 1200000.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "Rizaanjay@mail.com",
+        "nomor_rekening": "123456789101",
+        "saldo": 200000000000.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "Riz@mail.com",
+        "nomor_rekening": "123456789123",
+        "saldo": 200000000.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "carmen@mail.com",
+        "nomor_rekening": "1234556677",
+        "saldo": 2000000000.0,
+        "pin": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    },
+    {
+        "email": "freya@mail.com",
+        "nomor_rekening": "87654321234",
+        "saldo": 40000000000.0,
+        "pin": "481f6cc0511143ccdd7e2d1b1b94faf0a700a8b49cd13922a70b5ae28acaa8c5"
+    }
+]

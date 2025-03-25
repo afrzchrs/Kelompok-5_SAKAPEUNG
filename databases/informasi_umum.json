@@ -1,0 +1,157 @@
+[
+    {
+      "id_kereta": "KA001",
+      "nama_kereta": "Argo Bromo Anggrek",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 910000
+    },
+    {
+      "id_kereta": "KA002",
+      "nama_kereta": "Argo Bromo Anggrek",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 910000
+    },
+    {
+      "id_kereta": "KA003",
+      "nama_kereta": "Argo Wilis",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 725000
+    },
+    {
+      "id_kereta": "KA004",
+      "nama_kereta": "Argo Wilis",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 725000
+    },
+    {
+      "id_kereta": "KA005",
+      "nama_kereta": "Argo Parahyangan",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 6,
+      "harga_tiket": 225000
+    },
+    {
+      "id_kereta": "KA006",
+      "nama_kereta": "Argo Parahyangan",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 6,
+      "harga_tiket": 225000
+    },
+    {
+      "id_kereta": "KA007",
+      "nama_kereta": "Bima",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 550000
+    },
+    {
+      "id_kereta": "KA008",
+      "nama_kereta": "Bima",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 550000
+    },
+    {
+      "id_kereta": "KA009",
+      "nama_kereta": "Lodaya",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 300000
+    },
+    {
+      "id_kereta": "KA010",
+      "nama_kereta": "Lodaya",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 300000
+    },
+    {
+      "id_kereta": "KA011",
+      "nama_kereta": "Harina",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 317500
+    },
+    {
+      "id_kereta": "KA012",
+      "nama_kereta": "Harina",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 317500
+    },
+    {
+      "id_kereta": "KA013",
+      "nama_kereta": "Sancaka Utara",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 400000
+    },
+    {
+      "id_kereta": "KA014",
+      "nama_kereta": "Sancaka Utara",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 400000
+    },
+    {
+      "id_kereta": "KA015",
+      "nama_kereta": "Gajahwong",
+      "jenis_layanan": "Ekonomi",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 167500
+    },
+    {
+      "id_kereta": "KA016",
+      "nama_kereta": "Gajahwong",
+      "jenis_layanan": "Ekonomi",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 167500
+    },
+    {
+      "id_kereta": "KA017",
+      "nama_kereta": "Pasundan",
+      "jenis_layanan": "Ekonomi",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 280000
+    },
+    {
+      "id_kereta": "KA018",
+      "nama_kereta": "Pasundan",
+      "jenis_layanan": "Ekonomi",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 280000
+    },
+    {
+      "id_kereta": "KA019",
+      "nama_kereta": "Papandayan",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 315000
+    },
+    {
+      "id_kereta": "KA020",
+      "nama_kereta": "Papandayan",
+      "jenis_layanan": "Eksekutif",
+      "jumlah_gerbong": 8,
+      "harga_tiket": 315000
+    },
+    {
+      "id_kereta": "KA021",
+      "nama_kereta": "Baturraden Ekspres",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 175000
+    },
+    {
+      "id_kereta": "KA022",
+      "nama_kereta": "Baturraden Ekspres",
+      "jenis_layanan": "Bisnis",
+      "jumlah_gerbong": 7,
+      "harga_tiket": 175000
+    }
+]
+  
