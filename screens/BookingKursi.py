@@ -57,7 +57,7 @@ class BookingKursi(QWidget):
                 if kereta.get('id_kereta') == self.tiket_terpilih.get('id_kereta') and \
                 kereta.get('tanggal') == self.tiket_terpilih.get('tanggal'):
                     for gerbong in kereta.get('gerbong', []):
-                        gerbong_list.append(gerbong.get('id_gerbong'))
+                        gerbong_list.append(gerbong.get('gerbong_id'))
 
             if gerbong_list:
                 self.ui.comboBox.clear()
@@ -80,7 +80,7 @@ class BookingKursi(QWidget):
                 if kereta.get('id_kereta') == self.tiket_terpilih.get('id_kereta') and \
                 kereta.get('tanggal') == self.tiket_terpilih.get('tanggal'):
                     for gerbong in kereta.get('gerbong', []):
-                        if gerbong.get('id_gerbong') == gerbong_id:
+                        if gerbong.get('gerbong_id') == gerbong_id:
                             self.display_kursi(gerbong.get('kursi', {}))
                             return
         except Exception as e:
@@ -162,7 +162,7 @@ class BookingKursi(QWidget):
         
         # menyimpan ID kursi yang dipilih ke dalam tiket_terpilih (TAPI BELUM UPDATE DATABASE)
         self.tiket_terpilih['id_kursi'] = self.selected_seat
-        self.tiket_terpilih['id_gerbong'] = self.ui.comboBox.currentText()  # Simpan ID gerbong
+        self.tiket_terpilih['gerbong_id'] = self.ui.comboBox.currentText()  # Simpan ID gerbong
 
         QMessageBox.information(self, "Kursi Dipilih", f"Kursi {self.selected_seat} telah dipilih. Lanjutkan ke pembayaran.")
 
