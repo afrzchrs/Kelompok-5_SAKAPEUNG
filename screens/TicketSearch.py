@@ -199,6 +199,7 @@ class TicketSearch(QDialog):
         asal = self.ui.combo_asal.currentText()
         tujuan = self.ui.combo_tujuan.currentText()
         tanggal_str = self.ui.selected_date.text()
+        pilihan_layanan = self.ui.combo_layanan.currentText()  
 
         if asal == tujuan:
             QMessageBox.warning(self, "Error", "Stasiun asal dan tujuan tidak boleh sama!")
@@ -246,7 +247,7 @@ class TicketSearch(QDialog):
                         for kursi in self.load_json(KURSI_KERETA_FILE)
                     )
 
-                    if kursi_tersedia:
+                    if layanan == pilihan_layanan and kursi_tersedia:
                         tiket = {
                             "nama_kereta": info_kereta["nama_kereta"],
                             "id_kereta": info_kereta["id_kereta"],
@@ -267,8 +268,7 @@ class TicketSearch(QDialog):
         else:
             QMessageBox.warning(self, "Tiket Tidak Tersedia", "Maaf, tidak ada tiket yang tersedia untuk pencarian ini.")
             self.main_app.ticket_show_screen.tampilkan_tiket([])  # Kirim list kosong ke TicketShow
-
-            # Tetap pindah ke TicketShow agar pesan pemberitahuan tampil
+            # agar tetap pindah ke TicketShow dan pesan pemberitahuan tampil
             self.main_app.open_ticket_show()
 
     def reset_input(self):
