@@ -104,7 +104,7 @@ class Pembayaran(QWidget):
                 if kereta.get('id_kereta') == self.tiket_terpilih.get('id_kereta') and \
                 kereta.get('tanggal') == self.tiket_terpilih.get('tanggal'):
                     for gerbong in kereta.get('gerbong', []):
-                        if gerbong.get('id_gerbong') == self.tiket_terpilih.get('id_gerbong'):
+                        if gerbong.get('gerbong_id') == self.tiket_terpilih.get('gerbong_id'):
                             if self.tiket_terpilih['id_kursi'] in gerbong['kursi']:
                                 gerbong['kursi'][self.tiket_terpilih['id_kursi']] = False
                                 gerbong['kapasitas'] -= 1
