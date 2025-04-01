@@ -16,7 +16,8 @@ from screens.lihatJadwalKereta_dashboard import LihatJadwalKereta
 from screens.EditDataKereta_dashboard import DashboardEditData 
 from screens.tiket_saya_screen import TiketSaya
 from screens.lihatRekapKeuntungan_dasboard import LihatRekapKeuntungan
-from screens.detailRekapKeuntungan_dasboard import DetailRekapKeuntungan
+from screens.detailRekapKeuntungan_dasboard import DetailRekapKeuntungan  
+
 
 class MainApp(QStackedWidget):
     def __init__(self):
@@ -26,8 +27,7 @@ class MainApp(QStackedWidget):
         self.booking_kursi_screen = None  
         self.pembayaran_screen = None 
         self.email_pengguna = None  # Simpan email pengguna yang login
-
-        
+   
         # Inisialisasi semua halaman aplikasi
         self.welcome_screen = WelcomeScreen(self)
         self.login_screen = LoginScreen(self)
@@ -43,8 +43,7 @@ class MainApp(QStackedWidget):
         self.admin_edit_data_kereta = DashboardEditData(self)
         self.tiket_saya_screen = TiketSaya(self)  # Tambahkan email pengguna 
         self.lihat_RekapKeuntungan = LihatRekapKeuntungan(self)
-        self.detail_RekapKeuntungan = DetailRekapKeuntungan(self)
-          
+        self.detail_RekapKeuntungan = DetailRekapKeuntungan(self)     
         
         # Menambahkan halaman ke dalam stack
         self.addWidget(self.welcome_screen)
@@ -63,9 +62,10 @@ class MainApp(QStackedWidget):
         self.addWidget(self.lihat_RekapKeuntungan)
         self.addWidget(self.detail_RekapKeuntungan)
 
+
         # Menampilkan halaman awal (Welcome Screen)
         self.setCurrentWidget(self.welcome_screen)
-        self.setMinimumSize(1000, 730)
+        self.setMinimumSize(800, 600)
         
         # Fokuskan ke welcome screen agar bisa menangkap event keyboard
         self.welcome_screen.setFocus()
@@ -83,10 +83,18 @@ class MainApp(QStackedWidget):
         
         # Integrasi lihat rekap keuntungan dashboard admin
         self.dashboard_admin.ui.lihat_rekap_keuntungan_button.clicked.connect(self.open_lihat_rekap_keuntungan)
+        
+        # 🔥 Jalankan update kursi langsung saat aplikasi dimulai
+        print("⏳ Memperbarui data kursi...")
+        self.admin_edit_data_kereta.update_kursi_kereta()
+        print("✅ Data kursi berhasil diperbarui!")
 
     """ INTEGRASI USER DASH """
     def open_lihat_jadwal(self):
-        """Menampilkan halaman Lihat Jadwal Kereta."""
+        """Menampilkan halaman Lihat Jadwal Kereta dengan update kursi terbaru."""
+        print("⏳ Memperbarui data kursi sebelum melihat jadwal...")
+        self.admin_edit_data_kereta.update_kursi_kereta()  
+        print("✅ Data kursi diperbarui sebelum melihat jadwal.")
         self.setCurrentWidget(self.lihat_jadwal_kereta)
     
     def open_tiket_saya(self):
@@ -148,10 +156,14 @@ class MainApp(QStackedWidget):
 
         # Pindah ke halaman Ticket Search
         self.setCurrentWidget(self.ticket_search_screen)
+    
 
     """ INTEGRASI ADMIN DASH """
     def open_edit_data_kereta(self):
-        """Menampilkan halaman Edit Data Kereta."""
+        """Menampilkan halaman Edit Data Kereta dengan update kursi terbaru."""
+        print("⏳ Memperbarui data kursi sebelum edit data kereta...")
+        self.admin_edit_data_kereta.update_kursi_kereta() 
+        print("✅ Data kursi diperbarui sebelum edit data kereta.")
         self.setCurrentWidget(self.admin_edit_data_kereta) 
         
     def open_lihat_rekap_keuntungan(self):
@@ -161,6 +173,7 @@ class MainApp(QStackedWidget):
     def open_detail_rekap_keuntungan(self):
         """Navigasi ke halaman Detail Rekap Keuntungan."""
         self.setCurrentWidget(self.detail_RekapKeuntungan)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
