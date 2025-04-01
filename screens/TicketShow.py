@@ -58,7 +58,6 @@ class TicketShow(QWidget):
         print(f"Tiket yang dipilih: {tiket_terpilih}")   
         try:
             self.main_app.open_detail_pemesanan(tiket_terpilih)
-            print(" Berhasil memanggil open_detail_pemesanan")  
         except Exception as e:
             print(f"Error saat memanggil open_detail_pemesanan: {e}")
 
