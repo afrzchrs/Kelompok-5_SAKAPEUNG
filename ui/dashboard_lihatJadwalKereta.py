@@ -76,7 +76,7 @@ class Ui_dashboard_lihatJadwalKereta(object):
         self.lihat_jadwal_kereta_user.setGeometry(QtCore.QRect(10, 120, 791, 651))
         self.lihat_jadwal_kereta_user.setObjectName("lihat_jadwal_kereta_user")
         self.verticalFrame_2 = QtWidgets.QFrame(self.lihat_jadwal_kereta)
-        self.verticalFrame_2.setGeometry(QtCore.QRect(170, 130, 491, 211))
+        self.verticalFrame_2.setGeometry(QtCore.QRect(170, 130, 491, 221))
         self.verticalFrame_2.setStyleSheet("QFrame {\n"
 "    background-color: #E3F2FD; /* Warna latar belakang */\n"
 "    border: 2px solid #5C6BC0; /* Warna border */\n"
@@ -97,9 +97,8 @@ class Ui_dashboard_lihatJadwalKereta(object):
 "}\n"
 "")
         self.verticalFrame_2.setObjectName("verticalFrame_2")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalFrame_2)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.input_nama_kereta_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
+        self.input_nama_kereta_2.setGeometry(QtCore.QRect(21, 21, 451, 39))
         self.input_nama_kereta_2.setStyleSheet("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 8px;\n"
@@ -116,71 +115,8 @@ class Ui_dashboard_lihatJadwalKereta(object):
 "")
         self.input_nama_kereta_2.setText("")
         self.input_nama_kereta_2.setObjectName("input_nama_kereta_2")
-        self.verticalLayout_2.addWidget(self.input_nama_kereta_2)
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setContentsMargins(0, -1, 0, -1)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.input_stasiun_awal_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
-        self.input_stasiun_awal_2.setStyleSheet("QLineEdit {\n"
-"    min-width: 180px; /* Lebar minimum */\n"
-"    max-width: 200px; /* Lebar maksimum */\n"
-"    width: 50%; /* Lebar mengikuti parent */\n"
-"    padding: 8px; /* Jarak teks dari border */\n"
-"    border: 2px solid #3F51B5;\n"
-"    border-radius: 5px;\n"
-"    font-size: 14px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB;\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_stasiun_awal_2.setText("")
-        self.input_stasiun_awal_2.setObjectName("input_stasiun_awal_2")
-        self.horizontalLayout_3.addWidget(self.input_stasiun_awal_2)
-        self.label_3 = QtWidgets.QLabel(self.verticalFrame_2)
-        self.label_3.setMinimumSize(QtCore.QSize(20, 20))
-        self.label_3.setMaximumSize(QtCore.QSize(150, 150))
-        self.label_3.setStyleSheet("QLabel#label_2 {\n"
-"    background-image: url(E:/newPrefix/PYTHONN/ujiCoba1/icon/right-arrow.png);\n"
-"    background-repeat: no-repeat;\n"
-"    background-position: center;\n"
-"    background-size:10px 10px; /* Ubah ukuran sesuai kebutuhan */\n"
-"}\n"
-"")
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(":/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png"))
-        self.label_3.setScaledContents(True)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_3.addWidget(self.label_3)
-        self.input_stasiun_tujuan_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
-        self.input_stasiun_tujuan_2.setMaximumSize(QtCore.QSize(70, 16777215))
-        self.input_stasiun_tujuan_2.setStyleSheet("QLineEdit {\n"
-"    min-width: 180px; /* Lebar minimum */\n"
-"    max-width: 200px; /* Lebar maksimum */\n"
-"    width: 50%; /* Lebar mengikuti parent */\n"
-"    padding: 8px; /* Jarak teks dari border */\n"
-"    border: 2px solid #3F51B5;\n"
-"    border-radius: 5px;\n"
-"    font-size: 14px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB;\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"\n"
-"")
-        self.input_stasiun_tujuan_2.setText("")
-        self.input_stasiun_tujuan_2.setObjectName("input_stasiun_tujuan_2")
-        self.horizontalLayout_3.addWidget(self.input_stasiun_tujuan_2)
-        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
         self.tombo_search_2 = QtWidgets.QPushButton(self.verticalFrame_2)
+        self.tombo_search_2.setGeometry(QtCore.QRect(250, 170, 221, 37))
         self.tombo_search_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombo_search_2.setStyleSheet("QPushButton {\n"
 "    background-color: #3F51B5; /* Warna biru */\n"
@@ -203,8 +139,8 @@ class Ui_dashboard_lihatJadwalKereta(object):
 "}\n"
 "")
         self.tombo_search_2.setObjectName("tombo_search_2")
-        self.verticalLayout_2.addWidget(self.tombo_search_2)
         self.tombo_search_3 = QtWidgets.QPushButton(self.verticalFrame_2)
+        self.tombo_search_3.setGeometry(QtCore.QRect(20, 170, 211, 37))
         self.tombo_search_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombo_search_3.setStyleSheet("QPushButton {\n"
 "    background-color: #3F51B5; /* Warna biru */\n"
@@ -227,9 +163,103 @@ class Ui_dashboard_lihatJadwalKereta(object):
 "}\n"
 "")
         self.tombo_search_3.setObjectName("tombo_search_3")
-        self.verticalLayout_2.addWidget(self.tombo_search_3)
+        self.dateEdit_lihat_jadwal_kereta = QtWidgets.QDateEdit(self.verticalFrame_2)
+        self.dateEdit_lihat_jadwal_kereta.setGeometry(QtCore.QRect(20, 120, 451, 41))
+        self.dateEdit_lihat_jadwal_kereta.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QDateEdit {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang */\n"
+"    border: 2px solid #3F51B5; /* Warna border */\n"
+"    border-radius: 6px; /* Membuat sudut melengkung */\n"
+"    padding: 5px; /* Memberikan jarak dalam */\n"
+"    color: #000000; /* Warna teks */\n"
+"    font-size: 14px; /* Ukuran font */\n"
+"}\n"
+"\n"
+"/* Styling tombol dropdown QDateEdit */\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    width: 20px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right;\n"
+"    border-top-right-radius: 6px;\n"
+"    border-bottom-right-radius: 6px;\n"
+"}\n"
+"\n"
+"/* Styling ikon panah dalam tombol dropdown */\n"
+"QDateEdit::down-arrow {\n"
+"    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}")
+        self.dateEdit_lihat_jadwal_kereta.setObjectName("dateEdit_lihat_jadwal_kereta")
+        self.layoutWidget = QtWidgets.QWidget(self.verticalFrame_2)
+        self.layoutWidget.setGeometry(QtCore.QRect(20, 70, 451, 41))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.input_stasiun_awal_2 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.input_stasiun_awal_2.setStyleSheet("QLineEdit {\n"
+"    min-width: 180px; /* Lebar minimum */\n"
+"    max-width: 200px; /* Lebar maksimum */\n"
+"    width: 50%; /* Lebar mengikuti parent */\n"
+"    padding: 8px; /* Jarak teks dari border */\n"
+"    border: 2px solid #3F51B5;\n"
+"    border-radius: 5px;\n"
+"    font-size: 14px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"")
+        self.input_stasiun_awal_2.setText("")
+        self.input_stasiun_awal_2.setObjectName("input_stasiun_awal_2")
+        self.horizontalLayout_3.addWidget(self.input_stasiun_awal_2)
+        self.label_3 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_3.setMinimumSize(QtCore.QSize(20, 20))
+        self.label_3.setMaximumSize(QtCore.QSize(150, 150))
+        self.label_3.setStyleSheet("QLabel#label_2 {\n"
+"    background-image: url(E:/newPrefix/PYTHONN/ujiCoba1/icon/right-arrow.png);\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    background-size:10px 10px; /* Ubah ukuran sesuai kebutuhan */\n"
+"}\n"
+"")
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap(":/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png"))
+        self.label_3.setScaledContents(True)
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout_3.addWidget(self.label_3)
+        self.input_stasiun_tujuan_2 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.input_stasiun_tujuan_2.setMaximumSize(QtCore.QSize(70, 16777215))
+        self.input_stasiun_tujuan_2.setStyleSheet("QLineEdit {\n"
+"    min-width: 180px; /* Lebar minimum */\n"
+"    max-width: 200px; /* Lebar maksimum */\n"
+"    width: 50%; /* Lebar mengikuti parent */\n"
+"    padding: 8px; /* Jarak teks dari border */\n"
+"    border: 2px solid #3F51B5;\n"
+"    border-radius: 5px;\n"
+"    font-size: 14px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"\n"
+"")
+        self.input_stasiun_tujuan_2.setText("")
+        self.input_stasiun_tujuan_2.setObjectName("input_stasiun_tujuan_2")
+        self.horizontalLayout_3.addWidget(self.input_stasiun_tujuan_2)
         self.tableWidget = QtWidgets.QTableWidget(self.lihat_jadwal_kereta)
-        self.tableWidget.setGeometry(QtCore.QRect(40, 350, 731, 371))
+        self.tableWidget.setGeometry(QtCore.QRect(40, 360, 731, 361))
         self.tableWidget.setStyleSheet("QTableWidget {\n"
 "    border: 1px solid #ccc;\n"
 "    gridline-color: #aaa;\n"
@@ -400,10 +430,10 @@ class Ui_dashboard_lihatJadwalKereta(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.input_nama_kereta_2.setPlaceholderText(_translate("dashboard_lihatJadwalKereta", "Masukkan nama kereta"))
-        self.input_stasiun_awal_2.setPlaceholderText(_translate("dashboard_lihatJadwalKereta", "Staisun Awal"))
-        self.input_stasiun_tujuan_2.setPlaceholderText(_translate("dashboard_lihatJadwalKereta", "Stasiun Tujuan"))
         self.tombo_search_2.setText(_translate("dashboard_lihatJadwalKereta", "Cari Kereta"))
         self.tombo_search_3.setText(_translate("dashboard_lihatJadwalKereta", "Reset "))
+        self.input_stasiun_awal_2.setPlaceholderText(_translate("dashboard_lihatJadwalKereta", "Staisun Awal"))
+        self.input_stasiun_tujuan_2.setPlaceholderText(_translate("dashboard_lihatJadwalKereta", "Stasiun Tujuan"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("dashboard_lihatJadwalKereta", "Id_kereta"))
         item = self.tableWidget.horizontalHeaderItem(1)
