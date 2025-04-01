@@ -192,7 +192,7 @@ p, li { white-space: pre-wrap; }
          <x>170</x>
          <y>130</y>
          <width>491</width>
-         <height>211</height>
+         <height>221</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -216,11 +216,17 @@ QFrame#sidePanel {
 }
 </string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="input_nama_kereta_2">
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
+       <widget class="QLineEdit" name="input_nama_kereta_2">
+        <property name="geometry">
+         <rect>
+          <x>21</x>
+          <y>21</y>
+          <width>451</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
     font-size: 14px;
     padding: 8px;
     border: 2px solid #5C6BC0; /* Warna border */
@@ -234,27 +240,149 @@ QLineEdit:focus {
     background-color: #FFFFFF; /* Warna latar saat fokus */
 }
 </string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>Masukkan nama kereta</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLineEdit" name="input_stasiun_awal_2">
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Masukkan nama kereta</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="tombo_search_2">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>170</y>
+          <width>221</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #3F51B5; /* Warna biru */
+    color: white; /* Warna teks putih */
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #303F9F; /* Border biru tua */
+    border-radius: 8px; /* Membuat sudut tombol membulat */
+    padding: 8px 15px; /* Jarak dalam tombol */
+}
+
+QPushButton:hover {
+    background-color: #303F9F; /* Warna lebih gelap saat hover */
+    border: 2px solid #1A237E;
+}
+
+QPushButton:pressed {
+    background-color: #1A237E; /* Warna lebih gelap saat ditekan */
+    border: 2px solid #000051;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Cari Kereta</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="tombo_search_3">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>170</y>
+          <width>211</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #3F51B5; /* Warna biru */
+    color: white; /* Warna teks putih */
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #303F9F; /* Border biru tua */
+    border-radius: 8px; /* Membuat sudut tombol membulat */
+    padding: 8px 15px; /* Jarak dalam tombol */
+}
+
+QPushButton:hover {
+    background-color: #303F9F; /* Warna lebih gelap saat hover */
+    border: 2px solid #1A237E;
+}
+
+QPushButton:pressed {
+    background-color: #1A237E; /* Warna lebih gelap saat ditekan */
+    border: 2px solid #000051;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Reset </string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_lihat_jadwal_kereta">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>120</y>
+          <width>451</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* Styling untuk QDateEdit */
+QDateEdit {
+    background-color: #FFFFFF; /* Warna latar belakang */
+    border: 2px solid #3F51B5; /* Warna border */
+    border-radius: 6px; /* Membuat sudut melengkung */
+    padding: 5px; /* Memberikan jarak dalam */
+    color: #000000; /* Warna teks */
+    font-size: 14px; /* Ukuran font */
+}
+
+/* Styling tombol dropdown QDateEdit */
+QDateEdit::drop-down {
+    border: none;
+    background-color: #F3F4F6; /* Warna latar */
+    width: 20px;
+    subcontrol-origin: padding;
+    subcontrol-position: right;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Styling ikon panah dalam tombol dropdown */
+QDateEdit::down-arrow {
+    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */
+    width: 12px;
+    height: 12px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>451</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="input_stasiun_awal_2">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
     min-width: 180px; /* Lebar minimum */
     max-width: 200px; /* Lebar maksimum */
     width: 50%; /* Lebar mengikuti parent */
@@ -271,59 +399,59 @@ QLineEdit:focus {
     background-color: #FFFFFF; /* Warna latar saat fokus */
 }
 </string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>Staisun Awal</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_3">
-            <property name="minimumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>150</width>
-              <height>150</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel#label_2 {
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Staisun Awal</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel#label_2 {
     background-image: url(E:/newPrefix/PYTHONN/ujiCoba1/icon/right-arrow.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:10px 10px; /* Ubah ukuran sesuai kebutuhan */
 }
 </string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="C:/Users/ASPIRE 5/Downloads/test.qrc">:/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="input_stasiun_tujuan_2">
-            <property name="maximumSize">
-             <size>
-              <width>70</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="C:/Users/ASPIRE 5/Downloads/test.qrc">:/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="input_stasiun_tujuan_2">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
     min-width: 180px; /* Lebar minimum */
     max-width: 200px; /* Lebar maksimum */
     width: 50%; /* Lebar mengikuti parent */
@@ -341,90 +469,25 @@ QLineEdit:focus {
 }
 
 </string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>Stasiun Tujuan</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QPushButton" name="tombo_search_2">
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: #3F51B5; /* Warna biru */
-    color: white; /* Warna teks putih */
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #303F9F; /* Border biru tua */
-    border-radius: 8px; /* Membuat sudut tombol membulat */
-    padding: 8px 15px; /* Jarak dalam tombol */
-}
-
-QPushButton:hover {
-    background-color: #303F9F; /* Warna lebih gelap saat hover */
-    border: 2px solid #1A237E;
-}
-
-QPushButton:pressed {
-    background-color: #1A237E; /* Warna lebih gelap saat ditekan */
-    border: 2px solid #000051;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Cari Kereta</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="tombo_search_3">
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    background-color: #3F51B5; /* Warna biru */
-    color: white; /* Warna teks putih */
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #303F9F; /* Border biru tua */
-    border-radius: 8px; /* Membuat sudut tombol membulat */
-    padding: 8px 15px; /* Jarak dalam tombol */
-}
-
-QPushButton:hover {
-    background-color: #303F9F; /* Warna lebih gelap saat hover */
-    border: 2px solid #1A237E;
-}
-
-QPushButton:pressed {
-    background-color: #1A237E; /* Warna lebih gelap saat ditekan */
-    border: 2px solid #000051;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Reset </string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Stasiun Tujuan</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QTableWidget" name="tableWidget">
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>350</y>
+         <y>360</y>
          <width>731</width>
-         <height>371</height>
+         <height>361</height>
         </rect>
        </property>
        <property name="styleSheet">
