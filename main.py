@@ -27,6 +27,7 @@ class MainApp(QStackedWidget):
         self.current_user = None  # Menyimpan data user yang sedang login
         self.booking_kursi_screen = None  
         self.pembayaran_screen = None 
+        self.transaksi_pembayaran_screen = None 
         self.email_pengguna = None  # Simpan email pengguna yang login
    
         # Inisialisasi semua halaman aplikasi
