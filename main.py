@@ -122,15 +122,18 @@ class MainApp(QStackedWidget):
             print(f"Error di open_detail_pemesanan: {e}")
 
     def open_booking_kursi(self, tiket_terpilih):
-        """Navigasi ke halaman pemilihan kursi."""
-        if not self.booking_kursi_screen:
-            self.booking_kursi_screen = BookingKursi(self, tiket_terpilih)
-            self.addWidget(self.booking_kursi_screen)
-        else:
-            self.booking_kursi_screen.tiket_terpilih = tiket_terpilih
-            self.booking_kursi_screen.selected_seat = None 
-
-        self.setCurrentWidget(self.booking_kursi_screen)
+        """akan menmapilkan halaman booking kursi """
+        try:
+            if hasattr(self, 'booking_kursi_screen') and self.booking_kursi_screen is not None:
+                self.booking_kursi_screen.update_ticket(tiket_terpilih)
+            else:
+                print("Membuat layar booking kursi baru...")
+                self.booking_kursi_screen = BookingKursi(self, tiket_terpilih)
+                self.addWidget(self.booking_kursi_screen)
+            self.setCurrentWidget(self.booking_kursi_screen)
+        
+        except Exception as e:
+            print(f"Error saat membuka halaman Booking Kursi: {e}")
 
     def open_pembayaran(self, tiket_terpilih):
         """Navigasi ke halaman pembayaran setelah kursi dipilih."""
@@ -142,6 +145,18 @@ class MainApp(QStackedWidget):
             self.pembayaran_screen.tampilkan_detail_tiket()
 
         self.setCurrentWidget(self.pembayaran_screen)
+    
+    def open_transaksi_pembayaran(self, tiket_terpilih):
+        """Navigasi ke halaman transaksi pembayaran setelah pembayaran berhasil."""
+        
+        if not self.transaksi_pembayaran_screen:
+            self.transaksi_pembayaran_screen = TransaksiPembayaran(self, tiket_terpilih)
+            self.addWidget(self.transaksi_pembayaran_screen)
+        else:
+            self.transaksi_pembayaran_screen.tiket_terpilih = tiket_terpilih
+            self.transaksi_pembayaran_screen.tampilkan_detail_tiket()
+        
+        self.setCurrentWidget(self.transaksi_pembayaran_screen)
 
     def kembali_ke_ticket_search(self):
         """Navigasi kembali ke halaman utama (TicketSearch) setelah pembayaran selesai, dan reset input di semua halaman."""
