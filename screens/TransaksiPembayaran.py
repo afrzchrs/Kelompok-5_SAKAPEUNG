@@ -1,3 +1,13 @@
+"""
+Author: Devi Maulani
+NIM: 241524007
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+
+"""
+
 import json, os
 from PyQt5.QtWidgets import QWidget, QMessageBox, QInputDialog
 from ui.transasksi_pembayaran import Ui_transaksi_pembayaran
