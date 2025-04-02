@@ -18,7 +18,7 @@ PAYMENT_DATABASE_FILE = "databases/payment_database.json"
 KURSI_KERETA_FILE = "databases/kursi_kereta.json"
 RIWAYAT_PEMBELIAN_FILE = "databases/riwayat_pemesanan.json"
 
-# ========================== KELAS UTAMA PEMBAYARAN ==========================
+# ========================== KELAS UTAMA KONFRIMASI PEMBAYARAN ==========================
 class Pembayaran(QWidget):
     def __init__(self, main_app, tiket_terpilih):
         super().__init__()
