@@ -1,16 +1,6 @@
-"""
-Author: Devi Maulani
-NIM: 241524007
-Kelas: 1A
-Prodi: Sarjana Terapan Teknik Informatika
-Jurusan: Teknik Komputer dan Informatika
-Politeknik Negeri Bandung
-
-"""
 
 import json, os
 from PyQt5.QtWidgets import QWidget, QMessageBox, QCheckBox, QSpacerItem, QSizePolicy
-from PyQt5 import QtWidgets
 from ui.bookingkursi_bisnis import Ui_kereta_bisnis
 from ui.bookingkursi_ekonomi import Ui_kereta_ekonomi
 from ui.bookingkursi_eksekutif import Ui_kereta_eksekutif
@@ -25,16 +15,24 @@ class BookingKursi(QWidget):
         self.main_app = main_app
         self.tiket_terpilih = tiket_terpilih
         self.selected_seat = None
+        self.ui = None 
 
+        self.setup_ui_for_ticket()
+
+    def setup_ui_for_ticket(self):
+        self.selected_seat = None 
         self.load_ui_based_on_service()
-        self.ui.setupUi(self)
-        self.ui.nama_kereta.setText(self.tiket_terpilih.get('nama_kereta', ''))
-        self.load_gerbong()
-
-        # ========================== NAVIGASI ==========================
-        self.ui.comboBox.currentIndexChanged.connect(self.update_kursi_display)
-        self.ui.button_pilihkursi.clicked.connect(self.confirm_booking)
-        self.ui.button_keluar.clicked.connect(self.kembali_ke_detail_pemesanan)
+        
+        if self.ui:
+            self.ui.setupUi(self)
+            self.ui.nama_kereta.setText(self.tiket_terpilih.get('nama_kereta', ''))
+            
+            # ============================= NAVIGASI ================================
+            self.ui.comboBox.currentIndexChanged.connect(self.update_kursi_display)
+            self.ui.button_pilihkursi.clicked.connect(self.confirm_booking)
+            self.ui.button_keluar.clicked.connect(self.kembali_ke_detail_pemesanan)
+            
+            self.load_gerbong()
 
     def load_ui_based_on_service(self):
         layanan = self.tiket_terpilih.get('jenis_layanan', '').lower()
@@ -45,7 +43,7 @@ class BookingKursi(QWidget):
         elif layanan == 'ekonomi':
             self.ui = Ui_kereta_ekonomi()
         else:
-            return
+            print(f"Jenis layanan tidak dikenal: {layanan}")
         
     def load_gerbong(self):
         gerbong_list = []
@@ -62,15 +60,17 @@ class BookingKursi(QWidget):
             if gerbong_list:
                 self.ui.comboBox.clear()
                 self.ui.comboBox.addItems(gerbong_list)
-                self.update_kursi_display()  # Menampilkan kursi awal untuk gerbong pertama
+                self.update_kursi_display() 
             else:
-                print("Tidak ada gerbong yang tersedia untuk kereta ini.")
+                print(f"Tidak ada gerbong yang tersedia untuk kereta: {self.tiket_terpilih.get('nama_kereta')}")
         except Exception as e:
-            print(f"Error loading gerbong: {e}")
+            print(f"Error saat memuat gerbong: {e}")
 
     def update_kursi_display(self):
         self.clear_kursi()
         gerbong_id = self.ui.comboBox.currentText()
+        if not gerbong_id:
+            return
 
         try:
             with open(KURSI_KERETA_FILE, 'r') as file:
@@ -83,10 +83,15 @@ class BookingKursi(QWidget):
                         if gerbong.get('gerbong_id') == gerbong_id:
                             self.display_kursi(gerbong.get('kursi', {}))
                             return
+            
+            print(f"Tidak ditemukan kereta/gerbong yang sesuai untuk ID: {self.tiket_terpilih.get('id_kereta')}, gerbong: {gerbong_id}")
         except Exception as e:
-            print(f"Error updating kursi: {e}")
+            print(f"Error saat memperbarui kursi: {e}")
 
     def clear_kursi(self):
+        if not hasattr(self, 'ui') or not self.ui:
+            return
+            
         layout = self.ui.gridLayout
         while layout.count():
             item = layout.takeAt(0)
@@ -153,7 +158,8 @@ class BookingKursi(QWidget):
             else:
                 self.selected_seat = seat
         else:
-            self.selected_seat = None
+            if self.selected_seat == seat:
+                self.selected_seat = None
 
     def confirm_booking(self):
         if not self.selected_seat:
@@ -162,7 +168,7 @@ class BookingKursi(QWidget):
         
         # menyimpan ID kursi yang dipilih ke dalam tiket_terpilih (TAPI BELUM UPDATE DATABASE)
         self.tiket_terpilih['id_kursi'] = self.selected_seat
-        self.tiket_terpilih['gerbong_id'] = self.ui.comboBox.currentText()  # Simpan ID gerbong
+        self.tiket_terpilih['gerbong_id'] = self.ui.comboBox.currentText()  
 
         QMessageBox.information(self, "Kursi Dipilih", f"Kursi {self.selected_seat} telah dipilih. Lanjutkan ke pembayaran.")
 
@@ -170,15 +176,32 @@ class BookingKursi(QWidget):
 
     def kembali_ke_detail_pemesanan(self):
         self.main_app.setCurrentWidget(self.main_app.detail_pemesanan_screen)
+    
+    def update_ticket(self, tiket_terpilih):
+        """Memperbarui tiket saat ini dan memperbarui semua elemen UI"""
+        print("update_ticket() dipanggil!")
+        if not tiket_terpilih:
+            print("Error: tiket_terpilih kosong!")
+            return
 
+        self.tiket_terpilih = tiket_terpilih
+        self.reset_input()
+        self.setup_ui_for_ticket()
+
+        if hasattr(self.ui, 'nama_kereta'):
+            self.ui.nama_kereta.setText(self.tiket_terpilih.get('nama_kereta', ''))
+            
     def reset_input(self):
-        # ============== reset input pada halaman booking kursi (mengubahnya menjadi default kembali) ==============
+        """Reset semua input dan elemen UI ke keadaan default"""
         self.selected_seat = None  # Hapus kursi yang dipilih
-
-        self.ui.comboBox.clear()
-
-        self.clear_kursi()
-
-        self.ui.nama_kereta.clear()
-
-
+        
+        if hasattr(self, 'ui') and self.ui:
+            # Bersihkan combobox dan tampilan kursi
+            if hasattr(self.ui, 'comboBox'):
+                self.ui.comboBox.clear()
+            
+            self.clear_kursi()
+            
+            # Perbarui nama kereta jika diperlukan
+            if hasattr(self.ui, 'nama_kereta'):
+                self.ui.nama_kereta.setText(self.tiket_terpilih.get('nama_kereta', ''))
