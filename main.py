@@ -12,6 +12,7 @@ from screens.TicketShow import TicketShow
 from screens.DetailPemesanan import DetailPemesanan
 from screens.BookingKursi import BookingKursi
 from screens.Pembayaran import Pembayaran
+from screens.TransaksiPembayaran import TransaksiPembayaran
 from screens.lihatJadwalKereta_dashboard import LihatJadwalKereta
 from screens.EditDataKereta_dashboard import DashboardEditData 
 from screens.tiket_saya_screen import TiketSaya
