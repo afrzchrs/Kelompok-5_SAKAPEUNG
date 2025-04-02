@@ -19,6 +19,7 @@ PAYMENT_DATABASE_FILE = "databases/payment_database.json"
 KURSI_KERETA_FILE = "databases/kursi_kereta.json"
 RIWAYAT_PEMBELIAN_FILE = "databases/riwayat_pemesanan.json"
 
+# ========================== KELAS UTAMA TRANSAKSI PEMBAYARAN ==========================
 class TransaksiPembayaran(QWidget):
     def __init__(self, main_app, tiket_terpilih):
         super().__init__()
@@ -27,7 +28,9 @@ class TransaksiPembayaran(QWidget):
         self.ui = Ui_transaksi_pembayaran()
         self.ui.setupUi(self)
 
-        self.reset_input()  # Reset input saat halaman dibuka
+
+        # ========================== NAVIGASI ==========================
+        self.reset_input() 
         self.tampilkan_detail_tiket()
         self.ui.button_bayar.clicked.connect(self.proses_pembayaran)
         self.ui.button_keluar.clicked.connect(self.kembali_ke_pembayaran)
