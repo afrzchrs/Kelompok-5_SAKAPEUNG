@@ -126,9 +126,6 @@ class DashboardEditData(QtWidgets.QMainWindow):
     def populate_table(self, data):
         """Mengisi tabel dengan data kereta"""
         self.ui.tableWidget_Li.setRowCount(0)  # Reset tabel
-        
-        if not data:
-            return
             
         # Set header tabel
         headers = ["ID Kereta", "Nama Kereta", "Tanggal", "Jenis Layanan", "Stasiun Transit", "Waktu Transit"]
@@ -321,7 +318,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
         tanggal_str = start_date.strftime('%Y-%m-%d')
         
         try:
-            # 1. Tambahkan ke informasi umum
+            # Tambahkan ke informasi umum
             with open(INFOUMUM_DATABASE, 'r+', encoding='utf-8') as f:
                 info_data = json.load(f)
                 info_data.append({
@@ -334,7 +331,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 f.seek(0)
                 json.dump(info_data, f, indent=4, ensure_ascii=False)
             
-            # 2. Tambahkan ke jadwal kereta
+            # Tambahkan ke jadwal kereta
             with open(JADWALKERETA_DATABASE, 'r+', encoding='utf-8') as f:
                 jadwal_data = json.load(f)
                 jadwal_data.append({
@@ -345,7 +342,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 f.seek(0)
                 json.dump(jadwal_data, f, indent=4, ensure_ascii=False)
             
-            # 3. Buat kursi untuk 30 hari ke depan
+            # Buat kursi untuk 30 hari ke depan
             with open(KURSIKERETA_DATABASE, 'r+', encoding='utf-8') as f:
                 kursi_data = json.load(f)
                 
@@ -501,7 +498,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 QtWidgets.QMessageBox.warning(self, "Peringatan", "ID Kereta harus diisi!")
                 return
 
-            # 1. Baca data kursi
+            # Baca data kursi
             with open(KURSIKERETA_DATABASE, 'r', encoding='utf-8') as f:
                 try:
                     kursi_data = json.load(f)
@@ -510,7 +507,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 except (json.JSONDecodeError, FileNotFoundError):
                     kursi_data = []
 
-            # 2. Filter data yang akan dipertahankan
+            # Filter data yang akan dipertahankan
             kursi_baru = []
             for item in kursi_data:
                 try:
@@ -523,7 +520,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                     print(f"Error processing item: {str(e)}")
                     continue
 
-            # 3. Simpan ke log penghapusan
+            # Simpan ke log penghapusan
             DELETED_RECORDS_LOG = "databases/deleted_records.json"
             deleted_records = {"deleted": []}
             
@@ -544,11 +541,11 @@ class DashboardEditData(QtWidgets.QMainWindow):
             with open(DELETED_RECORDS_LOG, 'w', encoding='utf-8') as f:
                 json.dump(deleted_records, f, indent=4, ensure_ascii=False)
 
-            # 4. Simpan data kursi yang sudah difilter
+            # Simpan data kursi yang sudah difilter
             with open(KURSIKERETA_DATABASE, 'w', encoding='utf-8') as f:
                 json.dump(kursi_baru, f, indent=4, ensure_ascii=False)
 
-            # 5. Update UI
+            # Update UI
             self.ui.tableWidget_Hapus_Data.clearContents()
             self.ui.tableWidget_Hapus_Data.setRowCount(0)
             
@@ -573,7 +570,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
         jenis = self.ui.comboBox_Search_Data.currentText().strip().lower()
         tanggal = self.ui.dateEdit_lihat_data_kereta.date().toString('yyyy-MM-dd')
             
-            # Validasi input
+        # Validasi input
         if not jenis or not tanggal:
                 QtWidgets.QMessageBox.warning(
                     self,
@@ -587,7 +584,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
         informasi_umum = self.load_json(INFOUMUM_DATABASE)
         jadwal_kereta = self.load_json(JADWALKERETA_DATABASE)
             
-            # Dictionary untuk mapping cepat
+        # Dictionary untuk mapping cepat
         info_kereta = {item['id_kereta']: item for item in informasi_umum}
         jadwal_kereta_dict = {item['id_kereta']: item for item in jadwal_kereta}
 
@@ -627,9 +624,6 @@ class DashboardEditData(QtWidgets.QMainWindow):
     def populate_table_hapus_data(self, filtered_data):
         """Mengisi tabel untuk halaman hapus data"""
         self.ui.tableWidget_Hapus_Data.setRowCount(0)
-        
-        if not filtered_data:
-            return
             
         headers = ["ID Kereta", "Nama Kereta", "Tanggal", "Stasiun Transit", "Waktu Transit", "Jenis Layanan"]
         self.ui.tableWidget_Hapus_Data.setColumnCount(len(headers))
@@ -719,17 +713,19 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 "Error",
                 f"Terjadi kesalahan saat mencari kereta:\n{str(e)}"
             )
+
+    """ ============================== Fitur Tambahan Update Kursi Otomatis ============================== """
             
     def update_kursi_kereta(self):
         """Memperbarui data kursi untuk 30 hari ke depan dengan penanganan error"""
         try:
-            # 1. Baca semua data yang diperlukan
+            # Baca semua data yang diperlukan
             with open(KURSIKERETA_DATABASE, 'r', encoding='utf-8') as f:
                 kursi_kereta = json.load(f)
             with open(INFOUMUM_DATABASE, 'r', encoding='utf-8') as f:
                 informasi_umum = json.load(f)
             
-            # 2. Inisialisasi log penghapusan jika tidak ada
+            # Inisialisasi log penghapusan jika tidak ada
             deleted_records = {"deleted": []}
             try:
                 with open(DELETEDDATA, 'r', encoding='utf-8') as f:
@@ -739,10 +735,10 @@ class DashboardEditData(QtWidgets.QMainWindow):
             except (FileNotFoundError, json.JSONDecodeError):
                 pass
 
-            # 3. Hitung rentang tanggal
+            # Hitung rentang tanggal
             today = datetime.today().date()
             
-            # 4. Filter data kursi yang valid
+            # Filter data kursi yang valid
             kursi_kereta_baru = []
             for kursi in kursi_kereta:
                 try:
@@ -753,7 +749,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                 except (ValueError, KeyError):
                     continue
 
-            # 5. Proses pembaruan untuk setiap kereta aktif
+            # Proses pembaruan untuk setiap kereta aktif
             for kereta in informasi_umum:
                 try:
                     if not isinstance(kereta, dict):
@@ -767,7 +763,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                     if not format_gerbong:
                         continue
                     
-                    # 6. Generate data untuk 30 hari ke depan
+                    # Generate data untuk 30 hari ke depan
                     for i in range(31):
                         tanggal = (today + timedelta(days=i)).strftime('%Y-%m-%d')
                         
@@ -808,7 +804,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
                     print(f"Error processing train {id_kereta}: {str(e)}")
                     continue
 
-            # 7. Simpan perubahan
+            # Simpan perubahan
             with open(KURSIKERETA_DATABASE, 'w', encoding='utf-8') as f:
                 json.dump(kursi_kereta_baru, f, indent=4, ensure_ascii=False)
                 
