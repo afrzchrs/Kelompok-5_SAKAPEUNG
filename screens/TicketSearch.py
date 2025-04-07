@@ -54,43 +54,36 @@ class TicketSearch(QDialog):
                     return []
         return []
 
-    def populate_stations(self):
-        """Mengisi dropdown stasiun asal dan tujuan dengan daftar unik stasiun transit"""
-        
-        # Ambil daftar stasiun transit dan simpan dalam array sementara
-        stasiun_transit_list = self.load_transit_stations()
+   def populate_stations(self):
+        """Mengisi dropdown stasiun asal dan tujuan dengan stasiun transit dari database jadwal kereta."""
 
-        # Kosongkan dropdown sebelum menambahkan data baru
+        # Membaca file JSON jadwal kereta
+        data = self.load_json(JADWAL_KERETA_FILE)
+
+        # menggunakan array sementara untuk menyimpan daftar stasiun transit
+        stasiun_transit_list = []
+
+        for kereta in data:
+            transit = kereta.get("stasiun_transit", [])
+            stasiun_transit_list.extend(transit)
+
+        stasiun_transit_list = sorted(set(stasiun_transit_list))
+        
         self.ui.combo_asal.clear()
         self.ui.combo_tujuan.clear()
 
-        # Masukkan data dari array sementara ke dalam dropdown
+        # memasukkan data ke dalam dropdown
         self.ui.combo_asal.addItems(stasiun_transit_list)
         self.ui.combo_tujuan.addItems(stasiun_transit_list)
 
-    def load_transit_stations(self):
-        """Membaca data JSON jadwal kereta dan menyimpan daftar stasiun transit unik dalam array sementara"""
-        # Membaca file JSON jadwal kereta
-        data = self.load_json (JADWAL_KERETA_FILE)
-        
-        # Array sementara untuk menyimpan daftar stasiun transit
-        stasiun_transit_list = []
-
-        # Loop melalui setiap jadwal kereta dalam data JSON
-        for kereta in data:
-            transit = kereta.get("stasiun_transit", [])
-            # Tambahkan setiap stasiun ke dalam array sementara
-            stasiun_transit_list.extend(transit)
-        # Hapus duplikasi dengan mengubahnya ke set, lalu kembalikan sebagai list terurut
-        return sorted(set(stasiun_transit_list))
 
     def populate_layanan(self):
-        """Mengisi dropdown jenis layanan dengan daftar unik dari informasi umum."""
+        """Mengisi dropdown jenis layanan dari database informasi umum."""
         
         # Membaca data JSON dari informasi umum
         data = self.load_json(INFORMASI_UMUM_FILE)
 
-        # Array sementara untuk menyimpan daftar layanan unik
+        # array sementara untuk menyimpan daftar layanan unik
         layanan_list = []
 
         for kereta in data:
@@ -98,11 +91,12 @@ class TicketSearch(QDialog):
             if layanan:  
                 layanan_list.append(layanan)
 
-        # Hapus duplikasi dan urutkan
+        # mengahapus duplikasi dan megurutkannya
         layanan_list = sorted(set(layanan_list))
-        # Kosongkan dropdown sebelum menambahkan data baru
+        
         self.ui.combo_layanan.clear()
-        # Masukkan data ke dalam dropdown
+
+        # memasukkan data ke dalam dropdown
         self.ui.combo_layanan.addItems(layanan_list)
 
     def swap_stations(self):
