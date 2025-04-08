@@ -71,19 +71,20 @@ class TiketSaya(QtWidgets.QMainWindow):
             self.ui.table_tiket_saya.setItem(row, 4, QtWidgets.QTableWidgetItem(tanggal))
 
     def cari_dan_tampilkan_detail(self):
-        """Mencari tiket berdasarkan ID Kereta dan menampilkan detailnya"""
-        id_kereta_input = self.ui.lineEdit.text().strip()
-        
-        if not id_kereta_input:
-            QtWidgets.QMessageBox.warning(self, "Peringatan", "Masukkan ID Kereta terlebih dahulu!")
+        """Mencari tiket berdasarkan indeks dan menampilkan detailnya"""
+        indeks_input = self.ui.lineEdit.text().strip()
+    
+        if not indeks_input.isdigit():
+            QtWidgets.QMessageBox.warning(self, "Peringatan", "Masukkan angka indeks dari tabel!")
             return
 
-        tiket_ditemukan = next((tiket for tiket in self.tiket_user if str(tiket["id_kereta"]) == id_kereta_input), None)
-        
-        if tiket_ditemukan:
+        indeks = int(indeks_input) - 1  # Karena user lihat dari angka 1, kita ubah jadi 0-based index
+
+        if 0 <= indeks < len(self.tiket_user):
+            tiket_ditemukan = self.tiket_user[indeks]
             self.lihat_detail(tiket_ditemukan)
         else:
-            QtWidgets.QMessageBox.warning(self, "Peringatan", "Tiket tidak ditemukan!")
+            QtWidgets.QMessageBox.warning(self, "Peringatan", "Indeks tidak ditemukan dalam daftar tiket!")
     
 
     def lihat_detail(self, tiket):
