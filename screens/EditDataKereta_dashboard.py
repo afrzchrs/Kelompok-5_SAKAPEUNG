@@ -204,7 +204,6 @@ class DashboardEditData(QtWidgets.QMainWindow):
                             "waktu_transit": jadwal["waktu_transit"],
                             "gerbong": kursi["gerbong"]
                         })
-                        print(f"Data lengkap ditemukan untuk {id_kereta}")
                     else:
                         print(f"Data tidak lengkap untuk {id_kereta}")
 
