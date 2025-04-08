@@ -1,3 +1,12 @@
+"""
+Nama: Adi Rafi Chaerufarizki
+NIM: 241524001
+Kelas: 1A
+Prodi: Sarjana Terapan Teknik Informatika
+Jurusan: Teknik Komputer dan Informatika
+Politeknik Negeri Bandung
+"""
+
 from PyQt5.QtWidgets import QMainWindow, QVBoxLayout
 from ui.lihat_grafik_keuntungan import Ui_lihat_grafik_keuntungan as LihatGrafikUi
 import json
