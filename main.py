@@ -87,16 +87,12 @@ class MainApp(QStackedWidget):
         self.dashboard_admin.ui.lihat_rekap_keuntungan_button.clicked.connect(self.open_lihat_rekap_keuntungan)
         
         # Jalankan update kursi langsung saat aplikasi dimulai
-        print("Memperbarui data kursi...")
         self.admin_edit_data_kereta.update_kursi_kereta()
-        print("Data kursi berhasil diperbarui!")
 
     """ INTEGRASI USER DASH """
     def open_lihat_jadwal(self):
         """Menampilkan halaman Lihat Jadwal Kereta dengan update kursi terbaru."""
-        print("Memperbarui data kursi sebelum melihat jadwal...")
         self.admin_edit_data_kereta.update_kursi_kereta()  
-        print("Data kursi diperbarui sebelum melihat jadwal.")
         self.setCurrentWidget(self.lihat_jadwal_kereta)
     
     def open_tiket_saya(self):
@@ -108,6 +104,7 @@ class MainApp(QStackedWidget):
 
     def open_ticket_search(self):
         """Pindah kembali ke halaman TicketSearch saat tombol 'Kembali' ditekan"""
+        self.admin_edit_data_kereta.update_kursi_kereta()
         self.setCurrentWidget(self.ticket_search_screen)
 
     def open_ticket_show(self):
@@ -178,9 +175,7 @@ class MainApp(QStackedWidget):
     """ INTEGRASI ADMIN DASH """
     def open_edit_data_kereta(self):
         """Menampilkan halaman Edit Data Kereta dengan update kursi terbaru."""
-        print("Memperbarui data kursi sebelum edit data kereta...")
         self.admin_edit_data_kereta.update_kursi_kereta() 
-        print("Data kursi diperbarui sebelum edit data kereta.")
         self.setCurrentWidget(self.admin_edit_data_kereta) 
         
     def open_lihat_rekap_keuntungan(self):
