@@ -63,8 +63,11 @@ class LihatGrafikKeuntungan(QMainWindow):
         tanggal_sekarang = datetime.today().date()
         keuntungan_per_tanggal = {}
 
-        for pemesanan in data_pemesanan:
-            tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+       for pemesanan in data_pemesanan:
+            try:
+                tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+            except ValueError:
+                continue
             harga = pemesanan.get("harga", 0)
 
             if filter_terpilih == "Harian":
@@ -72,17 +75,21 @@ class LihatGrafikKeuntungan(QMainWindow):
                     keuntungan_per_tanggal[tanggal_pemesanan] = keuntungan_per_tanggal.get(tanggal_pemesanan, 0) + harga
 
             elif filter_terpilih == "Mingguan":
-                minggu_lalu = tanggal_sekarang - timedelta(days=7)
-                if minggu_lalu <= tanggal_pemesanan <= tanggal_sekarang:
-                    keuntungan_per_tanggal[tanggal_pemesanan] = keuntungan_per_tanggal.get(tanggal_pemesanan, 0) + harga
+                if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month == tanggal_sekarang.month:
+                    label = tanggal_sekarang.strftime("%B %Y")  # Misalnya "April 2025"
+                    keuntungan_per_tanggal[label] = keuntungan_per_tanggal.get(label, 0) + harga
+
 
             elif filter_terpilih == "Bulanan":
-                if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month == tanggal_sekarang.month:
-                    keuntungan_per_tanggal[tanggal_pemesanan] = keuntungan_per_tanggal.get(tanggal_pemesanan, 0) + harga
+                if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month <= tanggal_sekarang.month:
+                    nama_bulan = tanggal_pemesanan.strftime("%B")
+                keuntungan_per_tanggal[nama_bulan] = keuntungan_per_tanggal.get(nama_bulan, 0) + harga
 
             elif filter_terpilih == "Tahunan":
-                if tanggal_pemesanan.year == tanggal_sekarang.year:
-                    keuntungan_per_tanggal[tanggal_pemesanan] = keuntungan_per_tanggal.get(tanggal_pemesanan, 0) + harga
+                # Ambil data dari tahun sekarang ke tahun-tahun sebelumnya
+                tahun = tanggal_pemesanan.year
+                if tahun <= tanggal_sekarang.year:
+                    keuntungan_per_tanggal[str(tahun)] = keuntungan_per_tanggal.get(str(tahun), 0) + harga
 
         # Jika tidak ada data, tampilkan pesan
         if not keuntungan_per_tanggal:
