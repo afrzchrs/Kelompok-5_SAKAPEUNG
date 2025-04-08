@@ -64,25 +64,31 @@ class DetailRekapKeuntungan(QMainWindow):
         # Tanggal saat ini
         tanggal_sekarang = datetime.today().date()
 
-        for pemesanan in data:
-            tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+         for pemesanan in data:
+            try:
+                tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+            except ValueError:
+                continue  # Lewati data yang tanggalnya rusak
 
             if filter_terpilih == "Harian":
                 if tanggal_pemesanan == tanggal_sekarang:
                     data_terfilter.append(pemesanan)
 
             elif filter_terpilih == "Mingguan":
-                minggu_lalu = tanggal_sekarang - timedelta(days=7)
-                if minggu_lalu <= tanggal_pemesanan <= tanggal_sekarang:
-                    data_terfilter.append(pemesanan)
-
-            elif filter_terpilih == "Bulanan":
+                # Ambil semua data yang masuk bulan ini
                 if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month == tanggal_sekarang.month:
                     data_terfilter.append(pemesanan)
 
-            elif filter_terpilih == "Tahunan":
-                if tanggal_pemesanan.year == tanggal_sekarang.year:
+            elif filter_terpilih == "Bulanan":
+                # Dari bulan sekarang sampai Januari tahun ini
+                if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month <= tanggal_sekarang.month:
                     data_terfilter.append(pemesanan)
+
+            elif filter_terpilih == "Tahunan":
+                # Tampilkan semua data dari tahun ini dan sebelumnya
+                if tanggal_pemesanan.year <= tanggal_sekarang.year:
+                    data_terfilter.append(pemesanan)
+
 
         # Menampilkan data ke dalam tabel
         self.ui.table_lihat_detail_rekap_keuntungan.setRowCount(len(data_terfilter))
