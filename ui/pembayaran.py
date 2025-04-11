@@ -14,23 +14,24 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_pembayaran(object):
     def setupUi(self, pembayaran):
         pembayaran.setObjectName("pembayaran")
-        pembayaran.resize(1147, 865)
+        pembayaran.resize(1280, 766)
+        pembayaran.setMaximumSize(QtCore.QSize(1280, 766))
         pembayaran.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.kereta_box = QtWidgets.QFrame(pembayaran)
-        self.kereta_box.setGeometry(QtCore.QRect(50, 40, 1041, 791))
-        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
+        self.kereta_box.setGeometry(QtCore.QRect(50, 40, 1201, 691))
+        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 150); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
         self.kereta_box.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.kereta_box.setFrameShadow(QtWidgets.QFrame.Raised)
         self.kereta_box.setObjectName("kereta_box")
         self.kursi_kereta_box = QtWidgets.QWidget(self.kereta_box)
-        self.kursi_kereta_box.setGeometry(QtCore.QRect(30, 330, 971, 341))
+        self.kursi_kereta_box.setGeometry(QtCore.QRect(30, 260, 1151, 411))
         self.kursi_kereta_box.setStyleSheet("background : rgb(158, 213, 255);")
         self.kursi_kereta_box.setObjectName("kursi_kereta_box")
         self.groupBox = QtWidgets.QGroupBox(self.kursi_kereta_box)
-        self.groupBox.setGeometry(QtCore.QRect(20, 50, 921, 291))
+        self.groupBox.setGeometry(QtCore.QRect(20, 50, 1091, 341))
         self.groupBox.setStyleSheet("QCheckBox::indicator {\n"
 "    width: 25px;  /* Lebar kotak */\n"
 "    height: 25px; /* Tinggi kotak */\n"
@@ -39,7 +40,7 @@ class Ui_pembayaran(object):
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.checkBox = QtWidgets.QCheckBox(self.groupBox)
-        self.checkBox.setGeometry(QtCore.QRect(80, 190, 31, 31))
+        self.checkBox.setGeometry(QtCore.QRect(80, 150, 31, 31))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(6)
@@ -52,13 +53,13 @@ class Ui_pembayaran(object):
         self.checkBox.setText("")
         self.checkBox.setObjectName("checkBox")
         self.groupBox_namakereta = QtWidgets.QGroupBox(self.groupBox)
-        self.groupBox_namakereta.setGeometry(QtCore.QRect(70, 60, 801, 51))
+        self.groupBox_namakereta.setGeometry(QtCore.QRect(70, 0, 961, 41))
         self.groupBox_namakereta.setStyleSheet("background : white;\n"
 "")
         self.groupBox_namakereta.setTitle("")
         self.groupBox_namakereta.setObjectName("groupBox_namakereta")
         self.label_namakereta = QtWidgets.QLabel(self.groupBox_namakereta)
-        self.label_namakereta.setGeometry(QtCore.QRect(20, 0, 251, 51))
+        self.label_namakereta.setGeometry(QtCore.QRect(20, 0, 251, 41))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -67,7 +68,7 @@ class Ui_pembayaran(object):
         self.label_namakereta.setAlignment(QtCore.Qt.AlignCenter)
         self.label_namakereta.setObjectName("label_namakereta")
         self.label_jenislayanan = QtWidgets.QLabel(self.groupBox_namakereta)
-        self.label_jenislayanan.setGeometry(QtCore.QRect(550, 0, 191, 51))
+        self.label_jenislayanan.setGeometry(QtCore.QRect(550, 0, 191, 41))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -76,7 +77,7 @@ class Ui_pembayaran(object):
         self.label_jenislayanan.setAlignment(QtCore.Qt.AlignCenter)
         self.label_jenislayanan.setObjectName("label_jenislayanan")
         self.label_tampung_harga = QtWidgets.QLabel(self.groupBox)
-        self.label_tampung_harga.setGeometry(QtCore.QRect(70, 120, 801, 51))
+        self.label_tampung_harga.setGeometry(QtCore.QRect(70, 50, 961, 51))
         font = QtGui.QFont()
         font.setPointSize(9)
         font.setBold(True)
@@ -85,7 +86,7 @@ class Ui_pembayaran(object):
         self.label_tampung_harga.setStyleSheet("background : white;")
         self.label_tampung_harga.setObjectName("label_tampung_harga")
         self.label_harga = QtWidgets.QLabel(self.groupBox)
-        self.label_harga.setGeometry(QtCore.QRect(630, 130, 161, 31))
+        self.label_harga.setGeometry(QtCore.QRect(760, 60, 251, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -94,14 +95,58 @@ class Ui_pembayaran(object):
         self.label_harga.setAlignment(QtCore.Qt.AlignCenter)
         self.label_harga.setObjectName("label_harga")
         self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setGeometry(QtCore.QRect(120, 180, 801, 51))
+        self.label.setGeometry(QtCore.QRect(120, 140, 801, 51))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.button_bayar = QtWidgets.QPushButton(self.groupBox)
+        self.button_bayar.setGeometry(QtCore.QRect(160, 220, 791, 41))
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.button_bayar.setFont(font)
+        self.button_bayar.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(44, 181, 255);\n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
+"    padding: 8px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"")
+        self.button_bayar.setObjectName("button_bayar")
+        self.button_keluar = QtWidgets.QPushButton(self.groupBox)
+        self.button_keluar.setGeometry(QtCore.QRect(160, 270, 791, 41))
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.button_keluar.setFont(font)
+        self.button_keluar.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(44, 181, 255);\n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
+"    padding: 8px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"")
+        self.button_keluar.setObjectName("button_keluar")
         self.label_5 = QtWidgets.QLabel(self.kursi_kereta_box)
-        self.label_5.setGeometry(QtCore.QRect(270, 30, 361, 31))
+        self.label_5.setGeometry(QtCore.QRect(400, 10, 361, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -110,47 +155,15 @@ class Ui_pembayaran(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.label_2 = QtWidgets.QLabel(self.kursi_kereta_box)
-        self.label_2.setGeometry(QtCore.QRect(310, 290, 581, 16))
+        self.label_2.setGeometry(QtCore.QRect(470, 230, 581, 16))
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         self.textBrowser_data_ = QtWidgets.QTextBrowser(self.kereta_box)
-        self.textBrowser_data_.setGeometry(QtCore.QRect(30, 10, 971, 301))
+        self.textBrowser_data_.setGeometry(QtCore.QRect(30, 10, 1151, 241))
         self.textBrowser_data_.setStyleSheet("background : rgb(158, 213, 255);")
         self.textBrowser_data_.setObjectName("textBrowser_data_")
-        self.button_keluar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_keluar.setGeometry(QtCore.QRect(30, 730, 971, 41))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.button_keluar.setFont(font)
-        self.button_keluar.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
-"    color: white;\n"
-"    border-radius: 10px;\n"
-"    padding: 8px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"")
-        self.button_keluar.setObjectName("button_keluar")
-        self.button_bayar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_bayar.setGeometry(QtCore.QRect(30, 680, 971, 41))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.button_bayar.setFont(font)
-        self.button_bayar.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
-"    color: white;\n"
-"    border-radius: 10px;\n"
-"    padding: 8px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"")
-        self.button_bayar.setObjectName("button_bayar")
         self.label_waktu_ticket = QtWidgets.QLabel(self.kereta_box)
-        self.label_waktu_ticket.setGeometry(QtCore.QRect(130, 90, 431, 31))
+        self.label_waktu_ticket.setGeometry(QtCore.QRect(130, 60, 431, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -158,7 +171,7 @@ class Ui_pembayaran(object):
         self.label_waktu_ticket.setAlignment(QtCore.Qt.AlignCenter)
         self.label_waktu_ticket.setObjectName("label_waktu_ticket")
         self.label_nama_kereta = QtWidgets.QLabel(self.kereta_box)
-        self.label_nama_kereta.setGeometry(QtCore.QRect(130, 220, 181, 31))
+        self.label_nama_kereta.setGeometry(QtCore.QRect(130, 190, 181, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -166,7 +179,7 @@ class Ui_pembayaran(object):
         self.label_nama_kereta.setAlignment(QtCore.Qt.AlignCenter)
         self.label_nama_kereta.setObjectName("label_nama_kereta")
         self.label_layanan = QtWidgets.QLabel(self.kereta_box)
-        self.label_layanan.setGeometry(QtCore.QRect(330, 220, 171, 31))
+        self.label_layanan.setGeometry(QtCore.QRect(330, 190, 171, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -174,7 +187,7 @@ class Ui_pembayaran(object):
         self.label_layanan.setAlignment(QtCore.Qt.AlignCenter)
         self.label_layanan.setObjectName("label_layanan")
         self.label_penumpang = QtWidgets.QLabel(self.kereta_box)
-        self.label_penumpang.setGeometry(QtCore.QRect(520, 220, 171, 31))
+        self.label_penumpang.setGeometry(QtCore.QRect(520, 190, 171, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -182,11 +195,11 @@ class Ui_pembayaran(object):
         self.label_penumpang.setAlignment(QtCore.Qt.AlignCenter)
         self.label_penumpang.setObjectName("label_penumpang")
         self.label_container_asaltujan = QtWidgets.QLabel(self.kereta_box)
-        self.label_container_asaltujan.setGeometry(QtCore.QRect(130, 130, 771, 81))
+        self.label_container_asaltujan.setGeometry(QtCore.QRect(130, 100, 951, 81))
         self.label_container_asaltujan.setText("")
         self.label_container_asaltujan.setObjectName("label_container_asaltujan")
         self.label_asal = QtWidgets.QLabel(self.kereta_box)
-        self.label_asal.setGeometry(QtCore.QRect(170, 140, 221, 61))
+        self.label_asal.setGeometry(QtCore.QRect(170, 110, 221, 61))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -194,7 +207,7 @@ class Ui_pembayaran(object):
         self.label_asal.setAlignment(QtCore.Qt.AlignCenter)
         self.label_asal.setObjectName("label_asal")
         self.label_tujuan = QtWidgets.QLabel(self.kereta_box)
-        self.label_tujuan.setGeometry(QtCore.QRect(640, 140, 221, 61))
+        self.label_tujuan.setGeometry(QtCore.QRect(750, 110, 311, 61))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -202,7 +215,7 @@ class Ui_pembayaran(object):
         self.label_tujuan.setAlignment(QtCore.Qt.AlignCenter)
         self.label_tujuan.setObjectName("label_tujuan")
         self.label_harga_2 = QtWidgets.QLabel(self.kereta_box)
-        self.label_harga_2.setGeometry(QtCore.QRect(130, 260, 181, 31))
+        self.label_harga_2.setGeometry(QtCore.QRect(900, 190, 181, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -210,7 +223,7 @@ class Ui_pembayaran(object):
         self.label_harga_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_harga_2.setObjectName("label_harga_2")
         self.label_kursi = QtWidgets.QLabel(self.kereta_box)
-        self.label_kursi.setGeometry(QtCore.QRect(330, 260, 171, 31))
+        self.label_kursi.setGeometry(QtCore.QRect(710, 190, 171, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -218,7 +231,7 @@ class Ui_pembayaran(object):
         self.label_kursi.setAlignment(QtCore.Qt.AlignCenter)
         self.label_kursi.setObjectName("label_kursi")
         self.label_3 = QtWidgets.QLabel(self.kereta_box)
-        self.label_3.setGeometry(QtCore.QRect(470, 140, 91, 61))
+        self.label_3.setGeometry(QtCore.QRect(540, 110, 91, 61))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -226,6 +239,15 @@ class Ui_pembayaran(object):
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
+        self.label_6 = QtWidgets.QLabel(pembayaran)
+        self.label_6.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_6.setMaximumSize(QtCore.QSize(1280, 766))
+        self.label_6.setText("")
+        self.label_6.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_6.setScaledContents(True)
+        self.label_6.setObjectName("label_6")
+        self.label_6.raise_()
+        self.kereta_box.raise_()
 
         self.retranslateUi(pembayaran)
         QtCore.QMetaObject.connectSlotsByName(pembayaran)
@@ -238,16 +260,16 @@ class Ui_pembayaran(object):
         self.label_tampung_harga.setText(_translate("pembayaran", "     Total Pembayaran : "))
         self.label_harga.setText(_translate("pembayaran", "TOTAL HARGA"))
         self.label.setText(_translate("pembayaran", "Saya telah membaca dan setuju terhadap Syarat dan ketentuan pembelian tiket"))
+        self.button_bayar.setText(_translate("pembayaran", "BAYAR"))
+        self.button_keluar.setText(_translate("pembayaran", "KELUAR"))
         self.label_5.setText(_translate("pembayaran", "RINCIAN HARGA "))
         self.label_2.setText(_translate("pembayaran", "Pastikan saldo anda mencukupi sebelum melakukan pembayaran "))
         self.textBrowser_data_.setHtml(_translate("pembayaran", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">PESAN TIKET </span></p></body></html>"))
-        self.button_keluar.setText(_translate("pembayaran", "KELUAR"))
-        self.button_bayar.setText(_translate("pembayaran", "BAYAR"))
         self.label_waktu_ticket.setText(_translate("pembayaran", "TANGGAL KEBERANGKATAN DAN WAKTU KERETA "))
         self.label_nama_kereta.setText(_translate("pembayaran", "NAMA KERETA"))
         self.label_layanan.setText(_translate("pembayaran", "JENIS LAYANAN"))

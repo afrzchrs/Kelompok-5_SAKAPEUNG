@@ -22,6 +22,9 @@ class DetailRekapKeuntungan(QMainWindow):
         # Load data sesuai filter saat combobox berubah
         self.ui.combo_filter_rekap.currentIndexChanged.connect(self.update_tabel_berdasarkan_filter)
 
+        # Tombol untuk melihat grafik keuntungan
+        self.ui.button_lihat_grafik.clicked.connect(self.buka_halaman_grafik)
+
         # Tombol kembali ke halaman utama rekap keuntungan
         self.ui.button_kembali.clicked.connect(self.kembali_ke_rekap)
 
@@ -47,33 +50,36 @@ class DetailRekapKeuntungan(QMainWindow):
             print("Database riwayat pemesanan tidak ditemukan atau rusak!")
             return
 
-        # Ambil filter yang dipilih oleh admin
         filter_terpilih = self.ui.combo_filter_rekap.currentText()
         data_terfilter = []
         total_keuntungan = 0
-
-        # Tanggal saat ini
         tanggal_sekarang = datetime.today().date()
 
         for pemesanan in data:
-            tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+            try:
+                tanggal_pemesanan = datetime.strptime(pemesanan["tanggal"], "%Y-%m-%d").date()
+            except ValueError:
+                continue  # Lewati data yang tanggalnya rusak
 
             if filter_terpilih == "Harian":
                 if tanggal_pemesanan == tanggal_sekarang:
                     data_terfilter.append(pemesanan)
 
             elif filter_terpilih == "Mingguan":
-                minggu_lalu = tanggal_sekarang - timedelta(days=7)
-                if minggu_lalu <= tanggal_pemesanan <= tanggal_sekarang:
-                    data_terfilter.append(pemesanan)
-
-            elif filter_terpilih == "Bulanan":
+                # Ambil semua data yang masuk bulan ini
                 if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month == tanggal_sekarang.month:
                     data_terfilter.append(pemesanan)
 
-            elif filter_terpilih == "Tahunan":
-                if tanggal_pemesanan.year == tanggal_sekarang.year:
+            elif filter_terpilih == "Bulanan":
+                # Dari bulan sekarang sampai Januari tahun ini
+                if tanggal_pemesanan.year == tanggal_sekarang.year and tanggal_pemesanan.month <= tanggal_sekarang.month:
                     data_terfilter.append(pemesanan)
+
+            elif filter_terpilih == "Tahunan":
+                # Tampilkan semua data dari tahun ini dan sebelumnya
+                if tanggal_pemesanan.year <= tanggal_sekarang.year:
+                    data_terfilter.append(pemesanan)
+
 
         # Menampilkan data ke dalam tabel
         self.ui.table_lihat_detail_rekap_keuntungan.setRowCount(len(data_terfilter))
@@ -95,6 +101,10 @@ class DetailRekapKeuntungan(QMainWindow):
 
         # Menampilkan total pemasukan sesuai filter di label
         self.ui.label_total_pemasukan.setText(f"Rp {total_keuntungan:,}")
+
+    def buka_halaman_grafik(self):
+        """Navigasi ke halaman Lihat Grafik Keuntungan."""
+        self.main_app.setCurrentWidget(self.main_app.lihat_GrafikKeuntungan)
 
     def kembali_ke_rekap(self):
         """Navigasi kembali ke halaman Lihat Rekap Keuntungan."""

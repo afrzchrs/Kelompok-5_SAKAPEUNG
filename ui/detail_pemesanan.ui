@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1091</width>
-    <height>911</height>
+    <width>1280</width>
+    <height>766</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>766</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -20,14 +26,14 @@
   <widget class="QFrame" name="kereta_box">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>10</y>
+     <x>120</x>
+     <y>20</y>
      <width>1041</width>
-     <height>841</height>
+     <height>721</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, 180); /* Transparansi */
+    <string notr="true">background-color: rgb(20, 91, 166, 120); /* Transparansi */
 border-radius: 15px; /* Membuat sudut melengkung */
 </string>
    </property>
@@ -41,13 +47,13 @@ border-radius: 15px; /* Membuat sudut melengkung */
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>350</y>
+      <y>300</y>
       <width>981</width>
-      <height>351</height>
+      <height>301</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(156, 209, 255); /* Transparansi */
+     <string notr="true">background-color: #145ba6; /* Transparansi */
 border-radius: 15px; /* Membuat sudut melengkung */</string>
     </property>
     <widget class="QGroupBox" name="groupBox">
@@ -66,7 +72,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>30</y>
+        <y>-10</y>
         <width>861</width>
         <height>51</height>
        </rect>
@@ -91,7 +97,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>70</y>
+        <y>40</y>
         <width>861</width>
         <height>51</height>
        </rect>
@@ -116,7 +122,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>120</y>
+        <y>100</y>
         <width>861</width>
         <height>41</height>
        </rect>
@@ -141,7 +147,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <property name="geometry">
        <rect>
         <x>740</x>
-        <y>190</y>
+        <y>160</y>
         <width>131</width>
         <height>41</height>
        </rect>
@@ -161,7 +167,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>190</y>
+        <y>160</y>
         <width>411</width>
         <height>31</height>
        </rect>
@@ -208,7 +214,7 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <x>30</x>
       <y>30</y>
       <width>981</width>
-      <height>301</height>
+      <height>261</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -219,8 +225,8 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;PESAN TIKET &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
@@ -228,21 +234,27 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>770</y>
+      <y>660</y>
       <width>981</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>Montserrat</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(3, 137, 255); /* Transparansi */
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -258,21 +270,27 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>720</y>
+      <y>610</y>
       <width>981</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>Montserrat</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color:  rgb(3, 137, 255); /* Transparansi */
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -288,7 +306,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>110</y>
+      <y>90</y>
       <width>501</width>
       <height>31</height>
      </rect>
@@ -314,7 +332,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>250</y>
+      <y>230</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -340,7 +358,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>250</y>
+      <y>230</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -366,7 +384,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>250</y>
+      <y>230</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -392,7 +410,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>160</y>
+      <y>140</y>
       <width>281</width>
       <height>61</height>
      </rect>
@@ -415,7 +433,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>660</x>
-      <y>160</y>
+      <y>140</y>
       <width>281</width>
       <height>61</height>
      </rect>
@@ -438,7 +456,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>160</y>
+      <y>140</y>
       <width>121</width>
       <height>61</height>
      </rect>
@@ -461,7 +479,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>680</x>
-      <y>250</y>
+      <y>230</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -484,6 +502,27 @@ QPushButton:hover {
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1611</width>
+     <height>771</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>3.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>kereta_box</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -55,7 +55,6 @@ class Ui_Welcome(object):
         _translate = QtCore.QCoreApplication.translate
         Welcome.setWindowTitle(_translate("Welcome", "MainWindow"))
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

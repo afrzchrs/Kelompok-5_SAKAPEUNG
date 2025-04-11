@@ -14,11 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_tiket_show_box(object):
     def setupUi(self, tiket_show_box):
         tiket_show_box.setObjectName("tiket_show_box")
-        tiket_show_box.resize(1097, 817)
+        tiket_show_box.resize(1280, 766)
+        tiket_show_box.setMaximumSize(QtCore.QSize(1280, 766))
         tiket_show_box.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.kereta_box = QtWidgets.QFrame(tiket_show_box)
-        self.kereta_box.setGeometry(QtCore.QRect(30, 30, 1041, 761))
+        self.kereta_box.setGeometry(QtCore.QRect(120, 30, 1041, 710))
         self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
@@ -26,39 +27,41 @@ class Ui_tiket_show_box(object):
         self.kereta_box.setFrameShadow(QtWidgets.QFrame.Raised)
         self.kereta_box.setObjectName("kereta_box")
         self.tiket_box = QtWidgets.QWidget(self.kereta_box)
-        self.tiket_box.setGeometry(QtCore.QRect(30, 110, 991, 591))
+        self.tiket_box.setGeometry(QtCore.QRect(30, 110, 991, 511))
         self.tiket_box.setStyleSheet("background : white;")
         self.tiket_box.setObjectName("tiket_box")
         self.table_pesan_tiket = QtWidgets.QTableWidget(self.tiket_box)
-        self.table_pesan_tiket.setGeometry(QtCore.QRect(60, 50, 851, 481))
+        self.table_pesan_tiket.setGeometry(QtCore.QRect(30, 50, 941, 441))
         self.table_pesan_tiket.setStyleSheet("QTableWidget {\n"
 "    background-color: white; /* Warna ungu muda untuk latar tabel */\n"
-"    border: 2px solid #A066D3; /* Border ungu */\n"
 "    border-radius: 10px;\n"
-"    gridline-color: #D8B5F8; /* Warna garis antar sel */\n"
+"    gridline-color: rgb(202, 202, 202); /* Warna garis antar sel */\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color:  qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc); /* Warna ungu lebih gelap untuk header */\n"
-"    color: white;\n"
+"    background-color:rgb(202, 202, 202);\n"
+"    color: black;\n"
+"    padding: 10px;\n"
+"    border: none;\n"
 "    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    border: 1px solid #8A4EB5; /* Warna ungu lebih gelap */\n"
+"    text-align: center;\n"
+"    border-bottom: 0px solid #004085; /* Garis bawah tegas */\n"
+"    font-size: 12px;\n"
 "}\n"
 "\n"
 "QTableWidget::item {\n"
 "    padding: 6px;\n"
-"    border: 1px solid #D8B5F8; /* Warna border antar sel */\n"
+"    border: 1px solid rgb(202, 202, 202); /* Warna border antar sel */\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color:  qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc); /* Warna ungu terang untuk item terpilih */\n"
+"    background-color: rgb(202, 202, 202); /* Warna ungu terang untuk item terpilih */\n"
 "    color: black;\n"
 "}\n"
 "\n"
 "QTableCornerButton::section {\n"
-"    background-color:  qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc); /* Warna sudut kiri atas tabel */\n"
-"    border: 1px solid #8A4EB5;\n"
+"    background-color: rgb(255, 255, 255) ; /* Warna sudut kiri atas tabel */\n"
+"    border: 1px solid rgb(255, 255, 255);\n"
 "}\n"
 "")
         self.table_pesan_tiket.setObjectName("table_pesan_tiket")
@@ -101,14 +104,20 @@ class Ui_tiket_show_box(object):
         self.table_pesan_tiket.horizontalHeader().setDefaultSectionSize(150)
         self.table_pesan_tiket.horizontalHeader().setStretchLastSection(True)
         self.button_keluar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_keluar.setGeometry(QtCore.QRect(30, 710, 991, 41))
+        self.button_keluar.setGeometry(QtCore.QRect(30, 640, 991, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_keluar.setFont(font)
         self.button_keluar.setStyleSheet("QPushButton {\n"
-"    background-color:  qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -125,6 +134,15 @@ class Ui_tiket_show_box(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
+        self.label_5 = QtWidgets.QLabel(tiket_show_box)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_5.setMaximumSize(QtCore.QSize(1280, 766))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.label_5.raise_()
+        self.kereta_box.raise_()
 
         self.retranslateUi(tiket_show_box)
         QtCore.QMetaObject.connectSlotsByName(tiket_show_box)

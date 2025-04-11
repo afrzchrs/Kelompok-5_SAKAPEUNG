@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1103</width>
-    <height>848</height>
+    <width>1280</width>
+    <height>766</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,14 +20,20 @@
   <widget class="QFrame" name="box_Booking">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>40</y>
-     <width>911</width>
-     <height>751</height>
+     <x>130</x>
+     <y>20</y>
+     <width>891</width>
+     <height>731</height>
     </rect>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>1280</width>
+     <height>766</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, 180); /* Transparansi */
+    <string notr="true">background-color: rgba(255, 255, 255, 150); /* Transparansi */
 border-radius: 15px; /* Membuat sudut melengkung */
 </string>
    </property>
@@ -60,14 +66,20 @@ border-radius: 15px; /* Membuat sudut melengkung */
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <family>Montserrat</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -90,14 +102,20 @@ QPushButton:hover {
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <family>Montserrat</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -288,15 +306,28 @@ QPushButton:hover {
        <x>280</x>
        <y>40</y>
        <width>251</width>
-       <height>20</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <family>Montserrat</family>
+       <pointsize>20</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: 'Montserrat';
+font-size: 20pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: transparent; /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
      </property>
      <property name="text">
       <string>TIKET KERETA </string>
@@ -307,6 +338,33 @@ QPushButton:hover {
     </widget>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>766</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1280</width>
+     <height>766</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>3.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>box_Booking</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -14,12 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_TICKETBOOKING(object):
     def setupUi(self, TICKETBOOKING):
         TICKETBOOKING.setObjectName("TICKETBOOKING")
-        TICKETBOOKING.resize(1103, 848)
+        TICKETBOOKING.resize(1280, 766)
         TICKETBOOKING.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.box_Booking = QtWidgets.QFrame(TICKETBOOKING)
-        self.box_Booking.setGeometry(QtCore.QRect(110, 40, 911, 751))
-        self.box_Booking.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
+        self.box_Booking.setGeometry(QtCore.QRect(130, 20, 891, 731))
+        self.box_Booking.setMaximumSize(QtCore.QSize(1280, 766))
+        self.box_Booking.setStyleSheet("background-color: rgba(255, 255, 255, 150); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
         self.box_Booking.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -32,12 +33,18 @@ class Ui_TICKETBOOKING(object):
         self.button_cari = QtWidgets.QPushButton(self.TicketBooking)
         self.button_cari.setGeometry(QtCore.QRect(110, 490, 601, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_cari.setFont(font)
         self.button_cari.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -48,12 +55,18 @@ class Ui_TICKETBOOKING(object):
         self.button_keluar = QtWidgets.QPushButton(self.TicketBooking)
         self.button_keluar.setGeometry(QtCore.QRect(110, 540, 601, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_keluar.setFont(font)
         self.button_keluar.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -162,14 +175,34 @@ class Ui_TICKETBOOKING(object):
         self.combo_layanan.setObjectName("combo_layanan")
         self.horizontalLayout_4.addWidget(self.combo_layanan)
         self.label = QtWidgets.QLabel(self.TicketBooking)
-        self.label.setGeometry(QtCore.QRect(280, 40, 251, 20))
+        self.label.setGeometry(QtCore.QRect(280, 40, 251, 41))
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setFamily("Montserrat")
+        font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 20pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: transparent; /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
+        self.label_4 = QtWidgets.QLabel(TICKETBOOKING)
+        self.label_4.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_4.setMaximumSize(QtCore.QSize(1280, 766))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.label_4.raise_()
+        self.box_Booking.raise_()
 
         self.retranslateUi(TICKETBOOKING)
         QtCore.QMetaObject.connectSlotsByName(TICKETBOOKING)

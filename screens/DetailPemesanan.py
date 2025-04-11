@@ -76,7 +76,8 @@ class DetailPemesanan(QWidget):
 
     def kembali_ke_show(self):
             """Navigasi kembali ke TicketShow."""
-            self.main_app.setCurrentWidget(self.main_app.ticket_show_screen)  # Kembali ke TicketShow
+            self.main_app.setCurrentWidget(self.main_app.ticket_show_screen)
+            self.reset_input()
 
     def reset_input(self):
         # ============== reset input pada halaman detail pemesanan (mengubahnya menjadi default kembali) ==============

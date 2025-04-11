@@ -1,12 +1,3 @@
-"""""
-Author: Roufiel Hadi
-NIM: 241524028
-Kelas: 1A
-Prodi: Sarjana Terapan Teknik Informatika
-Jurusan: Teknik Komputer dan Informatika
-Politeknik Negeri Bandung
-"""
-
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'dashboard_akun.ui'
@@ -23,20 +14,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_dashboard_admin_sakapeung(object):
     def setupUi(self, dashboard_admin_sakapeung):
         dashboard_admin_sakapeung.setObjectName("dashboard_admin_sakapeung")
-        dashboard_admin_sakapeung.resize(1107, 879)
+        dashboard_admin_sakapeung.resize(1280, 766)
+        dashboard_admin_sakapeung.setMaximumSize(QtCore.QSize(1280, 766))
         dashboard_admin_sakapeung.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.centralwidget = QtWidgets.QWidget(dashboard_admin_sakapeung)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_utama = QtWidgets.QFrame(self.centralwidget)
-        self.frame_utama.setGeometry(QtCore.QRect(30, 30, 1051, 781))
+        self.frame_utama.setGeometry(QtCore.QRect(0, 0, 1280, 766))
         self.frame_utama.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.frame_utama.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_utama.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_utama.setObjectName("frame_utama")
         self.stackedWidget = QtWidgets.QStackedWidget(self.frame_utama)
-        self.stackedWidget.setGeometry(QtCore.QRect(240, 0, 811, 781))
+        self.stackedWidget.setGeometry(QtCore.QRect(290, 0, 991, 771))
         self.stackedWidget.setStyleSheet("background : white;")
         self.stackedWidget.setFrameShape(QtWidgets.QFrame.Box)
         self.stackedWidget.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -53,69 +45,85 @@ class Ui_dashboard_admin_sakapeung(object):
 "\n"
 "")
         self.home_title_akun.setObjectName("home_title_akun")
+        self.label_7 = QtWidgets.QLabel(self.akun)
+        self.label_7.setGeometry(QtCore.QRect(-294, -8, 1291, 781))
+        self.label_7.setText("")
+        self.label_7.setPixmap(QtGui.QPixmap("ui/dashboard_akun.png"))
+        self.label_7.setScaledContents(True)
+        self.label_7.setObjectName("label_7")
         self.stackedWidget.addWidget(self.akun)
         self.lihat_informasi_akun = QtWidgets.QWidget()
         self.lihat_informasi_akun.setObjectName("lihat_informasi_akun")
-        self.lihat_informasi_akun_title_akun = QtWidgets.QTextBrowser(self.lihat_informasi_akun)
-        self.lihat_informasi_akun_title_akun.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.lihat_informasi_akun_title_akun.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.lihat_informasi_akun_title_akun.setObjectName("lihat_informasi_akun_title_akun")
         self.lihat_informasi_akun_akun = QtWidgets.QTextEdit(self.lihat_informasi_akun)
-        self.lihat_informasi_akun_akun.setGeometry(QtCore.QRect(10, 120, 791, 651))
+        self.lihat_informasi_akun_akun.setGeometry(QtCore.QRect(80, 160, 821, 241))
+        self.lihat_informasi_akun_akun.setStyleSheet("background : transparent;\n"
+"border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;")
         self.lihat_informasi_akun_akun.setObjectName("lihat_informasi_akun_akun")
+        self.label_2 = QtWidgets.QLabel(self.lihat_informasi_akun)
+        self.label_2.setGeometry(QtCore.QRect(-294, -8, 1291, 781))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("ui/dashboard_akun (2).png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
+        self.label_2.raise_()
+        self.lihat_informasi_akun_akun.raise_()
         self.stackedWidget.addWidget(self.lihat_informasi_akun)
         self.edit_informasi_akun = QtWidgets.QWidget()
         self.edit_informasi_akun.setObjectName("edit_informasi_akun")
-        self.edit_informasi_akun_title_akun = QtWidgets.QTextBrowser(self.edit_informasi_akun)
-        self.edit_informasi_akun_title_akun.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.edit_informasi_akun_title_akun.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.edit_informasi_akun_title_akun.setObjectName("edit_informasi_akun_title_akun")
         self.nama_baru_input = QtWidgets.QLineEdit(self.edit_informasi_akun)
-        self.nama_baru_input.setGeometry(QtCore.QRect(40, 140, 731, 61))
+        self.nama_baru_input.setGeometry(QtCore.QRect(90, 230, 771, 41))
         self.nama_baru_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.nama_baru_input.setText("")
         self.nama_baru_input.setObjectName("nama_baru_input")
         self.alamat_baru_input = QtWidgets.QLineEdit(self.edit_informasi_akun)
-        self.alamat_baru_input.setGeometry(QtCore.QRect(40, 310, 731, 61))
+        self.alamat_baru_input.setGeometry(QtCore.QRect(90, 360, 771, 51))
         self.alamat_baru_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.alamat_baru_input.setText("")
         self.alamat_baru_input.setObjectName("alamat_baru_input")
         self.no_telepon_baru_input = QtWidgets.QLineEdit(self.edit_informasi_akun)
-        self.no_telepon_baru_input.setGeometry(QtCore.QRect(40, 480, 731, 61))
+        self.no_telepon_baru_input.setGeometry(QtCore.QRect(90, 490, 771, 51))
         self.no_telepon_baru_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.no_telepon_baru_input.setText("")
         self.no_telepon_baru_input.setObjectName("no_telepon_baru_input")
         self.submit_nama_baru = QtWidgets.QPushButton(self.edit_informasi_akun)
-        self.submit_nama_baru.setGeometry(QtCore.QRect(280, 240, 231, 41))
+        self.submit_nama_baru.setGeometry(QtCore.QRect(590, 290, 261, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.submit_nama_baru.setFont(font)
         self.submit_nama_baru.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -124,14 +132,20 @@ class Ui_dashboard_admin_sakapeung(object):
 "")
         self.submit_nama_baru.setObjectName("submit_nama_baru")
         self.submit_alamat_baru = QtWidgets.QPushButton(self.edit_informasi_akun)
-        self.submit_alamat_baru.setGeometry(QtCore.QRect(280, 410, 231, 41))
+        self.submit_alamat_baru.setGeometry(QtCore.QRect(590, 420, 261, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.submit_alamat_baru.setFont(font)
         self.submit_alamat_baru.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -140,14 +154,20 @@ class Ui_dashboard_admin_sakapeung(object):
 "")
         self.submit_alamat_baru.setObjectName("submit_alamat_baru")
         self.submit_nomor_telepon_baru = QtWidgets.QPushButton(self.edit_informasi_akun)
-        self.submit_nomor_telepon_baru.setGeometry(QtCore.QRect(280, 570, 231, 41))
+        self.submit_nomor_telepon_baru.setGeometry(QtCore.QRect(590, 550, 261, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.submit_nomor_telepon_baru.setFont(font)
         self.submit_nomor_telepon_baru.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -155,35 +175,49 @@ class Ui_dashboard_admin_sakapeung(object):
 "}\n"
 "")
         self.submit_nomor_telepon_baru.setObjectName("submit_nomor_telepon_baru")
+        self.label_3 = QtWidgets.QLabel(self.edit_informasi_akun)
+        self.label_3.setGeometry(QtCore.QRect(-304, 0, 1301, 771))
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap("ui/dashboard_akun (3).png"))
+        self.label_3.setScaledContents(True)
+        self.label_3.setObjectName("label_3")
+        self.label_3.raise_()
+        self.nama_baru_input.raise_()
+        self.alamat_baru_input.raise_()
+        self.no_telepon_baru_input.raise_()
+        self.submit_nama_baru.raise_()
+        self.submit_alamat_baru.raise_()
+        self.submit_nomor_telepon_baru.raise_()
         self.stackedWidget.addWidget(self.edit_informasi_akun)
         self.ganti_password = QtWidgets.QWidget()
         self.ganti_password.setObjectName("ganti_password")
-        self.ganti_password_title_akun = QtWidgets.QTextBrowser(self.ganti_password)
-        self.ganti_password_title_akun.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.ganti_password_title_akun.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.ganti_password_title_akun.setObjectName("ganti_password_title_akun")
         self.password_lama_input = QtWidgets.QLineEdit(self.ganti_password)
-        self.password_lama_input.setGeometry(QtCore.QRect(30, 140, 731, 61))
+        self.password_lama_input.setGeometry(QtCore.QRect(90, 230, 771, 41))
         self.password_lama_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.password_lama_input.setText("")
         self.password_lama_input.setObjectName("password_lama_input")
         self.submit_password_baru = QtWidgets.QPushButton(self.ganti_password)
-        self.submit_password_baru.setGeometry(QtCore.QRect(270, 450, 231, 41))
+        self.submit_password_baru.setGeometry(QtCore.QRect(530, 510, 331, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.submit_password_baru.setFont(font)
         self.submit_password_baru.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -192,97 +226,370 @@ class Ui_dashboard_admin_sakapeung(object):
 "")
         self.submit_password_baru.setObjectName("submit_password_baru")
         self.password_baru_input = QtWidgets.QLineEdit(self.ganti_password)
-        self.password_baru_input.setGeometry(QtCore.QRect(30, 230, 731, 61))
+        self.password_baru_input.setGeometry(QtCore.QRect(90, 320, 771, 41))
         self.password_baru_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.password_baru_input.setText("")
         self.password_baru_input.setObjectName("password_baru_input")
         self.konfirmasi_password_baru_input = QtWidgets.QLineEdit(self.ganti_password)
-        self.konfirmasi_password_baru_input.setGeometry(QtCore.QRect(30, 310, 731, 61))
+        self.konfirmasi_password_baru_input.setGeometry(QtCore.QRect(90, 410, 771, 41))
         self.konfirmasi_password_baru_input.setStyleSheet("    border: none;\n"
-"    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
-"    color: black;\n"
-"    font-size: 16px;\n"
+"    color: white;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 16pt; \n"
 "    padding: 5px;\n"
 "    background: transparent;")
         self.konfirmasi_password_baru_input.setText("")
         self.konfirmasi_password_baru_input.setObjectName("konfirmasi_password_baru_input")
+        self.label_4 = QtWidgets.QLabel(self.ganti_password)
+        self.label_4.setGeometry(QtCore.QRect(-304, -1, 1301, 771))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("ui/dashboard_akun (4).png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.label_4.raise_()
+        self.password_lama_input.raise_()
+        self.submit_password_baru.raise_()
+        self.password_baru_input.raise_()
+        self.konfirmasi_password_baru_input.raise_()
         self.stackedWidget.addWidget(self.ganti_password)
         self.informasi_aplikasi = QtWidgets.QWidget()
         self.informasi_aplikasi.setObjectName("informasi_aplikasi")
-        self.informasi_aplikasi_title_akun = QtWidgets.QTextBrowser(self.informasi_aplikasi)
-        self.informasi_aplikasi_title_akun.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.informasi_aplikasi_title_akun.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.informasi_aplikasi_title_akun.setObjectName("informasi_aplikasi_title_akun")
         self.informasi_aplikasi_akun = QtWidgets.QTextEdit(self.informasi_aplikasi)
-        self.informasi_aplikasi_akun.setGeometry(QtCore.QRect(10, 120, 791, 651))
+        self.informasi_aplikasi_akun.setGeometry(QtCore.QRect(40, 140, 901, 601))
+        self.informasi_aplikasi_akun.setStyleSheet("border-radius: 50px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;")
         self.informasi_aplikasi_akun.setObjectName("informasi_aplikasi_akun")
+        self.label_5 = QtWidgets.QLabel(self.informasi_aplikasi)
+        self.label_5.setGeometry(QtCore.QRect(-294, -8, 1291, 781))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/informasi_aplikasi.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.label_5.raise_()
+        self.informasi_aplikasi_akun.raise_()
         self.stackedWidget.addWidget(self.informasi_aplikasi)
         self.pusat_bantuan = QtWidgets.QWidget()
         self.pusat_bantuan.setObjectName("pusat_bantuan")
-        self.pusat_bantuan_title_akun = QtWidgets.QTextBrowser(self.pusat_bantuan)
-        self.pusat_bantuan_title_akun.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.pusat_bantuan_title_akun.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.pusat_bantuan_title_akun.setObjectName("pusat_bantuan_title_akun")
         self.pusat_bantuan_akun = QtWidgets.QTextEdit(self.pusat_bantuan)
-        self.pusat_bantuan_akun.setGeometry(QtCore.QRect(10, 120, 791, 651))
+        self.pusat_bantuan_akun.setGeometry(QtCore.QRect(40, 140, 891, 601))
+        self.pusat_bantuan_akun.setStyleSheet("border-radius: 50px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;")
         self.pusat_bantuan_akun.setObjectName("pusat_bantuan_akun")
+        self.label_6 = QtWidgets.QLabel(self.pusat_bantuan)
+        self.label_6.setGeometry(QtCore.QRect(-294, -8, 1291, 781))
+        self.label_6.setText("")
+        self.label_6.setPixmap(QtGui.QPixmap("ui/pusat_bantuan.png"))
+        self.label_6.setScaledContents(True)
+        self.label_6.setObjectName("label_6")
+        self.label_6.raise_()
+        self.pusat_bantuan_akun.raise_()
         self.stackedWidget.addWidget(self.pusat_bantuan)
         self.home_button = QtWidgets.QPushButton(self.frame_utama)
-        self.home_button.setGeometry(QtCore.QRect(10, 140, 221, 61))
+        self.home_button.setGeometry(QtCore.QRect(30, 180, 251, 61))
         self.home_button.setMouseTracking(True)
         self.home_button.setTabletTracking(True)
+        self.home_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.home_button.setIcon(icon)
+        self.home_button.setIconSize(QtCore.QSize(30, 30))
         self.home_button.setObjectName("home_button")
-        self.sakapeung = QtWidgets.QTextBrowser(self.frame_utama)
-        self.sakapeung.setGeometry(QtCore.QRect(10, 30, 251, 71))
-        self.sakapeung.setStyleSheet("  background: transparent;")
-        self.sakapeung.setObjectName("sakapeung")
         self.lihat_informasi_akun_button = QtWidgets.QPushButton(self.frame_utama)
-        self.lihat_informasi_akun_button.setGeometry(QtCore.QRect(10, 210, 221, 61))
+        self.lihat_informasi_akun_button.setGeometry(QtCore.QRect(30, 240, 251, 61))
         self.lihat_informasi_akun_button.setMouseTracking(True)
         self.lihat_informasi_akun_button.setTabletTracking(True)
+        self.lihat_informasi_akun_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("ui/informationakun.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.lihat_informasi_akun_button.setIcon(icon1)
+        self.lihat_informasi_akun_button.setIconSize(QtCore.QSize(30, 30))
         self.lihat_informasi_akun_button.setObjectName("lihat_informasi_akun_button")
         self.edit_informasi_akun_button = QtWidgets.QPushButton(self.frame_utama)
-        self.edit_informasi_akun_button.setGeometry(QtCore.QRect(10, 280, 221, 61))
+        self.edit_informasi_akun_button.setGeometry(QtCore.QRect(30, 300, 251, 61))
         self.edit_informasi_akun_button.setMouseTracking(True)
         self.edit_informasi_akun_button.setTabletTracking(True)
+        self.edit_informasi_akun_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("ui/editakun.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.edit_informasi_akun_button.setIcon(icon2)
+        self.edit_informasi_akun_button.setIconSize(QtCore.QSize(31, 31))
         self.edit_informasi_akun_button.setObjectName("edit_informasi_akun_button")
         self.ganti_password_button = QtWidgets.QPushButton(self.frame_utama)
-        self.ganti_password_button.setGeometry(QtCore.QRect(10, 350, 221, 71))
+        self.ganti_password_button.setGeometry(QtCore.QRect(30, 360, 251, 61))
         self.ganti_password_button.setMouseTracking(True)
         self.ganti_password_button.setTabletTracking(True)
+        self.ganti_password_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("ui/gantipassword.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ganti_password_button.setIcon(icon3)
+        self.ganti_password_button.setIconSize(QtCore.QSize(32, 32))
         self.ganti_password_button.setObjectName("ganti_password_button")
         self.informasi_aplikasi_button = QtWidgets.QPushButton(self.frame_utama)
-        self.informasi_aplikasi_button.setGeometry(QtCore.QRect(10, 430, 221, 71))
+        self.informasi_aplikasi_button.setGeometry(QtCore.QRect(30, 420, 251, 61))
         self.informasi_aplikasi_button.setMouseTracking(True)
         self.informasi_aplikasi_button.setTabletTracking(True)
+        self.informasi_aplikasi_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("ui/information.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.informasi_aplikasi_button.setIcon(icon4)
+        self.informasi_aplikasi_button.setIconSize(QtCore.QSize(32, 32))
         self.informasi_aplikasi_button.setObjectName("informasi_aplikasi_button")
         self.pusat_bantuan_button = QtWidgets.QPushButton(self.frame_utama)
-        self.pusat_bantuan_button.setGeometry(QtCore.QRect(10, 510, 221, 71))
+        self.pusat_bantuan_button.setGeometry(QtCore.QRect(30, 480, 251, 61))
         self.pusat_bantuan_button.setMouseTracking(True)
         self.pusat_bantuan_button.setTabletTracking(True)
+        self.pusat_bantuan_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("ui/customer-service.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pusat_bantuan_button.setIcon(icon5)
+        self.pusat_bantuan_button.setIconSize(QtCore.QSize(32, 32))
         self.pusat_bantuan_button.setObjectName("pusat_bantuan_button")
         self.logout_button = QtWidgets.QPushButton(self.frame_utama)
-        self.logout_button.setGeometry(QtCore.QRect(10, 590, 221, 81))
+        self.logout_button.setGeometry(QtCore.QRect(30, 670, 221, 81))
         self.logout_button.setMouseTracking(True)
         self.logout_button.setTabletTracking(True)
+        self.logout_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"}\n"
+"\n"
+"")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("ui/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.logout_button.setIcon(icon6)
+        self.logout_button.setIconSize(QtCore.QSize(40, 40))
         self.logout_button.setObjectName("logout_button")
         self.kembali_button = QtWidgets.QPushButton(self.frame_utama)
-        self.kembali_button.setGeometry(QtCore.QRect(10, 680, 221, 81))
+        self.kembali_button.setGeometry(QtCore.QRect(30, 590, 221, 81))
         self.kembali_button.setMouseTracking(True)
         self.kembali_button.setTabletTracking(True)
+        self.kembali_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"}\n"
+"\n"
+"")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("ui/dashboard.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.kembali_button.setIcon(icon7)
+        self.kembali_button.setIconSize(QtCore.QSize(32, 32))
         self.kembali_button.setObjectName("kembali_button")
-        self.sakapeung.raise_()
+        self.label = QtWidgets.QLabel(self.frame_utama)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("ui/0.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame_utama)
+        self.lineEdit.setGeometry(QtCore.QRect(30, 550, 241, 20))
+        self.lineEdit.setStyleSheet("    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;")
+        self.lineEdit.setObjectName("lineEdit")
+        self.label.raise_()
         self.stackedWidget.raise_()
         self.home_button.raise_()
         self.lihat_informasi_akun_button.raise_()
@@ -292,10 +599,11 @@ class Ui_dashboard_admin_sakapeung(object):
         self.pusat_bantuan_button.raise_()
         self.logout_button.raise_()
         self.kembali_button.raise_()
+        self.lineEdit.raise_()
         dashboard_admin_sakapeung.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(dashboard_admin_sakapeung)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(5)
         QtCore.QMetaObject.connectSlotsByName(dashboard_admin_sakapeung)
 
     def retranslateUi(self, dashboard_admin_sakapeung):
@@ -313,81 +621,41 @@ class Ui_dashboard_admin_sakapeung(object):
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Dashboard Akun</span></p></body></html>"))
-        self.lihat_informasi_akun_title_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Lihat Informasi Akun</span></p></body></html>"))
         self.lihat_informasi_akun_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.edit_informasi_akun_title_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Edit Informasi Akun</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:12pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p></body></html>"))
         self.nama_baru_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan nama baru anda....."))
         self.alamat_baru_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan alamat baru anda....."))
         self.no_telepon_baru_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan nomor telepon baru anda"))
-        self.submit_nama_baru.setText(_translate("dashboard_admin_sakapeung", "Submit Nama Baru"))
-        self.submit_alamat_baru.setText(_translate("dashboard_admin_sakapeung", "Submit Alamat Baru"))
-        self.submit_nomor_telepon_baru.setText(_translate("dashboard_admin_sakapeung", "Submit Nomor Telepon Baru"))
-        self.ganti_password_title_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Ganti Password</span></p></body></html>"))
+        self.submit_nama_baru.setText(_translate("dashboard_admin_sakapeung", "SUBMIT"))
+        self.submit_alamat_baru.setText(_translate("dashboard_admin_sakapeung", "SUBMIT"))
+        self.submit_nomor_telepon_baru.setText(_translate("dashboard_admin_sakapeung", "SUBMIT"))
         self.password_lama_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan password anda sekarang....."))
         self.submit_password_baru.setText(_translate("dashboard_admin_sakapeung", "Submit Password Baru"))
         self.password_baru_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan password baru anda....."))
         self.konfirmasi_password_baru_input.setPlaceholderText(_translate("dashboard_admin_sakapeung", "masukkan ulang password baru anda....."))
-        self.informasi_aplikasi_title_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Informasi Aplikasi</span></p></body></html>"))
         self.informasi_aplikasi_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.pusat_bantuan_title_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Pusat Bantuan</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:12pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p></body></html>"))
         self.pusat_bantuan_akun.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.home_button.setText(_translate("dashboard_admin_sakapeung", "Home"))
-        self.sakapeung.setHtml(_translate("dashboard_admin_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt;\">SAKAPEUNG</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:22pt;\"><br /></p></body></html>"))
-        self.lihat_informasi_akun_button.setText(_translate("dashboard_admin_sakapeung", "Lihat Informasi Akun"))
-        self.edit_informasi_akun_button.setText(_translate("dashboard_admin_sakapeung", "Edit Informasi Akun"))
-        self.ganti_password_button.setText(_translate("dashboard_admin_sakapeung", "Ganti Password"))
-        self.informasi_aplikasi_button.setText(_translate("dashboard_admin_sakapeung", "Informasi Aplikasi"))
-        self.pusat_bantuan_button.setText(_translate("dashboard_admin_sakapeung", "Pusat Bantuan"))
-        self.logout_button.setText(_translate("dashboard_admin_sakapeung", "Log Out"))
-        self.kembali_button.setText(_translate("dashboard_admin_sakapeung", "Kembali Ke Dashboard Utama"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:12pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p></body></html>"))
+        self.home_button.setText(_translate("dashboard_admin_sakapeung", " Home"))
+        self.lihat_informasi_akun_button.setText(_translate("dashboard_admin_sakapeung", " Informasi Akun"))
+        self.edit_informasi_akun_button.setText(_translate("dashboard_admin_sakapeung", " Edit Akun"))
+        self.ganti_password_button.setText(_translate("dashboard_admin_sakapeung", " Ganti Password"))
+        self.informasi_aplikasi_button.setText(_translate("dashboard_admin_sakapeung", " Informasi Aplikasi"))
+        self.pusat_bantuan_button.setText(_translate("dashboard_admin_sakapeung", " Pusat Bantuan"))
+        self.logout_button.setText(_translate("dashboard_admin_sakapeung", " Log Out"))
+        self.kembali_button.setText(_translate("dashboard_admin_sakapeung", " Main Dashboard"))
+        self.lineEdit.setText(_translate("dashboard_admin_sakapeung", "-------------------------------------"))
 
 
 if __name__ == "__main__":

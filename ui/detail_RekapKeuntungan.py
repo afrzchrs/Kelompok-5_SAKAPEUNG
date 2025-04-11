@@ -201,7 +201,7 @@ class Ui_detail_RekapKeuntungan(object):
         item = QtWidgets.QTableWidgetItem()
         self.table_lihat_detail_rekap_keuntungan.setHorizontalHeaderItem(6, item)
         self.button_kembali = QtWidgets.QPushButton(self.lihat_rekap_keuntungan)
-        self.button_kembali.setGeometry(QtCore.QRect(740, 570, 91, 31))
+        self.button_kembali.setGeometry(QtCore.QRect(430, 570, 91, 31))
         self.button_kembali.setStyleSheet("#button_kembali {\n"
 "    font-size: 12px;\n"
 "    font-weight: bold;\n"
@@ -229,7 +229,7 @@ class Ui_detail_RekapKeuntungan(object):
 "")
         self.button_kembali.setObjectName("button_kembali")
         self.label_2 = QtWidgets.QLabel(self.lihat_rekap_keuntungan)
-        self.label_2.setGeometry(QtCore.QRect(320, 570, 121, 31))
+        self.label_2.setGeometry(QtCore.QRect(310, 220, 121, 31))
         self.label_2.setStyleSheet("#label_2 {\n"
 "     font-size: 10px;\n"
 "    font-weight: bold;\n"
@@ -245,7 +245,7 @@ class Ui_detail_RekapKeuntungan(object):
 "")
         self.label_2.setObjectName("label_2")
         self.label_total_pemasukan = QtWidgets.QLabel(self.lihat_rekap_keuntungan)
-        self.label_total_pemasukan.setGeometry(QtCore.QRect(450, 570, 161, 31))
+        self.label_total_pemasukan.setGeometry(QtCore.QRect(440, 220, 161, 31))
         self.label_total_pemasukan.setStyleSheet("#label_total_pemasukan {\n"
 "     font-size: 10px;\n"
 "    font-weight: bold;\n"
@@ -260,6 +260,33 @@ class Ui_detail_RekapKeuntungan(object):
 "}\n"
 "")
         self.label_total_pemasukan.setObjectName("label_total_pemasukan")
+        self.button_lihat_grafik = QtWidgets.QPushButton(self.lihat_rekap_keuntungan)
+        self.button_lihat_grafik.setGeometry(QtCore.QRect(320, 570, 91, 31))
+        self.button_lihat_grafik.setStyleSheet("QPushButton#button_lihat_grafik {\n"
+"    font-size: 10px;\n"
+"    font-weight: bold;\n"
+"    color: white;\n"
+"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
+"                                stop:0 #1976D2, stop:1 #64B5F6);\n"
+"    padding: 8px 12px;\n"
+"    border-radius: 8px;\n"
+"    border: 2px solid #1565C0;\n"
+"}\n"
+"\n"
+"/* Efek hover */\n"
+"#button_lihat_grafik:hover {\n"
+"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
+"                                stop:0 #1565C0, stop:1 #42A5F5);\n"
+"}\n"
+"\n"
+"/* Efek tombol ditekan */\n"
+"#button_lihat_grafik:pressed {\n"
+"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
+"                                stop:0 #F44336, stop:1 #9A0007); /* Merah lebih gelap saat ditekan */\n"
+"    border: 2px solid #7F0000;\n"
+"}\n"
+"")
+        self.button_lihat_grafik.setObjectName("button_lihat_grafik")
         self.stackedWidget.addWidget(self.lihat_rekap_keuntungan)
         self.sakapeung = QtWidgets.QTextBrowser(self.frame_utama)
         self.sakapeung.setGeometry(QtCore.QRect(10, 30, 251, 71))
@@ -329,9 +356,20 @@ class Ui_detail_RekapKeuntungan(object):
         self.button_kembali.setText(_translate("detail_RekapKeuntungan", "Kembali"))
         self.label_2.setText(_translate("detail_RekapKeuntungan", "Total Pemasukan:"))
         self.label_total_pemasukan.setText(_translate("detail_RekapKeuntungan", "TextLabel"))
+        self.button_lihat_grafik.setText(_translate("detail_RekapKeuntungan", "Lihat Grafik"))
         self.sakapeung.setHtml(_translate("detail_RekapKeuntungan", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt;\">SAKAPEUNG</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:22pt;\"><br /></p></body></html>"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    detail_RekapKeuntungan = QtWidgets.QMainWindow()
+    ui = Ui_detail_RekapKeuntungan()
+    ui.setupUi(detail_RekapKeuntungan)
+    detail_RekapKeuntungan.show()
+    sys.exit(app.exec_())

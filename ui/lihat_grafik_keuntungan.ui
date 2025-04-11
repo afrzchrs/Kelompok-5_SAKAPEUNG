@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>lihat_grafik_keuntungan</class>
+ <widget class="QMainWindow" name="lihat_grafik_keuntungan">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1107</width>
+    <height>879</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dashboard SAKAPEUNG</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_utama">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>1051</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 180); /* Transparansi */
+border-radius: 15px; /* Membuat sudut melengkung */</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>0</y>
+       <width>1061</width>
+       <height>781</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background : white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="admin">
+      <widget class="QTextEdit" name="home_admin">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>791</width>
+         <height>651</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Ini adalah dashbiard admin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="home_title_admin">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>811</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
+border-radius: 0px; 
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Dashboard Admin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="edit_jadwal_kereta">
+      <widget class="QTextBrowser" name="edit_jadwal_kereta_title_admin">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>811</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
+border-radius: 0px; 
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Edit Jadwal Kereta&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="edit_jadwal_kereta_admin">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>791</width>
+         <height>651</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Ini adalah menu edit jadwal kereta&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="lihat_rekap_keuntungan">
+      <widget class="QTextBrowser" name="lihat_rekap_keuntungan_title_admin">
+       <property name="geometry">
+        <rect>
+         <x>-210</x>
+         <y>0</y>
+         <width>1301</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
+border-radius: 0px;
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;	Lihat Rekap Keuntungan&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>140</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/* Judul &quot;Lihat Rekap Keuntungan&quot; dengan background gradasi */
+QLabel#label {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #6a11cb, stop:1 #2575fc);
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #4a00e0;
+}</string>
+       </property>
+       <property name="text">
+        <string>Lihat Grafik Keuntungan</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="combo_filter_rekap">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>280</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#combo_filter_rekap {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #6a11cb, stop:1 #2575fc);
+    padding: 5px;
+    border-radius: 6px;
+    border: 2px solid #4a00e0;
+    selection-background-color: #4a00e0;
+}
+
+/* Dropdown list */
+QComboBox QAbstractItemView {
+    background-color: #6a11cb;
+    color: white;
+    selection-background-color: #2575fc;
+    border: 1px solid #4a00e0;
+    padding: 5px;
+}
+
+/* Saat hover */
+#combo_filter_rekap:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #4a00e0, stop:1 #6a11cb);
+}
+
+/* Saat ditekan */
+#combo_filter_rekap:on {
+    background: #4a00e0;
+    color: #ffffff;
+}
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Harian</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mingguan</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bulanan</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tahunan</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>220</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label_2 {
+     font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #a085ff, stop:1 #76baff);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid #76baff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Total Pemasukan:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_total_pemasukan">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>220</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label_total_pemasukan {
+     font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #a085ff, stop:1 #76baff);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid #76baff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Text Label</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_persentase_perubahan">
+       <property name="geometry">
+        <rect>
+         <x>730</x>
+         <y>220</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label_persentase_perubahan {
+     font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #a085ff, stop:1 #76baff);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid #76baff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Text Label</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>220</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label_3 {
+     font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #a085ff, stop:1 #76baff);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid #76baff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Persentase Perubahan:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="button_kembali">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>610</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#button_kembali {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #B71C1C;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #FF8A80, stop:1 #D32F2F); /* Lebih banyak merah terang */
+}
+
+/* Efek hover */
+#button_kembali:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #FF5252, stop:1 #B71C1C); /* Lebih merah saat hover */
+    border: 2px solid #D32F2F;
+}
+
+/* Efek tombol ditekan */
+#button_kembali:pressed {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                                stop:0 #F44336, stop:1 #9A0007); /* Merah lebih gelap saat ditekan */
+    border: 2px solid #7F0000;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Kembali</string>
+       </property>
+      </widget>
+      <widget class="QScrollArea" name="scrollArea_grafik">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>270</y>
+         <width>651</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>651</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <widget class="QWidget" name="widget_grafik" native="true">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>651</width>
+           <height>311</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">/* Style untuk widget grafik */
+QWidget#widget_grafik {
+    background-color: #E3F2FD; /* Biru muda pastel */
+    border-radius: 10px;
+    border: 2px solid #BBDEFB; /* Biru muda untuk garis agar serasi */
+}
+
+/* Style untuk batang diagram */
+QBarSet {
+    color: white; /* Warna teks dalam batang */
+}
+
+/* Style untuk warna batang diagram */
+QBarSeries {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #6a11cb, stop:1 #2575fc);
+}
+/* Scroll area untuk grafik */
+QScrollArea#widget_grafik {
+    border: none;
+    background: #E3F2FD; /* Warna latar belakang */
+}
+
+/* Scrollbar Vertikal */
+QScrollBar:vertical {
+    background: #E3F2FD;
+    width: 10px;
+    margin: 2px 0 2px 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #1976D2;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+/* Scrollbar Horizontal */
+QScrollBar:horizontal {
+    background: #E3F2FD;
+    height: 10px;
+    margin: 0 2px 0 2px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #1976D2;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, 
+QScrollBar::sub-line:horizontal {
+    background: none;
+}
+</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

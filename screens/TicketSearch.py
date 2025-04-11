@@ -42,36 +42,29 @@ class TicketSearch(QDialog):
                     print(f"Error membaca file {file_path}")
                     return []
         return []
-
+    
     def populate_stations(self):
-        """Mengisi dropdown stasiun asal dan tujuan dengan daftar unik stasiun transit"""
-        
-        # Ambil daftar stasiun transit dan simpan dalam array sementara
-        stasiun_transit_list = self.load_transit_stations()
+        """Mengisi dropdown stasiun asal dan tujuan dengan daftar unik stasiun transit dari data JSON."""
 
-        # Kosongkan dropdown sebelum menambahkan data baru
+        # Membaca file JSON jadwal kereta
+        data = self.load_json(JADWAL_KERETA_FILE)
+
+        # menggunakan array sementara untuk menyimpan daftar stasiun transit
+        stasiun_transit_list = []
+
+        for kereta in data:
+            transit = kereta.get("stasiun_transit", [])
+            stasiun_transit_list.extend(transit) #tergantung dari bagaimana cara penulisannya dalam database
+
+        stasiun_transit_list = sorted(set(stasiun_transit_list))
+        
         self.ui.combo_asal.clear()
         self.ui.combo_tujuan.clear()
 
-        # Masukkan data dari array sementara ke dalam dropdown
+        # memasukkan data ke dalam dropdown
         self.ui.combo_asal.addItems(stasiun_transit_list)
         self.ui.combo_tujuan.addItems(stasiun_transit_list)
 
-    def load_transit_stations(self):
-        """Membaca data JSON jadwal kereta dan menyimpan daftar stasiun transit unik dalam array sementara"""
-        # Membaca file JSON jadwal kereta
-        data = self.load_json (JADWAL_KERETA_FILE)
-        
-        # Array sementara untuk menyimpan daftar stasiun transit
-        stasiun_transit_list = []
-
-        # Loop melalui setiap jadwal kereta dalam data JSON
-        for kereta in data:
-            transit = kereta.get("stasiun_transit", [])
-            # Tambahkan setiap stasiun ke dalam array sementara
-            stasiun_transit_list.extend(transit)
-        # Hapus duplikasi dengan mengubahnya ke set, lalu kembalikan sebagai list terurut
-        return sorted(set(stasiun_transit_list))
 
     def populate_layanan(self):
         """Mengisi dropdown jenis layanan dengan daftar unik dari informasi umum."""
@@ -79,7 +72,7 @@ class TicketSearch(QDialog):
         # Membaca data JSON dari informasi umum
         data = self.load_json(INFORMASI_UMUM_FILE)
 
-        # Array sementara untuk menyimpan daftar layanan unik
+        # array sementara untuk menyimpan daftar layanan unik
         layanan_list = []
 
         for kereta in data:
@@ -87,11 +80,12 @@ class TicketSearch(QDialog):
             if layanan:  
                 layanan_list.append(layanan)
 
-        # Hapus duplikasi dan urutkan
+        # mengahapus duplikasi dan megurutkannya
         layanan_list = sorted(set(layanan_list))
-        # Kosongkan dropdown sebelum menambahkan data baru
+        
         self.ui.combo_layanan.clear()
-        # Masukkan data ke dalam dropdown
+
+        # memasukkan data ke dalam dropdown
         self.ui.combo_layanan.addItems(layanan_list)
 
     def swap_stations(self):
@@ -104,13 +98,13 @@ class TicketSearch(QDialog):
     def show_calendar(self):
         """Menampilkan kalender untuk memilih tanggal keberangkatan"""
         dialog = QDialog(self)
-        dialog.setWindowTitle("Pilih Tanggal")
+        dialog.setWindowTitle("Masukan Tanggal")
 
         # Widget kalender
         calendar = QCalendarWidget(dialog)
         calendar.setGridVisible(True)
         calendar.setSelectedDate(QDate.currentDate())
-    
+
         calendar.setStyleSheet("""
             QCalendarWidget QWidget {
                 alternate-background-color: #ffffff;
@@ -161,16 +155,15 @@ class TicketSearch(QDialog):
 
         # Fungsi untuk menetapkan tanggal yang dipilih
         def set_date():
-
-            self.ui.selected_date.setText(calendar.selectedDate().toString("yyyy-MM-dd"))
-            dialog.accept()
             selected_date = calendar.selectedDate()
             current_date = QDate.currentDate()
 
             if selected_date < current_date:
                 QMessageBox.warning(dialog, "Tanggal Tidak Valid", "Anda tidak dapat memilih tanggal yang telah lewat!")
             else:
-                self.ui.selected_date.setText(selected_date.toString("yyyy-MM-dd"))
+                # Format tanggal menyesaikan database
+                formatted_date = selected_date.toString("yyyy-MM-dd")
+                self.ui.button_tanggal.setText(formatted_date)
                 dialog.accept()
 
         button_ok = QPushButton("OK", dialog)
@@ -182,83 +175,98 @@ class TicketSearch(QDialog):
         dialog.setLayout(layout)
         dialog.exec_()
 
-
     def cari_tiket(self):
         """Mencari tiket berdasarkan input pengguna dan menampilkan di TicketShow."""
-        asal = self.ui.combo_asal.currentText()
-        tujuan = self.ui.combo_tujuan.currentText()
-        tanggal_str = self.ui.selected_date.text()
+        try:
+            asal = self.ui.combo_asal.currentText()
+            tujuan = self.ui.combo_tujuan.currentText()
+            tanggal_str = self.ui.button_tanggal.text()
+            pilihan_layanan = self.ui.combo_layanan.currentText()  
+            
+            """print("DEBUG: Mulai pencarian tiket...")
+            print(f"Stasiun asal: {asal}, tujuan: {tujuan}, tanggal: {tanggal_str}")
+            print(f"Pilihan layanan pengguna: {pilihan_layanan}")"""
 
-        if asal == tujuan:
-            QMessageBox.warning(self, "Error", "Stasiun asal dan tujuan tidak boleh sama!")
-            return
+            if asal == tujuan:
+                QMessageBox.warning(self, "Error", "Stasiun asal dan tujuan tidak boleh sama!")
+                return
 
-        # akan mencegah rute jadwal yang tidak sesuai dengan database
-        jadwal_data = self.load_json(JADWAL_KERETA_FILE)
-        valid_trip = False
-        for jadwal in jadwal_data:
-            stasiun_transit = jadwal.get("stasiun_transit", [])
-            if asal in stasiun_transit and tujuan in stasiun_transit:
-                if stasiun_transit.index(asal) < stasiun_transit.index(tujuan):
-                    valid_trip = True
-                    break
+            # Cek rute valid (ada atau tidak pada database) 
+            jadwal_data = self.load_json(JADWAL_KERETA_FILE)
+            valid_trip = False
+            for jadwal in jadwal_data:
+                stasiun_transit = jadwal.get("stasiun_transit", [])
+                if asal in stasiun_transit and tujuan in stasiun_transit:
+                    if stasiun_transit.index(asal) < stasiun_transit.index(tujuan):
+                        valid_trip = True
+                        break
+            if not valid_trip:
+                QMessageBox.warning(self, "Error", "Rute perjalanan tidak ditemukan!")
+                return
 
-        if not valid_trip:
-            QMessageBox.warning(self, "Error", "Rute perjalanan tidak ditemukan!")
-            return
+            # Validasi tanggal
+            selected_date = QDate.fromString(tanggal_str, "yyyy-MM-dd")
+            current_date = QDate.currentDate()
+            if selected_date < current_date:
+                QMessageBox.warning(self, "Tanggal Tidak Valid", "Anda tidak dapat memilih tanggal yang telah lewat!")
+                return
 
-        # Validasi tanggal yang telah lewat
-        selected_date = QDate.fromString(tanggal_str, "yyyy-MM-dd")
-        current_date = QDate.currentDate()
-        if selected_date < current_date:
-            QMessageBox.warning(self, "Tanggal Tidak Valid", "Anda tidak dapat memilih tanggal yang telah lewat!")
-            return
+            # Mulai mencari tiket yang tersedia
+            hasil_pencarian = []
+            for jadwal in jadwal_data:
+                id_kereta = jadwal["id_kereta"]
+                stasiun_transit = jadwal["stasiun_transit"]
+                waktu_transit = jadwal["waktu_transit"]
 
-        # pencarian tiket yang tersedia
-        hasil_pencarian = []
-        for jadwal in jadwal_data:
-            id_kereta = jadwal["id_kereta"]
-            stasiun_transit = jadwal["stasiun_transit"]
-            waktu_transit = jadwal["waktu_transit"]
+                if asal in stasiun_transit and tujuan in stasiun_transit:
+                    idx_asal = stasiun_transit.index(asal)
+                    idx_tujuan = stasiun_transit.index(tujuan)
 
-            if asal in stasiun_transit and tujuan in stasiun_transit:
-                idx_asal = stasiun_transit.index(asal)
-                idx_tujuan = stasiun_transit.index(tujuan)
+                    if idx_asal < idx_tujuan:
+                        info_kereta = next((info for info in self.load_json(INFORMASI_UMUM_FILE) if info["id_kereta"] == id_kereta), None)
+                        if not info_kereta:
+                            continue  # Skip jika tidak ditemukan info kereta
 
-                if idx_asal < idx_tujuan:
-                    info_kereta = next((info for info in self.load_json(INFORMASI_UMUM_FILE) if info["id_kereta"] == id_kereta), None)
-                    harga = info_kereta["harga_tiket"] if info_kereta else "Tidak diketahui"
-                    layanan = info_kereta["jenis_layanan"] if info_kereta else "Tidak diketahui"
+                        harga = info_kereta.get("harga_tiket", "Tidak diketahui")
+                        layanan = info_kereta.get("jenis_layanan", "Tidak diketahui")
 
-                    kursi_tersedia = any(
-                        kursi["id_kereta"] == id_kereta and kursi["tanggal"] == tanggal_str
-                        for kursi in self.load_json(KURSI_KERETA_FILE)
-                    )
+                        # Cek ketersediaan kursi
+                        kursi_tersedia = any(
+                            kursi["id_kereta"] == id_kereta and kursi["tanggal"] == tanggal_str
+                            for kursi in self.load_json(KURSI_KERETA_FILE)
+                        )
 
-                    if kursi_tersedia:
-                        tiket = {
-                            "nama_kereta": info_kereta["nama_kereta"],
-                            "id_kereta": info_kereta["id_kereta"],
-                            "asal": asal,
-                            "tujuan": tujuan,
-                            "waktu_berangkat": waktu_transit[idx_asal],
-                            "waktu_tiba": waktu_transit[idx_tujuan],
-                            "tanggal": tanggal_str,
-                            "harga": harga,
-                            "jenis_layanan": layanan
-                            
-                        }
-                        hasil_pencarian.append(tiket)
+                        #print(f"DEBUG: ID Kereta: {id_kereta}, Layanan: {layanan}, Kursi tersedia: {kursi_tersedia}")
 
-        if hasil_pencarian:
-            self.main_app.ticket_show_screen.tampilkan_tiket(hasil_pencarian)
-            self.main_app.open_ticket_show()  # Pindah ke halaman TicketShow
-        else:
-            QMessageBox.warning(self, "Tiket Tidak Tersedia", "Maaf, tidak ada tiket yang tersedia untuk pencarian ini.")
-            self.main_app.ticket_show_screen.tampilkan_tiket([])  # Kirim list kosong ke TicketShow
+                        # Filter berdasarkan layanan yang dipilih
+                        if layanan == pilihan_layanan and kursi_tersedia:
+                            tiket = {
+                                "nama_kereta": info_kereta["nama_kereta"],
+                                "id_kereta": info_kereta["id_kereta"],
+                                "asal": asal,
+                                "tujuan": tujuan,
+                                "waktu_berangkat": waktu_transit[idx_asal],
+                                "waktu_tiba": waktu_transit[idx_tujuan],
+                                "tanggal": tanggal_str,
+                                "harga": harga,
+                                "jenis_layanan": layanan
+                            }
+                            hasil_pencarian.append(tiket)
 
-            # Tetap pindah ke TicketShow agar pesan pemberitahuan tampil
-            self.main_app.open_ticket_show()
+            """ Debugging hasil pencarian
+            print(f"DEBUG: Total tiket ditemukan: {len(hasil_pencarian)}")"""
+            
+            # Tampilkan hasil atau beri peringatan jika tidak ada tiket
+            if hasil_pencarian:
+                self.main_app.ticket_show_screen.tampilkan_tiket(hasil_pencarian)
+                self.main_app.setCurrentWidget(self.ticket_show)  
+            else:
+                QMessageBox.warning(self, "Tiket Tidak Tersedia", "Maaf, tidak ada tiket yang tersedia untuk pencarian ini.")
+                self.main_app.ticket_show_screen.tampilkan_tiket([])
+                self.main_app.setCurrentWidget(self.ticket_show)
+
+        except Exception as e:
+            print(f"ERROR: {e}")  # Mencetak error di terminal agar kita tahu apa penyebab crash
 
     def reset_input(self):
 
@@ -268,7 +276,7 @@ class TicketSearch(QDialog):
         if self.ui.combo_tujuan.count() > 0:
             self.ui.combo_tujuan.setCurrentIndex(0)
 
-        self.ui.selected_date.clear() 
+        self.ui.button_tanggal.setText("Masukan Tanggal")
 
         if self.ui.combo_layanan.count() > 0:
             self.ui.combo_layanan.setCurrentIndex(0)

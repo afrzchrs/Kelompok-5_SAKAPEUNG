@@ -67,31 +67,12 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.Form_Detail_kursi.setObjectName("Form_Detail_kursi")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.Form_Detail_kursi)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.Detail_Kursi = QtWidgets.QTextBrowser(self.Form_Detail_kursi)
+        self.Detail_Kursi.setGeometry(QtCore.QRect(21, 23, 689, 70))
         self.Detail_Kursi.setMaximumSize(QtCore.QSize(16777215, 70))
         self.Detail_Kursi.setObjectName("Detail_Kursi")
-        self.verticalLayout_2.addWidget(self.Detail_Kursi)
-        self.input_JenisLayananLihat_Jadwal = QtWidgets.QLineEdit(self.Form_Detail_kursi)
-        self.input_JenisLayananLihat_Jadwal.setStyleSheet("QLineEdit {\n"
-"    font-size: 14px;\n"
-"    padding: 8px;\n"
-"    border: 2px solid #5C6BC0; /* Warna border */\n"
-"    border-radius: 5px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_JenisLayananLihat_Jadwal.setText("")
-        self.input_JenisLayananLihat_Jadwal.setObjectName("input_JenisLayananLihat_Jadwal")
-        self.verticalLayout_2.addWidget(self.input_JenisLayananLihat_Jadwal)
         self.tombol_seacrh_id_Lihat_Jadwal = QtWidgets.QPushButton(self.Form_Detail_kursi)
+        self.tombol_seacrh_id_Lihat_Jadwal.setGeometry(QtCore.QRect(370, 200, 341, 37))
         self.tombol_seacrh_id_Lihat_Jadwal.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombol_seacrh_id_Lihat_Jadwal.setStyleSheet("QPushButton {\n"
 "    background-color: #3F51B5; /* Warna biru */\n"
@@ -114,8 +95,8 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.tombol_seacrh_id_Lihat_Jadwal.setObjectName("tombol_seacrh_id_Lihat_Jadwal")
-        self.verticalLayout_2.addWidget(self.tombol_seacrh_id_Lihat_Jadwal)
         self.tombol_reset_form_lihaJadwal_2 = QtWidgets.QPushButton(self.Form_Detail_kursi)
+        self.tombol_reset_form_lihaJadwal_2.setGeometry(QtCore.QRect(21, 200, 341, 37))
         self.tombol_reset_form_lihaJadwal_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombol_reset_form_lihaJadwal_2.setStyleSheet("QPushButton {\n"
 "    background-color: #30E3CA; /* Warna biru */\n"
@@ -138,7 +119,69 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.tombol_reset_form_lihaJadwal_2.setObjectName("tombol_reset_form_lihaJadwal_2")
-        self.verticalLayout_2.addWidget(self.tombol_reset_form_lihaJadwal_2)
+        self.comboBox_Search_Data = QtWidgets.QComboBox(self.Form_Detail_kursi)
+        self.comboBox_Search_Data.setGeometry(QtCore.QRect(21, 101, 691, 41))
+        self.comboBox_Search_Data.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QComboBox {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang */\n"
+"    border: 2px solid #3F51B5; /* Warna border */\n"
+"    border-radius: 6px; /* Membuat sudut melengkung */\n"
+"    padding: 5px; /* Memberikan jarak dalam */\n"
+"    color: #000000; /* Warna teks */\n"
+"    font-size: 14px; /* Ukuran font */\n"
+"}\n"
+"\n"
+"/* Styling tombol dropdown QDateEdit */\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    width: 20px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right;\n"
+"    border-top-right-radius: 6px;\n"
+"    border-bottom-right-radius: 6px;\n"
+"}\n"
+"\n"
+"/* Styling ikon panah dalam tombol dropdown */\n"
+"QDateEdit::down-arrow {\n"
+"    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}")
+        self.comboBox_Search_Data.setObjectName("comboBox_Search_Data")
+        self.comboBox_Search_Data.addItem("")
+        self.comboBox_Search_Data.addItem("")
+        self.comboBox_Search_Data.addItem("")
+        self.dateEdit_lihat_data_kereta = QtWidgets.QDateEdit(self.Form_Detail_kursi)
+        self.dateEdit_lihat_data_kereta.setGeometry(QtCore.QRect(19, 150, 691, 41))
+        self.dateEdit_lihat_data_kereta.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QDateEdit {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang */\n"
+"    border: 2px solid #3F51B5; /* Warna border */\n"
+"    border-radius: 6px; /* Membuat sudut melengkung */\n"
+"    padding: 5px; /* Memberikan jarak dalam */\n"
+"    color: #000000; /* Warna teks */\n"
+"    font-size: 14px; /* Ukuran font */\n"
+"}\n"
+"\n"
+"/* Styling tombol dropdown QDateEdit */\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    width: 20px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right;\n"
+"    border-top-right-radius: 6px;\n"
+"    border-bottom-right-radius: 6px;\n"
+"}\n"
+"\n"
+"/* Styling ikon panah dalam tombol dropdown */\n"
+"QDateEdit::down-arrow {\n"
+"    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}")
+        self.dateEdit_lihat_data_kereta.setObjectName("dateEdit_lihat_data_kereta")
         self.tableWidget_Li = QtWidgets.QTableWidget(self.Lihat_jadwal_kereta)
         self.tableWidget_Li.setGeometry(QtCore.QRect(40, 390, 731, 371))
         self.tableWidget_Li.setStyleSheet("QTableWidget {\n"
@@ -261,24 +304,6 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.tombol_reset_form_lihaJadwal.setObjectName("tombol_reset_form_lihaJadwal")
-        self.input_Jenis_layanan_TambahData = QtWidgets.QLineEdit(self.Form_TambahData)
-        self.input_Jenis_layanan_TambahData.setGeometry(QtCore.QRect(21, 200, 681, 39))
-        self.input_Jenis_layanan_TambahData.setStyleSheet("QLineEdit {\n"
-"    font-size: 14px;\n"
-"    padding: 8px;\n"
-"    border: 2px solid #5C6BC0; /* Warna border */\n"
-"    border-radius: 5px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_Jenis_layanan_TambahData.setText("")
-        self.input_Jenis_layanan_TambahData.setObjectName("input_Jenis_layanan_TambahData")
         self.input_Stasiun_Transit_TambahData = QtWidgets.QLineEdit(self.Form_TambahData)
         self.input_Stasiun_Transit_TambahData.setGeometry(QtCore.QRect(21, 250, 681, 39))
         self.input_Stasiun_Transit_TambahData.setStyleSheet("QLineEdit {\n"
@@ -410,6 +435,39 @@ class Ui_dashboard_admin_Edit_Data(object):
 "    height: 12px;\n"
 "}")
         self.dateEdit_TambahData.setObjectName("dateEdit_TambahData")
+        self.comboBox_Tambah_Data = QtWidgets.QComboBox(self.Form_TambahData)
+        self.comboBox_Tambah_Data.setGeometry(QtCore.QRect(20, 200, 681, 41))
+        self.comboBox_Tambah_Data.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QComboBox {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang */\n"
+"    border: 2px solid #3F51B5; /* Warna border */\n"
+"    border-radius: 6px; /* Membuat sudut melengkung */\n"
+"    padding: 5px; /* Memberikan jarak dalam */\n"
+"    color: #000000; /* Warna teks */\n"
+"    font-size: 14px; /* Ukuran font */\n"
+"}\n"
+"\n"
+"/* Styling tombol dropdown QDateEdit */\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    width: 20px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right;\n"
+"    border-top-right-radius: 6px;\n"
+"    border-bottom-right-radius: 6px;\n"
+"}\n"
+"\n"
+"/* Styling ikon panah dalam tombol dropdown */\n"
+"QDateEdit::down-arrow {\n"
+"    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}")
+        self.comboBox_Tambah_Data.setObjectName("comboBox_Tambah_Data")
+        self.comboBox_Tambah_Data.addItem("")
+        self.comboBox_Tambah_Data.addItem("")
+        self.comboBox_Tambah_Data.addItem("")
         self.stackedWidget.addWidget(self.Tambah_jadwal_kereta)
         self.Edit_jadwal_kereta = QtWidgets.QWidget()
         self.Edit_jadwal_kereta.setObjectName("Edit_jadwal_kereta")
@@ -420,7 +478,7 @@ class Ui_dashboard_admin_Edit_Data(object):
 "")
         self.Edit_Data_kereta_2.setObjectName("Edit_Data_kereta_2")
         self.Form_Edit_Data = QtWidgets.QFrame(self.Edit_jadwal_kereta)
-        self.Form_Edit_Data.setGeometry(QtCore.QRect(40, 140, 731, 611))
+        self.Form_Edit_Data.setGeometry(QtCore.QRect(40, 140, 731, 501))
         self.Form_Edit_Data.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.Form_Edit_Data.setStyleSheet("QFrame {\n"
 "    background-color: #E3F2FD; /* Warna latar belakang */\n"
@@ -446,26 +504,8 @@ class Ui_dashboard_admin_Edit_Data(object):
         self.textBrowser_3.setGeometry(QtCore.QRect(21, 21, 689, 70))
         self.textBrowser_3.setMaximumSize(QtCore.QSize(16777215, 70))
         self.textBrowser_3.setObjectName("textBrowser_3")
-        self.input_nama_kereta_EditData = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_nama_kereta_EditData.setGeometry(QtCore.QRect(20, 200, 681, 39))
-        self.input_nama_kereta_EditData.setStyleSheet("QLineEdit {\n"
-"    font-size: 14px;\n"
-"    padding: 8px;\n"
-"    border: 2px solid #5C6BC0; /* Warna border */\n"
-"    border-radius: 5px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_nama_kereta_EditData.setText("")
-        self.input_nama_kereta_EditData.setObjectName("input_nama_kereta_EditData")
         self.tombol_reset_form = QtWidgets.QPushButton(self.Form_Edit_Data)
-        self.tombol_reset_form.setGeometry(QtCore.QRect(250, 560, 221, 37))
+        self.tombol_reset_form.setGeometry(QtCore.QRect(250, 450, 221, 37))
         self.tombol_reset_form.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombol_reset_form.setStyleSheet("QPushButton {\n"
 "    background-color: #30E3CA; /* Warna biru */\n"
@@ -488,26 +528,8 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.tombol_reset_form.setObjectName("tombol_reset_form")
-        self.input_nama_kereta_JenisLayanan = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_nama_kereta_JenisLayanan.setGeometry(QtCore.QRect(21, 250, 681, 39))
-        self.input_nama_kereta_JenisLayanan.setStyleSheet("QLineEdit {\n"
-"    font-size: 14px;\n"
-"    padding: 8px;\n"
-"    border: 2px solid #5C6BC0; /* Warna border */\n"
-"    border-radius: 5px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_nama_kereta_JenisLayanan.setText("")
-        self.input_nama_kereta_JenisLayanan.setObjectName("input_nama_kereta_JenisLayanan")
         self.input_staisun_transit_EditData = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_staisun_transit_EditData.setGeometry(QtCore.QRect(21, 300, 681, 39))
+        self.input_staisun_transit_EditData.setGeometry(QtCore.QRect(20, 200, 681, 39))
         self.input_staisun_transit_EditData.setStyleSheet("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 8px;\n"
@@ -525,7 +547,7 @@ class Ui_dashboard_admin_Edit_Data(object):
         self.input_staisun_transit_EditData.setText("")
         self.input_staisun_transit_EditData.setObjectName("input_staisun_transit_EditData")
         self.input_waktu_transit_EditData = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_waktu_transit_EditData.setGeometry(QtCore.QRect(20, 350, 681, 39))
+        self.input_waktu_transit_EditData.setGeometry(QtCore.QRect(20, 300, 681, 39))
         self.input_waktu_transit_EditData.setStyleSheet("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 8px;\n"
@@ -542,26 +564,8 @@ class Ui_dashboard_admin_Edit_Data(object):
 "")
         self.input_waktu_transit_EditData.setText("")
         self.input_waktu_transit_EditData.setObjectName("input_waktu_transit_EditData")
-        self.input_tarif_tiket_EditData = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_tarif_tiket_EditData.setGeometry(QtCore.QRect(21, 450, 681, 39))
-        self.input_tarif_tiket_EditData.setStyleSheet("QLineEdit {\n"
-"    font-size: 14px;\n"
-"    padding: 8px;\n"
-"    border: 2px solid #5C6BC0; /* Warna border */\n"
-"    border-radius: 5px;\n"
-"    background-color: #F3F4F6; /* Warna latar */\n"
-"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
-"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
-"}\n"
-"")
-        self.input_tarif_tiket_EditData.setText("")
-        self.input_tarif_tiket_EditData.setObjectName("input_tarif_tiket_EditData")
         self.input_jumlah_gerbong_EdiData = QtWidgets.QLineEdit(self.Form_Edit_Data)
-        self.input_jumlah_gerbong_EdiData.setGeometry(QtCore.QRect(21, 500, 681, 39))
+        self.input_jumlah_gerbong_EdiData.setGeometry(QtCore.QRect(21, 400, 681, 39))
         self.input_jumlah_gerbong_EdiData.setStyleSheet("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 8px;\n"
@@ -579,7 +583,7 @@ class Ui_dashboard_admin_Edit_Data(object):
         self.input_jumlah_gerbong_EdiData.setText("")
         self.input_jumlah_gerbong_EdiData.setObjectName("input_jumlah_gerbong_EdiData")
         self.tombol_edit_data = QtWidgets.QPushButton(self.Form_Edit_Data)
-        self.tombol_edit_data.setGeometry(QtCore.QRect(480, 560, 221, 37))
+        self.tombol_edit_data.setGeometry(QtCore.QRect(480, 450, 221, 37))
         self.tombol_edit_data.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tombol_edit_data.setStyleSheet("QPushButton {\n"
 "    background-color: #3F51B5; /* Warna biru */\n"
@@ -625,10 +629,28 @@ class Ui_dashboard_admin_Edit_Data(object):
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
-        self.dateEdit_TambahData_2 = QtWidgets.QDateEdit(self.Form_Edit_Data)
-        self.dateEdit_TambahData_2.setGeometry(QtCore.QRect(20, 400, 681, 41))
-        self.dateEdit_TambahData_2.setStyleSheet("/* Styling untuk QDateEdit */\n"
-"QDateEdit {\n"
+        self.input_tarif_tiket_EditData = QtWidgets.QLineEdit(self.Form_Edit_Data)
+        self.input_tarif_tiket_EditData.setGeometry(QtCore.QRect(20, 350, 681, 39))
+        self.input_tarif_tiket_EditData.setStyleSheet("QLineEdit {\n"
+"    font-size: 14px;\n"
+"    padding: 8px;\n"
+"    border: 2px solid #5C6BC0; /* Warna border */\n"
+"    border-radius: 5px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"")
+        self.input_tarif_tiket_EditData.setText("")
+        self.input_tarif_tiket_EditData.setObjectName("input_tarif_tiket_EditData")
+        self.comboBox_EditData = QtWidgets.QComboBox(self.Form_Edit_Data)
+        self.comboBox_EditData.setGeometry(QtCore.QRect(20, 250, 681, 41))
+        self.comboBox_EditData.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QComboBox {\n"
 "    background-color: #FFFFFF; /* Warna latar belakang */\n"
 "    border: 2px solid #3F51B5; /* Warna border */\n"
 "    border-radius: 6px; /* Membuat sudut melengkung */\n"
@@ -654,7 +676,10 @@ class Ui_dashboard_admin_Edit_Data(object):
 "    width: 12px;\n"
 "    height: 12px;\n"
 "}")
-        self.dateEdit_TambahData_2.setObjectName("dateEdit_TambahData_2")
+        self.comboBox_EditData.setObjectName("comboBox_EditData")
+        self.comboBox_EditData.addItem("")
+        self.comboBox_EditData.addItem("")
+        self.comboBox_EditData.addItem("")
         self.stackedWidget.addWidget(self.Edit_jadwal_kereta)
         self.Hapus_jadwal_kereta = QtWidgets.QWidget()
         self.Hapus_jadwal_kereta.setObjectName("Hapus_jadwal_kereta")
@@ -686,13 +711,12 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.Form_Hapus_Data.setObjectName("Form_Hapus_Data")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.Form_Hapus_Data)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.Hapus_Data_kereta = QtWidgets.QTextBrowser(self.Form_Hapus_Data)
+        self.Hapus_Data_kereta.setGeometry(QtCore.QRect(21, 23, 689, 70))
         self.Hapus_Data_kereta.setMaximumSize(QtCore.QSize(16777215, 70))
         self.Hapus_Data_kereta.setObjectName("Hapus_Data_kereta")
-        self.verticalLayout_3.addWidget(self.Hapus_Data_kereta)
         self.input_id_Hapus_kereta = QtWidgets.QLineEdit(self.Form_Hapus_Data)
+        self.input_id_Hapus_kereta.setGeometry(QtCore.QRect(21, 101, 341, 39))
         self.input_id_Hapus_kereta.setStyleSheet("QLineEdit {\n"
 "    font-size: 14px;\n"
 "    padding: 8px;\n"
@@ -709,8 +733,8 @@ class Ui_dashboard_admin_Edit_Data(object):
 "")
         self.input_id_Hapus_kereta.setText("")
         self.input_id_Hapus_kereta.setObjectName("input_id_Hapus_kereta")
-        self.verticalLayout_3.addWidget(self.input_id_Hapus_kereta)
         self.Cari_KeretaYangDihapus = QtWidgets.QPushButton(self.Form_Hapus_Data)
+        self.Cari_KeretaYangDihapus.setGeometry(QtCore.QRect(21, 148, 691, 37))
         self.Cari_KeretaYangDihapus.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Cari_KeretaYangDihapus.setStyleSheet("QPushButton {\n"
 "    background-color: #3F51B5; /* Warna biru */\n"
@@ -733,7 +757,36 @@ class Ui_dashboard_admin_Edit_Data(object):
 "}\n"
 "")
         self.Cari_KeretaYangDihapus.setObjectName("Cari_KeretaYangDihapus")
-        self.verticalLayout_3.addWidget(self.Cari_KeretaYangDihapus)
+        self.dateEdit_hapus_data_kereta = QtWidgets.QDateEdit(self.Form_Hapus_Data)
+        self.dateEdit_hapus_data_kereta.setGeometry(QtCore.QRect(369, 101, 341, 41))
+        self.dateEdit_hapus_data_kereta.setStyleSheet("/* Styling untuk QDateEdit */\n"
+"QDateEdit {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang */\n"
+"    border: 2px solid #3F51B5; /* Warna border */\n"
+"    border-radius: 6px; /* Membuat sudut melengkung */\n"
+"    padding: 5px; /* Memberikan jarak dalam */\n"
+"    color: #000000; /* Warna teks */\n"
+"    font-size: 14px; /* Ukuran font */\n"
+"}\n"
+"\n"
+"/* Styling tombol dropdown QDateEdit */\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    width: 20px;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: right;\n"
+"    border-top-right-radius: 6px;\n"
+"    border-bottom-right-radius: 6px;\n"
+"}\n"
+"\n"
+"/* Styling ikon panah dalam tombol dropdown */\n"
+"QDateEdit::down-arrow {\n"
+"    image: url(:/icons/down-arrow.png); /* Ganti dengan ikon panah yang sesuai */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}")
+        self.dateEdit_hapus_data_kereta.setObjectName("dateEdit_hapus_data_kereta")
         self.tombol_batal = QtWidgets.QPushButton(self.Hapus_jadwal_kereta)
         self.tombol_batal.setGeometry(QtCore.QRect(360, 630, 191, 37))
         self.tombol_batal.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -857,7 +910,7 @@ class Ui_dashboard_admin_Edit_Data(object):
         dashboard_admin_Edit_Data.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(dashboard_admin_Edit_Data)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(dashboard_admin_Edit_Data)
 
     def retranslateUi(self, dashboard_admin_Edit_Data):
@@ -881,9 +934,11 @@ class Ui_dashboard_admin_Edit_Data(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">CARI DATA BERDASARKAN KELAS</span></p></body></html>"))
-        self.input_JenisLayananLihat_Jadwal.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan kelas kereta"))
         self.tombol_seacrh_id_Lihat_Jadwal.setText(_translate("dashboard_admin_Edit_Data", "Cari Kereta"))
         self.tombol_reset_form_lihaJadwal_2.setText(_translate("dashboard_admin_Edit_Data", "Reset Form"))
+        self.comboBox_Search_Data.setItemText(0, _translate("dashboard_admin_Edit_Data", "Ekonomi"))
+        self.comboBox_Search_Data.setItemText(1, _translate("dashboard_admin_Edit_Data", "Bisnis"))
+        self.comboBox_Search_Data.setItemText(2, _translate("dashboard_admin_Edit_Data", "Eksekutif"))
         item = self.tableWidget_Li.horizontalHeaderItem(0)
         item.setText(_translate("dashboard_admin_Edit_Data", "New Column"))
         item = self.tableWidget_Li.horizontalHeaderItem(1)
@@ -916,12 +971,14 @@ class Ui_dashboard_admin_Edit_Data(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">ISI DATA-DATA YANG DIBUTUHKAN</span></p></body></html>"))
         self.input_nama_kereta_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Nama Kereta"))
         self.tombol_reset_form_lihaJadwal.setText(_translate("dashboard_admin_Edit_Data", "Reset Form"))
-        self.input_Jenis_layanan_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Jenis Layanan"))
         self.input_Stasiun_Transit_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Staisun Transit Kerera"))
         self.input_Waktu_Operasional_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Waktu Transit Kereta"))
         self.input_Tarif_Tiket_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Tarif Tiket Kereta"))
         self.input_Jumla_Gerbong_TambahData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Jumlah Gerbong Kereta"))
         self.tombol_tambah_data.setText(_translate("dashboard_admin_Edit_Data", "Tambah Data"))
+        self.comboBox_Tambah_Data.setItemText(0, _translate("dashboard_admin_Edit_Data", "Ekonomi"))
+        self.comboBox_Tambah_Data.setItemText(1, _translate("dashboard_admin_Edit_Data", "Bisnis"))
+        self.comboBox_Tambah_Data.setItemText(2, _translate("dashboard_admin_Edit_Data", "Eksekutif"))
         self.Edit_Data_kereta_2.setHtml(_translate("dashboard_admin_Edit_Data", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -935,15 +992,16 @@ class Ui_dashboard_admin_Edit_Data(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">ISI DATA-DATA YANG DIBUTUHKAN</span></p></body></html>"))
-        self.input_nama_kereta_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Nama Kereta baru"))
         self.tombol_reset_form.setText(_translate("dashboard_admin_Edit_Data", "Reset Form"))
-        self.input_nama_kereta_JenisLayanan.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Jenis Layanan baru"))
         self.input_staisun_transit_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Stasiun Transit Kereta Baru"))
         self.input_waktu_transit_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Waktu Transit Kereta baru"))
-        self.input_tarif_tiket_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Tarif Tiket Kereta baru"))
         self.input_jumlah_gerbong_EdiData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Jumlah Gerbong Kereta baru"))
         self.tombol_edit_data.setText(_translate("dashboard_admin_Edit_Data", "Update Data"))
         self.input_id_kereta_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Id Kereta"))
+        self.input_tarif_tiket_EditData.setPlaceholderText(_translate("dashboard_admin_Edit_Data", "Masukkan Harga Baru"))
+        self.comboBox_EditData.setItemText(0, _translate("dashboard_admin_Edit_Data", "Ekonomi"))
+        self.comboBox_EditData.setItemText(1, _translate("dashboard_admin_Edit_Data", "Bisnis"))
+        self.comboBox_EditData.setItemText(2, _translate("dashboard_admin_Edit_Data", "Eksekutif"))
         self.Hapus_Data.setHtml(_translate("dashboard_admin_Edit_Data", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -972,6 +1030,7 @@ class Ui_dashboard_admin_Edit_Data(object):
         self.Edit_Data_kereta.setText(_translate("dashboard_admin_Edit_Data", "Edit Data Kereta"))
         self.Hapus_Data_Kereta.setText(_translate("dashboard_admin_Edit_Data", "Hapus Data Kereta"))
         self.Dashboard_Utama.setText(_translate("dashboard_admin_Edit_Data", "Dashboard Utama"))
+
 
 if __name__ == "__main__":
     import sys

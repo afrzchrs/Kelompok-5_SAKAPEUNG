@@ -14,27 +14,29 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_kereta_bisnis(object):
     def setupUi(self, kereta_bisnis):
         kereta_bisnis.setObjectName("kereta_bisnis")
-        kereta_bisnis.resize(1109, 918)
+        kereta_bisnis.resize(1280, 766)
+        kereta_bisnis.setMaximumSize(QtCore.QSize(1280, 766))
         kereta_bisnis.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.kereta_box = QtWidgets.QFrame(kereta_bisnis)
-        self.kereta_box.setGeometry(QtCore.QRect(30, 70, 1051, 821))
-        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
+        self.kereta_box.setGeometry(QtCore.QRect(90, 30, 1041, 711))
+        self.kereta_box.setMaximumSize(QtCore.QSize(1280, 766))
+        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 125); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
         self.kereta_box.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.kereta_box.setFrameShadow(QtWidgets.QFrame.Raised)
         self.kereta_box.setObjectName("kereta_box")
         self.kursi_kereta_box = QtWidgets.QWidget(self.kereta_box)
-        self.kursi_kereta_box.setGeometry(QtCore.QRect(30, 90, 991, 601))
+        self.kursi_kereta_box.setGeometry(QtCore.QRect(30, 90, 991, 501))
         self.kursi_kereta_box.setStyleSheet("background : white;")
         self.kursi_kereta_box.setObjectName("kursi_kereta_box")
         self.scrollArea_kursi = QtWidgets.QScrollArea(self.kursi_kereta_box)
-        self.scrollArea_kursi.setGeometry(QtCore.QRect(109, 110, 781, 651))
+        self.scrollArea_kursi.setGeometry(QtCore.QRect(109, 70, 781, 401))
         self.scrollArea_kursi.setWidgetResizable(True)
         self.scrollArea_kursi.setObjectName("scrollArea_kursi")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 781, 651))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 781, 401))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.widget_container_kursi = QtWidgets.QWidget(self.scrollAreaWidgetContents_2)
         self.widget_container_kursi.setGeometry(QtCore.QRect(110, 10, 111, 101))
@@ -52,12 +54,12 @@ class Ui_kereta_bisnis(object):
         self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
         self.scrollArea_kursi.setWidget(self.scrollAreaWidgetContents_2)
         self.frame_data_kereta = QtWidgets.QFrame(self.kursi_kereta_box)
-        self.frame_data_kereta.setGeometry(QtCore.QRect(110, 29, 781, 61))
+        self.frame_data_kereta.setGeometry(QtCore.QRect(110, 10, 781, 41))
         self.frame_data_kereta.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_data_kereta.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_data_kereta.setObjectName("frame_data_kereta")
         self.pilih_gerbong = QtWidgets.QPushButton(self.frame_data_kereta)
-        self.pilih_gerbong.setGeometry(QtCore.QRect(450, 10, 221, 41))
+        self.pilih_gerbong.setGeometry(QtCore.QRect(450, 0, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -70,7 +72,7 @@ class Ui_kereta_bisnis(object):
         self.comboBox.setGeometry(QtCore.QRect(675, 9, 91, 41))
         self.comboBox.setObjectName("comboBox")
         self.nama_kereta = QtWidgets.QLabel(self.frame_data_kereta)
-        self.nama_kereta.setGeometry(QtCore.QRect(20, 5, 261, 51))
+        self.nama_kereta.setGeometry(QtCore.QRect(20, 0, 261, 51))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -78,14 +80,20 @@ class Ui_kereta_bisnis(object):
         self.nama_kereta.setAlignment(QtCore.Qt.AlignCenter)
         self.nama_kereta.setObjectName("nama_kereta")
         self.button_keluar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_keluar.setGeometry(QtCore.QRect(30, 760, 991, 41))
+        self.button_keluar.setGeometry(QtCore.QRect(30, 650, 991, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_keluar.setFont(font)
         self.button_keluar.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -94,14 +102,20 @@ class Ui_kereta_bisnis(object):
 "")
         self.button_keluar.setObjectName("button_keluar")
         self.button_pilihkursi = QtWidgets.QPushButton(self.kereta_box)
-        self.button_pilihkursi.setGeometry(QtCore.QRect(30, 710, 991, 41))
+        self.button_pilihkursi.setGeometry(QtCore.QRect(30, 600, 991, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_pilihkursi.setFont(font)
         self.button_pilihkursi.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -118,6 +132,15 @@ class Ui_kereta_bisnis(object):
         self.label_pilih_kursi.setFont(font)
         self.label_pilih_kursi.setAlignment(QtCore.Qt.AlignCenter)
         self.label_pilih_kursi.setObjectName("label_pilih_kursi")
+        self.label_5 = QtWidgets.QLabel(kereta_bisnis)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_5.setMaximumSize(QtCore.QSize(1280, 766))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.label_5.raise_()
+        self.kereta_box.raise_()
 
         self.retranslateUi(kereta_bisnis)
         QtCore.QMetaObject.connectSlotsByName(kereta_bisnis)
