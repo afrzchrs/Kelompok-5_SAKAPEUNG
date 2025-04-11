@@ -9,4 +9,6 @@ Adi Rafi Chaerufarizki - 241524001,
 Mario Julius Christianto - 241524014, 
 Roufiel Hadi - 241524028.
 
+#merging dari branch adi rafi (test merging)
+
 
