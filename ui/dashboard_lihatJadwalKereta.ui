@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1078</width>
-    <height>879</height>
+    <width>1280</width>
+    <height>766</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>766</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dashboard SAKAPEUNG</string>
@@ -21,10 +27,10 @@
    <widget class="QFrame" name="frame_utama">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>1051</width>
-      <height>781</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1280</width>
+      <height>766</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,9 +46,9 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
     <widget class="QStackedWidget" name="user">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>290</x>
        <y>0</y>
-       <width>811</width>
+       <width>991</width>
        <height>781</height>
       </rect>
      </property>
@@ -72,8 +78,8 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Ini adalah dashboard user&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ini adalah dashboard user&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QTextBrowser" name="home_title_user">
@@ -94,103 +100,235 @@ border-radius: 0px;
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Dashboard User&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="pembelian_tiket">
-      <widget class="QTextBrowser" name="pembelian_tiket_title_user">
+      <widget class="QTextEdit" name="home_user_2">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
+         <x>10</x>
+         <y>80</y>
+         <width>711</width>
+         <height>181</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; 
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: transparent; /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
 </string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Pembelian Tiket Kereta Api&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat'; font-size:40pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Selamat Datang di SAKAPEUNG!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="pembelian_tiket_user">
+      <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>791</width>
-         <height>651</height>
+         <x>-290</x>
+         <y>0</y>
+         <width>1611</width>
+         <height>771</height>
         </rect>
        </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ini adalah halaman pembelian tiket&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>3.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="lihat_jadwal_kereta">
-      <widget class="QTextBrowser" name="lihat_jadwal_kereta_title_user">
+      <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
+         <x>550</x>
+         <y>350</y>
+         <width>431</width>
+         <height>391</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; </string>
+        <string notr="true">background : transparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>4.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>30</y>
+         <width>741</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: transparent; /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
+       </property>
+       <property name="text">
+        <string>Selamat Datang</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>140</y>
+         <width>741</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: transparent; /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
+       </property>
+       <property name="text">
+        <string>di SAKAPEUNG!</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="pembelian_tiket">
+      <widget class="QTextEdit" name="pembelian_tiket_user">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>150</y>
+         <width>881</width>
+         <height>561</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 20pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: rgb(255, 255, 255); /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Lihat Jadwal Kereta Api&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400;&quot;&gt;ini adalah halaman pembelian tiket&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>-290</x>
+         <y>0</y>
+         <width>1291</width>
+         <height>781</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../SAKAPEUNGAPP/ui/3.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>0</y>
+         <width>941</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: rgb(255, 255, 255); /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: transparent; /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
+       </property>
+       <property name="text">
+        <string>Pembelian tiket Kereta Api</string>
+       </property>
+      </widget>
+      <zorder>label_14</zorder>
+      <zorder>pembelian_tiket_user</zorder>
+      <zorder>label_7</zorder>
+     </widget>
+     <widget class="QWidget" name="lihat_jadwal_kereta">
       <widget class="QTextEdit" name="lihat_jadwal_kereta_user">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>791</width>
-         <height>651</height>
+         <x>130</x>
+         <y>90</y>
+         <width>651</width>
+         <height>611</height>
         </rect>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QFrame" name="verticalFrame_2">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>130</y>
+         <x>210</x>
+         <y>110</y>
          <width>491</width>
          <height>211</height>
         </rect>
@@ -307,7 +445,7 @@ QLineEdit:focus {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="C:/Users/ASPIRE 5/Downloads/test.qrc">:/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png</pixmap>
+             <pixmap>:/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -421,10 +559,10 @@ QPushButton:pressed {
       <widget class="QTableWidget" name="tableWidget">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>350</y>
-         <width>731</width>
-         <height>371</height>
+         <x>150</x>
+         <y>330</y>
+         <width>611</width>
+         <height>351</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -488,8 +626,8 @@ QTableWidget QTableCornerButton::section {
       <widget class="QPushButton" name="tombol_kembali">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>730</y>
+         <x>230</x>
+         <y>710</y>
          <width>449</width>
          <height>37</height>
         </rect>
@@ -522,155 +660,167 @@ QPushButton:pressed {
         <string>Kembali</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>-294</x>
+         <y>-8</y>
+         <width>1291</width>
+         <height>781</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../SAKAPEUNGAPP/ui/3.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>-10</y>
+         <width>941</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: rgb(255, 255, 255); /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: transparent; /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
+       </property>
+       <property name="text">
+        <string>Lihat Jadwal Kereta Api</string>
+       </property>
+      </widget>
+      <zorder>label_2</zorder>
+      <zorder>lihat_jadwal_kereta_user</zorder>
+      <zorder>verticalFrame_2</zorder>
+      <zorder>tableWidget</zorder>
+      <zorder>tombol_kembali</zorder>
+      <zorder>label_8</zorder>
      </widget>
      <widget class="QWidget" name="tiket_saya">
+      <widget class="QTextEdit" name="tiket_saya_user">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>130</y>
+         <width>841</width>
+         <height>551</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-family: 'Montserrat';
+font-size: 20pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: rgb(255, 255, 255); /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>-290</x>
+         <y>0</y>
+         <width>1301</width>
+         <height>781</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../SAKAPEUNGAPP/ui/3.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
       <widget class="QTextBrowser" name="tiket_saya_tittle_user">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
+         <x>-10</x>
+         <y>30</y>
+         <width>991</width>
          <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; </string>
+        <string notr="true">font-family: 'Montserrat';
+font-size: 40pt; /* atau sesuaikan ukuran */   
+color: #333333;  /* warna teks opsional */   
+background-color: rgb(255, 255, 255); /* background opsional */
+    border: none;
+font-weight: bold;
+
+ background-color: transparent; /* semi-transparan putih */
+    color: #000000;  /* teks tetap hitam/solid */
+</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Tiket Saya&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat'; font-size:40pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:28pt;&quot;&gt;Tiket Saya&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="tiket_saya_user">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>791</width>
-         <height>651</height>
-        </rect>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Ini adalah menu tiket saya&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
+      <zorder>label_13</zorder>
+      <zorder>tiket_saya_tittle_user</zorder>
+      <zorder>tiket_saya_user</zorder>
      </widget>
     </widget>
-    <widget class="QPushButton" name="home_button">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>221</width>
-       <height>81</height>
+       <x>0</x>
+       <y>0</y>
+       <width>1280</width>
+       <height>766</height>
       </rect>
-     </property>
-     <property name="mouseTracking">
-      <bool>true</bool>
-     </property>
-     <property name="tabletTracking">
-      <bool>true</bool>
      </property>
      <property name="text">
-      <string>Home</string>
+      <string/>
      </property>
-    </widget>
-    <widget class="QTextBrowser" name="sakapeung">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>251</width>
-       <height>71</height>
-      </rect>
+     <property name="pixmap">
+      <pixmap>0.png</pixmap>
      </property>
-     <property name="styleSheet">
-      <string notr="true">  background: transparent;</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;SAKAPEUNG&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:22pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pembelian_tiket_button">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>220</y>
-       <width>221</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="mouseTracking">
+     <property name="scaledContents">
       <bool>true</bool>
-     </property>
-     <property name="tabletTracking">
-      <bool>true</bool>
-     </property>
-     <property name="text">
-      <string>Pembelian Tiket</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="lihat_jadwal_kereta_button">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>221</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="mouseTracking">
-      <bool>true</bool>
-     </property>
-     <property name="tabletTracking">
-      <bool>true</bool>
-     </property>
-     <property name="text">
-      <string>Lihat Jadwal Kereta</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="tiket_saya_button">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>400</y>
-       <width>221</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="mouseTracking">
-      <bool>true</bool>
-     </property>
-     <property name="tabletTracking">
-      <bool>true</bool>
-     </property>
-     <property name="text">
-      <string>Tiket Saya</string>
      </property>
     </widget>
     <widget class="QPushButton" name="dashboard_akun_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>490</y>
-       <width>221</width>
-       <height>81</height>
+       <x>50</x>
+       <y>430</y>
+       <width>231</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -679,17 +829,55 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Dashboard Akun</string>
+      <string> Dashboard Akun</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/account.png</normaloff>../../../SAKAPEUNGAPP/ui/account.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="dashboard_rekening_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>580</y>
-       <width>221</width>
-       <height>81</height>
+       <x>50</x>
+       <y>500</y>
+       <width>231</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -698,17 +886,169 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Dashboard Rekening</string>
+      <string> Rekening</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/accounting.png</normaloff>../../../SAKAPEUNGAPP/ui/accounting.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pembelian_tiket_button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string> Beli Tiket</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/ticket.png</normaloff>../../../SAKAPEUNGAPP/ui/ticket.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="lihat_jadwal_kereta_button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>290</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string> Lihat Jadwal</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/schedule.png</normaloff>../../../SAKAPEUNGAPP/ui/schedule.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="keluar_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>670</y>
-       <width>221</width>
-       <height>81</height>
+       <x>50</x>
+       <y>630</y>
+       <width>231</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -717,24 +1057,195 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Keluar Dari Aplikasi</string>
+      <string> Keluar</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/logout.png</normaloff>../../../SAKAPEUNGAPP/ui/logout.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
-    <zorder>sakapeung</zorder>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>590</y>
+       <width>241</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>-------------------------------------</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="tiket_saya_button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>360</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string> Tiket Saya</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/myticket.png</normaloff>../../../SAKAPEUNGAPP/ui/myticket.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home_button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>150</y>
+       <width>231</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string> Dashboard</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/dashboard.png</normaloff>../../../SAKAPEUNGAPP/ui/dashboard.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <zorder>label</zorder>
     <zorder>user</zorder>
-    <zorder>home_button</zorder>
-    <zorder>pembelian_tiket_button</zorder>
-    <zorder>lihat_jadwal_kereta_button</zorder>
-    <zorder>tiket_saya_button</zorder>
     <zorder>dashboard_akun_button</zorder>
     <zorder>dashboard_rekening_button</zorder>
+    <zorder>pembelian_tiket_button</zorder>
+    <zorder>lihat_jadwal_kereta_button</zorder>
     <zorder>keluar_button</zorder>
+    <zorder>lineEdit</zorder>
+    <zorder>tiket_saya_button</zorder>
+    <zorder>home_button</zorder>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="C:/Users/ASPIRE 5/Downloads/test.qrc"/>
+  <include location="../../../../../../ASPIRE 5/Downloads/test.qrc"/>
  </resources>
  <connections/>
 </ui>

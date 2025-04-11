@@ -12,11 +12,14 @@ from screens.TicketShow import TicketShow
 from screens.DetailPemesanan import DetailPemesanan
 from screens.BookingKursi import BookingKursi
 from screens.Pembayaran import Pembayaran
+from screens.TransaksiPembayaran import TransaksiPembayaran
 from screens.lihatJadwalKereta_dashboard import LihatJadwalKereta
 from screens.EditDataKereta_dashboard import DashboardEditData 
 from screens.tiket_saya_screen import TiketSaya
 from screens.lihatRekapKeuntungan_dasboard import LihatRekapKeuntungan
-from screens.detailRekapKeuntungan_dasboard import DetailRekapKeuntungan
+from screens.detailRekapKeuntungan_dasboard import DetailRekapKeuntungan  
+from screens.lihat_GrafikKeuntungan_dashboard import LihatGrafikKeuntungan
+
 
 class MainApp(QStackedWidget):
     def __init__(self):
@@ -25,7 +28,8 @@ class MainApp(QStackedWidget):
         self.current_user = None  # Menyimpan data user yang sedang login
         self.booking_kursi_screen = None  
         self.pembayaran_screen = None 
-        self.email_pengguna = None  # 🔥 Simpan email pengguna yang login
+        self.transaksi_pembayaran_screen = None 
+        self.email_pengguna = None  # Simpan email pengguna yang login
 
         
         # Inisialisasi semua halaman aplikasi
@@ -44,7 +48,7 @@ class MainApp(QStackedWidget):
         self.tiket_saya_screen = TiketSaya(self)  # Tambahkan email pengguna 
         self.lihat_RekapKeuntungan = LihatRekapKeuntungan(self)
         self.detail_RekapKeuntungan = DetailRekapKeuntungan(self)
-          
+        self.lihat_GrafikKeuntungan = LihatGrafikKeuntungan(self)        
         
         # Menambahkan halaman ke dalam stack
         self.addWidget(self.welcome_screen)
@@ -62,6 +66,8 @@ class MainApp(QStackedWidget):
         self.addWidget(self.tiket_saya_screen)
         self.addWidget(self.lihat_RekapKeuntungan)
         self.addWidget(self.detail_RekapKeuntungan)
+        self.addWidget(self.lihat_GrafikKeuntungan)
+
 
         # Menampilkan halaman awal (Welcome Screen)
         self.setCurrentWidget(self.welcome_screen)
@@ -114,15 +120,16 @@ class MainApp(QStackedWidget):
             print(f"Error di open_detail_pemesanan: {e}")
 
     def open_booking_kursi(self, tiket_terpilih):
-        """Navigasi ke halaman pemilihan kursi."""
-        if not self.booking_kursi_screen:
-            self.booking_kursi_screen = BookingKursi(self, tiket_terpilih)
-            self.addWidget(self.booking_kursi_screen)
-        else:
-            self.booking_kursi_screen.tiket_terpilih = tiket_terpilih
-            self.booking_kursi_screen.selected_seat = None 
-
-        self.setCurrentWidget(self.booking_kursi_screen)
+        try:
+            if hasattr(self, 'booking_kursi_screen') and self.booking_kursi_screen is not None:
+                self.booking_kursi_screen.update_ticket(tiket_terpilih)
+            else:
+                self.booking_kursi_screen = BookingKursi(self, tiket_terpilih)
+                self.addWidget(self.booking_kursi_screen)
+            self.setCurrentWidget(self.booking_kursi_screen)
+        
+        except Exception as e:
+            print(f"Error saat membuka halaman Booking Kursi: {e}")
 
     def open_pembayaran(self, tiket_terpilih):
         """Navigasi ke halaman pembayaran setelah kursi dipilih."""
@@ -134,7 +141,19 @@ class MainApp(QStackedWidget):
             self.pembayaran_screen.tampilkan_detail_tiket()
 
         self.setCurrentWidget(self.pembayaran_screen)
-
+    
+    def open_transaksi_pembayaran(self, tiket_terpilih):
+        """Navigasi ke halaman transaksi pembayaran setelah pembayaran berhasil."""
+        
+        if not self.transaksi_pembayaran_screen:
+            self.transaksi_pembayaran_screen = TransaksiPembayaran(self, tiket_terpilih)
+            self.addWidget(self.transaksi_pembayaran_screen)
+        else:
+            self.transaksi_pembayaran_screen.tiket_terpilih = tiket_terpilih
+            self.transaksi_pembayaran_screen.tampilkan_detail_tiket()
+        
+        self.setCurrentWidget(self.transaksi_pembayaran_screen)
+        
     def kembali_ke_ticket_search(self):
         """Navigasi kembali ke halaman utama (TicketSearch) setelah pembayaran selesai, dan reset input di semua halaman."""
         
@@ -161,6 +180,11 @@ class MainApp(QStackedWidget):
     def open_detail_rekap_keuntungan(self):
         """Navigasi ke halaman Detail Rekap Keuntungan."""
         self.setCurrentWidget(self.detail_RekapKeuntungan)
+
+    def open_lihat_grafik_keuntungan(self):
+        """Navigasi ke halaman Lihat Grafik Keuntungan."""
+        self.setCurrentWidget(self.lihat_GrafikKeuntungan)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -14,20 +14,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_detail_pemesanan(object):
     def setupUi(self, detail_pemesanan):
         detail_pemesanan.setObjectName("detail_pemesanan")
-        detail_pemesanan.resize(1091, 911)
+        detail_pemesanan.resize(1280, 766)
+        detail_pemesanan.setMaximumSize(QtCore.QSize(1280, 766))
         detail_pemesanan.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.kereta_box = QtWidgets.QFrame(detail_pemesanan)
-        self.kereta_box.setGeometry(QtCore.QRect(30, 10, 1041, 841))
-        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
+        self.kereta_box.setGeometry(QtCore.QRect(120, 20, 1041, 721))
+        self.kereta_box.setStyleSheet("background-color: rgb(20, 91, 166, 120); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
         self.kereta_box.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.kereta_box.setFrameShadow(QtWidgets.QFrame.Raised)
         self.kereta_box.setObjectName("kereta_box")
         self.box_detail_pemesanan = QtWidgets.QWidget(self.kereta_box)
-        self.box_detail_pemesanan.setGeometry(QtCore.QRect(30, 350, 981, 351))
-        self.box_detail_pemesanan.setStyleSheet("background-color: rgb(156, 209, 255); /* Transparansi */\n"
+        self.box_detail_pemesanan.setGeometry(QtCore.QRect(30, 300, 981, 301))
+        self.box_detail_pemesanan.setStyleSheet("background-color: #145ba6; /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.box_detail_pemesanan.setObjectName("box_detail_pemesanan")
         self.groupBox = QtWidgets.QGroupBox(self.box_detail_pemesanan)
@@ -35,7 +36,7 @@ class Ui_detail_pemesanan(object):
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.line_nama = QtWidgets.QLineEdit(self.groupBox)
-        self.line_nama.setGeometry(QtCore.QRect(20, 30, 861, 51))
+        self.line_nama.setGeometry(QtCore.QRect(20, -10, 861, 51))
         self.line_nama.setStyleSheet("    border: none;\n"
 "    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
@@ -46,7 +47,7 @@ class Ui_detail_pemesanan(object):
         self.line_nama.setText("")
         self.line_nama.setObjectName("line_nama")
         self.line_email = QtWidgets.QLineEdit(self.groupBox)
-        self.line_email.setGeometry(QtCore.QRect(20, 70, 861, 51))
+        self.line_email.setGeometry(QtCore.QRect(20, 40, 861, 51))
         self.line_email.setStyleSheet("    border: none;\n"
 "    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
@@ -57,7 +58,7 @@ class Ui_detail_pemesanan(object):
         self.line_email.setText("")
         self.line_email.setObjectName("line_email")
         self.line_nomor = QtWidgets.QLineEdit(self.groupBox)
-        self.line_nomor.setGeometry(QtCore.QRect(20, 120, 861, 41))
+        self.line_nomor.setGeometry(QtCore.QRect(20, 100, 861, 41))
         self.line_nomor.setStyleSheet("    border: none;\n"
 "    border-bottom: 2px solid black;\n"
 "    border-radius: 0px;\n"
@@ -68,7 +69,7 @@ class Ui_detail_pemesanan(object):
         self.line_nomor.setText("")
         self.line_nomor.setObjectName("line_nomor")
         self.checkBox = QtWidgets.QCheckBox(self.groupBox)
-        self.checkBox.setGeometry(QtCore.QRect(740, 190, 131, 41))
+        self.checkBox.setGeometry(QtCore.QRect(740, 160, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -76,7 +77,7 @@ class Ui_detail_pemesanan(object):
         self.checkBox.setFont(font)
         self.checkBox.setObjectName("checkBox")
         self.label_3 = QtWidgets.QLabel(self.groupBox)
-        self.label_3.setGeometry(QtCore.QRect(40, 190, 411, 31))
+        self.label_3.setGeometry(QtCore.QRect(40, 160, 411, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -93,19 +94,25 @@ class Ui_detail_pemesanan(object):
         self.text_detail.setAlignment(QtCore.Qt.AlignCenter)
         self.text_detail.setObjectName("text_detail")
         self.textBrowser_data_pesan_tiket = QtWidgets.QTextBrowser(self.kereta_box)
-        self.textBrowser_data_pesan_tiket.setGeometry(QtCore.QRect(30, 30, 981, 301))
+        self.textBrowser_data_pesan_tiket.setGeometry(QtCore.QRect(30, 30, 981, 261))
         self.textBrowser_data_pesan_tiket.setStyleSheet("background-color: rgb(156, 209, 255); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.textBrowser_data_pesan_tiket.setObjectName("textBrowser_data_pesan_tiket")
         self.button_keluar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_keluar.setGeometry(QtCore.QRect(30, 770, 981, 41))
+        self.button_keluar.setGeometry(QtCore.QRect(30, 660, 981, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_keluar.setFont(font)
         self.button_keluar.setStyleSheet("QPushButton {\n"
-"  background-color: rgb(3, 137, 255); /* Transparansi */\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -114,14 +121,20 @@ class Ui_detail_pemesanan(object):
 "")
         self.button_keluar.setObjectName("button_keluar")
         self.button_lanjutkan = QtWidgets.QPushButton(self.kereta_box)
-        self.button_lanjutkan.setGeometry(QtCore.QRect(30, 720, 981, 41))
+        self.button_lanjutkan.setGeometry(QtCore.QRect(30, 610, 981, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_lanjutkan.setFont(font)
         self.button_lanjutkan.setStyleSheet("QPushButton {\n"
-"  background-color:  rgb(3, 137, 255); /* Transparansi */\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -130,7 +143,7 @@ class Ui_detail_pemesanan(object):
 "")
         self.button_lanjutkan.setObjectName("button_lanjutkan")
         self.label_waktu_ticket = QtWidgets.QLabel(self.kereta_box)
-        self.label_waktu_ticket.setGeometry(QtCore.QRect(100, 110, 501, 31))
+        self.label_waktu_ticket.setGeometry(QtCore.QRect(100, 90, 501, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -140,7 +153,7 @@ class Ui_detail_pemesanan(object):
         self.label_waktu_ticket.setAlignment(QtCore.Qt.AlignCenter)
         self.label_waktu_ticket.setObjectName("label_waktu_ticket")
         self.label_nama_kereta = QtWidgets.QLabel(self.kereta_box)
-        self.label_nama_kereta.setGeometry(QtCore.QRect(100, 250, 181, 31))
+        self.label_nama_kereta.setGeometry(QtCore.QRect(100, 230, 181, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -150,7 +163,7 @@ class Ui_detail_pemesanan(object):
         self.label_nama_kereta.setAlignment(QtCore.Qt.AlignCenter)
         self.label_nama_kereta.setObjectName("label_nama_kereta")
         self.label_layanan = QtWidgets.QLabel(self.kereta_box)
-        self.label_layanan.setGeometry(QtCore.QRect(300, 250, 161, 31))
+        self.label_layanan.setGeometry(QtCore.QRect(300, 230, 161, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -160,7 +173,7 @@ class Ui_detail_pemesanan(object):
         self.label_layanan.setAlignment(QtCore.Qt.AlignCenter)
         self.label_layanan.setObjectName("label_layanan")
         self.label_penumpang = QtWidgets.QLabel(self.kereta_box)
-        self.label_penumpang.setGeometry(QtCore.QRect(480, 250, 181, 31))
+        self.label_penumpang.setGeometry(QtCore.QRect(480, 230, 181, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -170,7 +183,7 @@ class Ui_detail_pemesanan(object):
         self.label_penumpang.setAlignment(QtCore.Qt.AlignCenter)
         self.label_penumpang.setObjectName("label_penumpang")
         self.label_asal = QtWidgets.QLabel(self.kereta_box)
-        self.label_asal.setGeometry(QtCore.QRect(100, 160, 281, 61))
+        self.label_asal.setGeometry(QtCore.QRect(100, 140, 281, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -179,7 +192,7 @@ class Ui_detail_pemesanan(object):
         self.label_asal.setAlignment(QtCore.Qt.AlignCenter)
         self.label_asal.setObjectName("label_asal")
         self.label_tujuan = QtWidgets.QLabel(self.kereta_box)
-        self.label_tujuan.setGeometry(QtCore.QRect(660, 160, 281, 61))
+        self.label_tujuan.setGeometry(QtCore.QRect(660, 140, 281, 61))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -188,7 +201,7 @@ class Ui_detail_pemesanan(object):
         self.label_tujuan.setAlignment(QtCore.Qt.AlignCenter)
         self.label_tujuan.setObjectName("label_tujuan")
         self.label = QtWidgets.QLabel(self.kereta_box)
-        self.label.setGeometry(QtCore.QRect(460, 160, 121, 61))
+        self.label.setGeometry(QtCore.QRect(460, 140, 121, 61))
         font = QtGui.QFont()
         font.setPointSize(30)
         font.setBold(True)
@@ -197,7 +210,7 @@ class Ui_detail_pemesanan(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.label_harga = QtWidgets.QLabel(self.kereta_box)
-        self.label_harga.setGeometry(QtCore.QRect(680, 250, 181, 31))
+        self.label_harga.setGeometry(QtCore.QRect(680, 230, 181, 31))
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setBold(True)
@@ -206,6 +219,14 @@ class Ui_detail_pemesanan(object):
         self.label_harga.setStyleSheet("")
         self.label_harga.setAlignment(QtCore.Qt.AlignCenter)
         self.label_harga.setObjectName("label_harga")
+        self.label_4 = QtWidgets.QLabel(detail_pemesanan)
+        self.label_4.setGeometry(QtCore.QRect(0, 0, 1611, 771))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.label_4.raise_()
+        self.kereta_box.raise_()
 
         self.retranslateUi(detail_pemesanan)
         QtCore.QMetaObject.connectSlotsByName(detail_pemesanan)
@@ -222,8 +243,8 @@ class Ui_detail_pemesanan(object):
         self.textBrowser_data_pesan_tiket.setHtml(_translate("detail_pemesanan", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600;\">PESAN TIKET </span></p></body></html>"))
         self.button_keluar.setText(_translate("detail_pemesanan", "KELUAR"))
         self.button_lanjutkan.setText(_translate("detail_pemesanan", "LANJUTKAN"))

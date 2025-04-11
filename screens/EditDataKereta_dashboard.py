@@ -1,6 +1,7 @@
 import json
 import os
 from PyQt5 import QtWidgets, QtCore
+from datetime import datetime, timedelta
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMessageBox
 from ui.dashboard_editDataKereta import Ui_dashboard_admin_Edit_Data as DashboardAdminEditData
@@ -9,6 +10,7 @@ INFOUMUM_DATABASE = "databases/informasi_umum.json"
 JADWALKERETA_DATABASE = "databases/jadwal_kereta.json"
 KURSIKERETA_DATABASE = "databases/kursi_kereta.json"
 FORMATGERBONG = "databases/formatGerbong.json"
+DELETEDDATA = "databases/deleted_records.json"
 
 class DashboardEditData(QtWidgets.QMainWindow):
     def __init__(self, main_app=None):
@@ -22,8 +24,9 @@ class DashboardEditData(QtWidgets.QMainWindow):
         # Load Data
         self.data = []
         self.load_data()
+        self.jadwal_hari_ini()
         
-    # ======================== Navigasi Dashboard Edit Data Kereta ========================
+    """ ======================== Navigasi Dashboard Edit Data Kereta ======================== """
     
     def setup_connections(self):
         self.ui.Lihat_Data_Kereta.clicked.connect(self.Lihat_Jadwal_kereta)
@@ -44,6 +47,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
     
     def Lihat_Jadwal_kereta(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Lihat_jadwal_kereta)
+        self.jadwal_hari_ini()
     def Tambah_Jadwal_kereta(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.Tambah_jadwal_kereta)
     def Edit_Jadwal_kereta(self):
@@ -53,94 +57,49 @@ class DashboardEditData(QtWidgets.QMainWindow):
     def Go_to_Main(self):
         self.main_app.setCurrentWidget(self.main_app.dashboard_admin)
         
-    # ============================== Pengelolaan Data Kereta ==============================
+    """ ============================== Pengelolaan Data Aplikasi ============================== """
     
+    def load_json(self, filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                return json.load(file)
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self, "Error", f"Gagal memuat file {filename}: {str(e)}")
+            return []
+        
     def load_data(self):
+        """Memuat dan menggabungkan data dari semua database"""
         combined_data = {}
-
-        for db_path in [INFOUMUM_DATABASE, JADWALKERETA_DATABASE, KURSIKERETA_DATABASE, FORMATGERBONG]:
-            if not os.path.exists(db_path):
-                QtWidgets.QMessageBox.critical(self, "Error", f"Database {db_path} tidak ditemukan.")
-                return
-            
-            try:
-                with open(db_path, "r") as file:
-                    data = json.load(file)
-                    for kereta in data:
-                        id_kereta = kereta.get("id_kereta")
-                        if id_kereta:
-                            if id_kereta not in combined_data:
-                                combined_data[id_kereta] = {}
-                            combined_data[id_kereta].update(kereta)
-            except json.JSONDecodeError:
-                QtWidgets.QMessageBox.critical(self, "Error", f"Database {db_path} rusak atau tidak dapat dibaca.")
-                return
+        
+        # Muat semua data terlebih dahulu
+        informasi_umum = self.load_json(INFOUMUM_DATABASE)
+        jadwal_kereta = self.load_json(JADWALKERETA_DATABASE)
+        kursi_kereta = self.load_json(KURSIKERETA_DATABASE)
+        
+        # Gabungkan data berdasarkan id_kereta
+        for data in [informasi_umum, jadwal_kereta, kursi_kereta]:
+            for item in data:
+                id_kereta = item.get("id_kereta")
+                if id_kereta:
+                    if id_kereta not in combined_data:
+                        combined_data[id_kereta] = {}
+                    combined_data[id_kereta].update(item)
         
         self.data = list(combined_data.values())
-        self.populate_table(self.data)
+        return self.data
     
-    def save_data(self, data):
-        
-        # MEMISAHKA DATA
-        informasi_umum_data = []
-        jadwal_kereta_data = []
-        kursi_kereta_data = []
-
-        for kereta in data:
-            id_kereta = kereta.get("id_kereta")
-
-            # Cek dan tambahkan ke informasi umum
-            if "nama_kereta" in kereta and "jenis_layanan" in kereta and "harga_tiket" in kereta:
-                informasi_umum_data.append({
-                    "id_kereta": id_kereta,
-                    "nama_kereta": kereta["nama_kereta"],
-                    "jenis_layanan": kereta["jenis_layanan"],
-                    "harga_tiket": kereta["harga_tiket"] 
-                })
-
-            # Cek dan tambahkan ke jadwal kereta
-            if "stasiun_transit" in kereta and "waktu_transit" in kereta:
-                jadwal_kereta_data.append({
-                    "id_kereta": id_kereta,
-                    "stasiun_transit": kereta["stasiun_transit"],
-                    "waktu_transit": kereta["waktu_transit"]
-                })
-
-            # Cek dan tambahkan ke kursi kereta
-            if "tanggal" in kereta and "gerbong" in kereta:
-                kursi_kereta_data.append({
-                    "id_kereta": id_kereta,
-                    "tanggal": kereta["tanggal"],
-                    "gerbong": kereta["gerbong"]
-                })
-
-        # Simpan data kembali ke file masing-masing
-        file_mapping = {
-            INFOUMUM_DATABASE: informasi_umum_data,
-            JADWALKERETA_DATABASE: jadwal_kereta_data,
-            KURSIKERETA_DATABASE: kursi_kereta_data,
-        }
-
-        for db_path, content in file_mapping.items():
-            try:
-                with open(db_path, "w", encoding="utf-8") as file:
-                    json.dump(content, file, indent=4)
-            except Exception as e:
-                QtWidgets.QMessageBox.critical(self, "Error", f"Gagal menyimpan ke {db_path}: {str(e)}")
-                return
-            
     def reset_table(self):
+        """Mereset tabel ke keadaan awal"""
         self.ui.input_id_Hapus_kereta.clear()
-        self.ui.input_JenisLayananLihat_Jadwal.clear()
         self.ui.tableWidget_Li.clearContents()  
         self.ui.tableWidget_Li.setRowCount(0) 
         self.ui.tableWidget_Hapus_Data.clearContents() 
         self.ui.tableWidget_Hapus_Data.setRowCount(0)
-        self.load_data() 
+        self.jadwal_hari_ini() 
         
     def reset_form_tambah_data(self):
+        """Mereset form tambah data"""
         self.ui.input_nama_kereta_TambahData.clear()    
-        self.ui.input_Jenis_layanan_TambahData.clear()
         self.ui.input_Stasiun_Transit_TambahData.clear()
         self.ui.input_Waktu_Operasional_TambahData.clear()
         self.ui.input_Tarif_Tiket_TambahData.clear()
@@ -148,30 +107,28 @@ class DashboardEditData(QtWidgets.QMainWindow):
         self.ui.input_Jumla_Gerbong_TambahData.clear()
 
     def reset_form_edit_data(self):
+        """Mereset form edit data"""
         self.ui.input_id_kereta_EditData.clear()
-        self.ui.input_nama_kereta_EditData.clear()
-        self.ui.input_nama_kereta_JenisLayanan.clear()
         self.ui.input_staisun_transit_EditData.clear()
         self.ui.input_waktu_transit_EditData.clear()
         self.ui.input_tarif_tiket_EditData.clear()
-        self.ui.dateEdit_TambahData_2.setDate(QDate.currentDate()) 
         self.ui.input_jumlah_gerbong_EdiData.clear()
-
-        
+    
     def populate_table(self, data):
-        #Mengisi tabel dengan data kereta, menampilkan stasiun dan waktu transit dalam format vertikal.
-        current_rows = self.ui.tableWidget_Li.rowCount()  # Ambil jumlah baris saat ini
-        new_rows = sum(len(kereta.get("stasiun_transit", [])) for kereta in data)  # Hitung total baris tambahan
-        total_rows = current_rows + new_rows  # Total baris setelah penambahan data
-
-        self.ui.tableWidget_Li.setRowCount(total_rows)
-        self.ui.tableWidget_Li.setColumnCount(6)  # 6 Kolom: ID, Nama, Tanggal, Jenis Layanan, Stasiun, Waktu
-
+        """Mengisi tabel dengan data kereta"""
+        self.ui.tableWidget_Li.setRowCount(0)  # Reset tabel
+        
+        if not data:
+            return
+            
+        # Set header tabel
         headers = ["ID Kereta", "Nama Kereta", "Tanggal", "Jenis Layanan", "Stasiun Transit", "Waktu Transit"]
+        self.ui.tableWidget_Li.setColumnCount(len(headers))
         self.ui.tableWidget_Li.setHorizontalHeaderLabels(headers)
         self.ui.tableWidget_Li.verticalHeader().setVisible(False)
-
-        row = current_rows  # Mulai dari baris terakhir yang ada
+        
+        # Isi data
+        row = 0
         for kereta in data:
             id_kereta = kereta.get("id_kereta", "-")
             nama_kereta = kereta.get("nama_kereta", "-")
@@ -179,30 +136,81 @@ class DashboardEditData(QtWidgets.QMainWindow):
             jenis_layanan = kereta.get("jenis_layanan", "-")
             stasiun_transit = kereta.get("stasiun_transit", [])
             waktu_transit = kereta.get("waktu_transit", [])
-
-            span_count = len(stasiun_transit)  # Hitung jumlah baris yang harus digabung
-
-            for i in range(len(stasiun_transit)):
-                self.ui.tableWidget_Li.setItem(row, 4, QtWidgets.QTableWidgetItem(stasiun_transit[i]))
-                self.ui.tableWidget_Li.setItem(row, 5, QtWidgets.QTableWidgetItem(waktu_transit[i] if i < len(waktu_transit) else "-"))
-                row += 1
-                
-            first_row = row - span_count
-            self.ui.tableWidget_Li.setItem(first_row, 0, QtWidgets.QTableWidgetItem(id_kereta))
-            self.ui.tableWidget_Li.setItem(first_row, 1, QtWidgets.QTableWidgetItem(nama_kereta))
-            self.ui.tableWidget_Li.setItem(first_row, 2, QtWidgets.QTableWidgetItem(tanggal))
-            self.ui.tableWidget_Li.setItem(first_row, 3, QtWidgets.QTableWidgetItem(jenis_layanan))
-
-            self.ui.tableWidget_Li.setSpan(first_row, 0, span_count, 1)  # ID Kereta
-            self.ui.tableWidget_Li.setSpan(first_row, 1, span_count, 1)  # Nama Kereta
-            self.ui.tableWidget_Li.setSpan(first_row, 2, span_count, 1)  # Tanggal
-            self.ui.tableWidget_Li.setSpan(first_row, 3, span_count, 1)  # Jenis layanan
-
+            
+            span_count = len(stasiun_transit) or 1
+            
+            # Tambahkan baris sesuai jumlah stasiun transit
+            self.ui.tableWidget_Li.setRowCount(self.ui.tableWidget_Li.rowCount() + span_count)
+            
+            # Isi data stasiun dan waktu transit
+            for i in range(span_count):
+                self.ui.tableWidget_Li.setItem(row + i, 4, QtWidgets.QTableWidgetItem(
+                    stasiun_transit[i] if i < len(stasiun_transit) else "-"))
+                self.ui.tableWidget_Li.setItem(row + i, 5, QtWidgets.QTableWidgetItem(
+                    waktu_transit[i] if i < len(waktu_transit) else "-"))
+            
+            # Isi data umum dan gabungkan sel
+            self.ui.tableWidget_Li.setItem(row, 0, QtWidgets.QTableWidgetItem(id_kereta))
+            self.ui.tableWidget_Li.setItem(row, 1, QtWidgets.QTableWidgetItem(nama_kereta))
+            self.ui.tableWidget_Li.setItem(row, 2, QtWidgets.QTableWidgetItem(tanggal))
+            self.ui.tableWidget_Li.setItem(row, 3, QtWidgets.QTableWidgetItem(jenis_layanan))
+            
+            # Gabungkan sel untuk data umum
+            if span_count > 1:
+                for col in range(4):
+                    self.ui.tableWidget_Li.setSpan(row, col, span_count, 1)
+            
+            row += span_count
+            
+        # Atur tampilan tabel
         self.ui.tableWidget_Li.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.ui.tableWidget_Li.resizeRowsToContents()
+    
+    def jadwal_hari_ini(self):
+        """Menampilkan jadwal kereta untuk hari ini dengan pengecekan lebih menyeluruh"""
+        today = datetime.today().strftime("%Y-%m-%d")
         
+        try:
+            # Muat semua data terpisah untuk pengecekan
+            kursi_data = self.load_json(KURSIKERETA_DATABASE)
+            informasi_umum = self.load_json(INFOUMUM_DATABASE)
+            jadwal_kereta = self.load_json(JADWALKERETA_DATABASE)
+            
+            hasil_pencarian = []
+            
+            # Cari semua kereta yang beroperasi hari ini
+            for kursi in kursi_data:
+                if kursi["tanggal"] == today:
+                    id_kereta = kursi["id_kereta"]
+                    
+                    # Cari informasi tambahan
+                    info = next((i for i in informasi_umum if i["id_kereta"] == id_kereta), None)
+                    jadwal = next((j for j in jadwal_kereta if j["id_kereta"] == id_kereta), None)
+                    
+                    if info and jadwal:
+                        hasil_pencarian.append({
+                            "id_kereta": id_kereta,
+                            "nama_kereta": info["nama_kereta"],
+                            "jenis_layanan": info["jenis_layanan"],
+                            "tanggal": today,
+                            "harga_tiket": info["harga_tiket"],
+                            "stasiun_transit": jadwal["stasiun_transit"],
+                            "waktu_transit": jadwal["waktu_transit"],
+                            "gerbong": kursi["gerbong"]
+                        })
+                        print(f"Data lengkap ditemukan untuk {id_kereta}")
+                    else:
+                        print(f"Data tidak lengkap untuk {id_kereta}")
+
+            self.populate_table(hasil_pencarian)
+                
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self, "Error", f"Gagal memuat jadwal: {str(e)}")
+        
+    """ ============================== Pengelolaan Edit, Tambah, Hapus Data Aplikasi ============================== """
+
     def validasi_input(self, **kwargs):
-        #VALIDASI INPUT TAK BOLEH KOSONG
+        """Validasi input tidak boleh kosong"""
         for key, value in kwargs.items():
             if not value:
                 QtWidgets.QMessageBox.warning(self, "Peringatan", f"Kolom {key.replace('_', ' ').title()} harus diisi!")
@@ -210,7 +218,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
         return True
 
     def validasi_angka(self, harga, jumlah_gerbong):
-        #VALIDASI HARGA DAN JUMLAH GERBONG HARUS ANGKA
+        """Validasi input angka"""
         try:
             harga = float(harga)
             jumlah_gerbong = int(jumlah_gerbong)
@@ -222,7 +230,7 @@ class DashboardEditData(QtWidgets.QMainWindow):
             return None, None
 
     def validasi_stasiun_waktu(self, stasiun, waktu):
-        #VALIDASI JUMLAH STASIUN DAN WAKTU TRANSIT
+        """Validasi jumlah stasiun dan waktu transit sama"""
         stasiun_list = [s.strip() for s in stasiun.split(",") if s.strip()]
         waktu_list = [w.strip() for w in waktu.split(",") if w.strip()]
         if len(stasiun_list) != len(waktu_list):
@@ -231,19 +239,17 @@ class DashboardEditData(QtWidgets.QMainWindow):
         return stasiun_list, waktu_list
 
     def load_format_gerbong(self, jenis_layanan):
-        #LOAD FORMAT GERBONG BERDASARKAN JENIS LAYANAN
-        try:
-            with open(FORMATGERBONG, "r", encoding="utf-8") as file:
-                format_gerbong_data = json.load(file)
-
-            # Cari format gerbong yang sesuai
-            return next((fg for fg in format_gerbong_data if fg["jenis_layanan"] == jenis_layanan), None)
-
-        except (FileNotFoundError, json.JSONDecodeError):
-            return None
+        """Memuat format gerbong berdasarkan jenis layanan"""
+        format_data = self.load_json(FORMATGERBONG)
+        # Normalisasi case untuk pencarian (case insensitive)
+        jenis_layanan = jenis_layanan.lower()
+        return next((fg for fg in format_data if fg["jenis_layanan"].lower() == jenis_layanan), None)
 
     def generate_gerbong(self, id_kereta, jumlah_gerbong, format_terpilih):
-        #MEMBUAT FORMAT GERBONG
+        """Membuat data gerbong baru"""
+        if not format_terpilih:
+            return []
+            
         return [
             {
                 "gerbong_id": f"{id_kereta}-G{i}",
@@ -252,251 +258,559 @@ class DashboardEditData(QtWidgets.QMainWindow):
             }
             for i in range(1, jumlah_gerbong + 1)
         ]
-        
+         
     def tambah_data_kereta(self):
-        #INPUT UI
+        """Menambahkan data kereta baru dengan validasi tanggal dan membuat kursi untuk 30 hari ke depan"""
+        # Validasi input dasar
         nama = self.ui.input_nama_kereta_TambahData.text().strip()
-        layanan = self.ui.input_Jenis_layanan_TambahData.text().strip()
+        layanan = self.ui.comboBox_Search_Data.currentText().strip()
         stasiun = self.ui.input_Stasiun_Transit_TambahData.text().strip()
-        waktuTransit = self.ui.input_Waktu_Operasional_TambahData.text().strip()
+        waktu = self.ui.input_Waktu_Operasional_TambahData.text().strip()
         harga = self.ui.input_Tarif_Tiket_TambahData.text().strip()
-        tanggal = self.ui.dateEdit_TambahData.date().toString('yyyy-MM-dd')
         jumlah_gerbong = self.ui.input_Jumla_Gerbong_TambahData.text().strip()
-
-        stasiun_transit_list, waktu_transit_list = self.validasi_stasiun_waktu(stasiun, waktuTransit)
-        if stasiun_transit_list is None:
+        
+        # Validasi input tidak kosong
+        if not self.validasi_input(nama=nama, layanan=layanan, harga=harga, 
+                                jumlah_gerbong=jumlah_gerbong, stasiun=stasiun, waktu=waktu):
             return
         
-        if not self.validasi_input(nama=nama, layanan=layanan, harga=harga, jumlah_gerbong=jumlah_gerbong, stasiun=stasiun, waktu=waktu_transit_list):
-            return
-        
+        # Validasi angka
         harga, jumlah_gerbong = self.validasi_angka(harga, jumlah_gerbong)
         if harga is None:
             return
         
-
-        # MUAT DATA YANG ADA
-        self.load_data()  
-        data = self.data if hasattr(self, "data") else []
-
-        # MEMBUAT ID BARU BERDASARKAN DATA YANG SUDAH ADA
-        existing_ids = [int(d["id_kereta"][2:]) for d in data if d["id_kereta"].startswith("KA")]
-        new_id_number = max(existing_ids, default=0) + 1
-        id_kereta_baru = f"KA{new_id_number:03}"
-
-        # MENAMBAHKAN DATA GERBONG SESUAI JENIS LAYANAN
-        format_terpilih = self.load_format_gerbong(layanan)
-        if not format_terpilih:
-            QtWidgets.QMessageBox.critical(self, "Error", "Format gerbong untuk jenis layanan ini tidak ditemukan!")
+        # Validasi stasiun dan waktu transit
+        stasiun_list, waktu_list = self.validasi_stasiun_waktu(stasiun, waktu)
+        if stasiun_list is None:
             return
-
-        gerbong_baru = self.generate_gerbong(id_kereta_baru, jumlah_gerbong, format_terpilih)
-
-        # MENYIMPAN DATA BARU DENGAN FORMAT DATABASE
-        informasi_umum_baru = {
-            "id_kereta": id_kereta_baru,
-            "nama_kereta": nama,
-            "jenis_layanan": layanan,
-            "harga_tiket": harga
-        }
-
-        jadwal_kereta_baru = {
-            "id_kereta": id_kereta_baru,
-            "stasiun_transit": stasiun_transit_list,  # Simpan sebagai list
-            "waktu_transit": waktu_transit_list       # Simpan sebagai list
-        }
-
-        kursi_kereta_baru = {
-            "id_kereta": id_kereta_baru,
-            "tanggal": tanggal,
-            "gerbong": gerbong_baru
-        }
-
-        # MENYIMPAN DATA KE DATABASE
+        
+        # Validasi format gerbong
+        format_gerbong = self.load_format_gerbong(layanan)
+        if not format_gerbong:
+            QtWidgets.QMessageBox.critical(self, "Error", f"Format gerbong untuk layanan '{layanan}' tidak ditemukan!")
+            return
+        
+        # Validasi tanggal
+        input_date = self.ui.dateEdit_TambahData.date()
+        today = QDate.currentDate()
+        
+        if input_date < today:
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Tanggal Tidak Valid",
+                "Tanggal operasional tidak boleh lebih awal dari hari ini!\n"
+                f"Tanggal hari ini: {today.toString('dd/MM/yyyy')}"
+            )
+            return
+        
+        # Generate ID baru
+        existing_ids = [int(d["id_kereta"][2:]) for d in self.data if d["id_kereta"].startswith("KA")]
+        new_id = f"KA{max(existing_ids, default=0) + 1:03d}"
+        
+        # Konversi QDate ke string tanggal
+        start_date = datetime(input_date.year(), input_date.month(), input_date.day())
+        tanggal_str = start_date.strftime('%Y-%m-%d')
+        
         try:
-            def update_database(file_path, new_entry):
-                existing_data = []
-                if os.path.exists(file_path):
-                    with open(file_path, "r", encoding="utf-8") as file:
-                        existing_data = json.load(file)
-                existing_data.append(new_entry)  # Tambahkan data baru
-                with open(file_path, "w", encoding="utf-8") as file:
-                    json.dump(existing_data, file, indent=4)
-
-            update_database(INFOUMUM_DATABASE, informasi_umum_baru)
-            update_database(JADWALKERETA_DATABASE, jadwal_kereta_baru)
-            update_database(KURSIKERETA_DATABASE, kursi_kereta_baru)
-
+            # 1. Tambahkan ke informasi umum
+            with open(INFOUMUM_DATABASE, 'r+', encoding='utf-8') as f:
+                info_data = json.load(f)
+                info_data.append({
+                    "id_kereta": new_id,
+                    "nama_kereta": nama,
+                    "jenis_layanan": layanan.lower(),
+                    "harga_tiket": harga,
+                    "jumlah_gerbong": int(jumlah_gerbong)
+                })
+                f.seek(0)
+                json.dump(info_data, f, indent=4, ensure_ascii=False)
+            
+            # 2. Tambahkan ke jadwal kereta
+            with open(JADWALKERETA_DATABASE, 'r+', encoding='utf-8') as f:
+                jadwal_data = json.load(f)
+                jadwal_data.append({
+                    "id_kereta": new_id,
+                    "stasiun_transit": stasiun_list,
+                    "waktu_transit": waktu_list
+                })
+                f.seek(0)
+                json.dump(jadwal_data, f, indent=4, ensure_ascii=False)
+            
+            # 3. Buat kursi untuk 30 hari ke depan
+            with open(KURSIKERETA_DATABASE, 'r+', encoding='utf-8') as f:
+                kursi_data = json.load(f)
+                
+                for i in range(30):
+                    current_date = start_date + timedelta(days=i)
+                    date_str = current_date.strftime('%Y-%m-%d')
+                    
+                    # Cek duplikasi
+                    if not any(k['id_kereta'] == new_id and k['tanggal'] == date_str for k in kursi_data):
+                        kursi_data.append({
+                            "id_kereta": new_id,
+                            "tanggal": date_str,
+                            "gerbong": self.generate_gerbong(new_id, int(jumlah_gerbong), format_gerbong)
+                        })
+                
+                f.seek(0)
+                json.dump(kursi_data, f, indent=4, ensure_ascii=False)
+            
+            QtWidgets.QMessageBox.information(
+                self,
+                "Sukses",
+                f"Data kereta {new_id} berhasil ditambahkan!\n"
+                f"Kursi telah dibuat untuk 30 hari ke depan mulai dari {tanggal_str}"
+            )
+            
+            self.reset_form_tambah_data()
+            self.load_data()
+            
         except Exception as e:
-            QtWidgets.QMessageBox.critical(self, "Error", f"Gagal menyimpan data: {str(e)}")
-            return
-        
-        #PERBARUI TABEL
-        self.ui.tableWidget_Li.clearContents()
-        self.ui.tableWidget_Li.setRowCount(0)
-        
-        self.load_data()
-
-        QtWidgets.QMessageBox.information(self, "Sukses", "Data kereta berhasil diperbarui!")
-
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Error",
+                f"Gagal menyimpan data: {str(e)}"
+            )
+            
     def edit_data_kereta(self):
-        # INPUT UI
-        id_kereta = self.ui.input_id_kereta_EditData.text().strip().upper()
-        nama_kereta = self.ui.input_nama_kereta_EditData.text().strip()
-        jenis_layanan = self.ui.input_nama_kereta_JenisLayanan.text().strip()
-        stasiun_transit = self.ui.input_staisun_transit_EditData.text().strip()
-        waktu_transit = self.ui.input_waktu_transit_EditData.text().strip()
-        harga_tiket = self.ui.input_tarif_tiket_EditData.text().strip()
-        tanggal = self.ui.dateEdit_TambahData_2.date().toString('yyyy-MM-dd')
-        jumlah_gerbong = self.ui.input_jumlah_gerbong_EdiData.text().strip()
+            """Mengedit data kereta berdasarkan ID tanpa menggunakan tanggal input"""
+            # Validasi ID Kereta
+            id_kereta = self.ui.input_id_kereta_EditData.text().strip().upper()
+            if not id_kereta:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", "ID Kereta harus diisi!")
+                return
 
-        stasiun_transit_list, waktu_transit_list = self.validasi_stasiun_waktu(stasiun_transit, waktu_transit)
-        if stasiun_transit_list is None:
-            return
-        
-        if not self.validasi_input(id_kereta=id_kereta, nama=nama_kereta, layanan=jenis_layanan, harga=harga_tiket, jumlah_gerbong=jumlah_gerbong, stasiun=stasiun_transit, waktu=waktu_transit):
-            return
-        
-        harga_tiket, jumlah_gerbong = self.validasi_angka(harga_tiket, jumlah_gerbong)
-        if harga_tiket is None:
-            return
-        
-        # MEMBUKA DATA
-        self.load_data()
-        data = self.data 
+            # Ambil input dari UI
+            stasiun = self.ui.input_staisun_transit_EditData.text().strip()
+            layanan = self.ui.comboBox_EditData.currentText().strip()
+            waktu = self.ui.input_waktu_transit_EditData.text().strip()
+            harga = self.ui.input_tarif_tiket_EditData.text().strip()
+            jumlah_gerbong = self.ui.input_jumlah_gerbong_EdiData.text().strip()
 
-        # CARI DATA KERETA BERDASARKAN ID
-        kereta_ditemukan = next((kereta for kereta in data if kereta["id_kereta"] == id_kereta), None)
-        if not kereta_ditemukan:
-            QtWidgets.QMessageBox.warning(self, "Peringatan", "ID Kereta tidak ditemukan!")
-            return
+            # Validasi input
+            stasiun_list = [s.strip() for s in stasiun.split(',') if s.strip()]
+            waktu_list = [w.strip() for w in waktu.split(',') if w.strip()]
+            
+            if not stasiun_list or not waktu_list:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", "Stasiun dan waktu transit tidak boleh kosong!")
+                return
+                
+            if len(stasiun_list) != len(waktu_list):
+                QtWidgets.QMessageBox.warning(self, "Peringatan", 
+                    "Jumlah stasiun transit dan waktu harus sama!")
+                return
 
-        # MEMBUAT PEMBARUAN DATA KERETA
-        kereta_ditemukan.update({
-            "nama_kereta": nama_kereta,
-            "jenis_layanan": jenis_layanan,
-            "harga_tiket": harga_tiket,
-            "stasiun_transit": stasiun_transit_list,
-            "waktu_transit": waktu_transit_list,
-            "tanggal": tanggal,
-        })
+            try:
+                harga = float(harga)
+                jumlah_gerbong = int(jumlah_gerbong)
+                if harga <= 0 or jumlah_gerbong <= 0:
+                    raise ValueError
+            except ValueError:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", 
+                    "Harga dan jumlah gerbong harus berupa angka positif!")
+                return
 
-        # MEMPERBARUI GERBONG
-        format_terpilih = self.load_format_gerbong(jenis_layanan)
-        if not format_terpilih:
-            QtWidgets.QMessageBox.critical(self, "Error", "Format gerbong untuk jenis layanan ini tidak ditemukan!")
-            return
+            # Baca semua data yang diperlukan
+            with open(INFOUMUM_DATABASE, 'r', encoding='utf-8') as f:
+                info_data = json.load(f)
+            
+            with open(JADWALKERETA_DATABASE, 'r', encoding='utf-8') as f:
+                jadwal_data = json.load(f)
+            
+            with open(KURSIKERETA_DATABASE, 'r', encoding='utf-8') as f:
+                kursi_data = json.load(f)
 
-        kereta_ditemukan["gerbong"] = self.generate_gerbong(id_kereta, jumlah_gerbong, format_terpilih)
+            # Cari data kereta yang akan diedit
+            kereta_info = next((k for k in info_data if k.get("id_kereta") == id_kereta), None)
+            if not kereta_info:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", "Data kereta tidak ditemukan!")
+                return
 
-        # MENYIMPAN PERUBAHAN KE DATABASE
-        self.save_data(data)
-        
-        # MEMBERSIHKAN TABEL
-        self.ui.tableWidget_Li.clearContents()
-        self.ui.tableWidget_Li.setRowCount(0)
-        
-        # MENGAMBIL DATA ULANG YANG TELAH DIPERBAHARUI
-        self.load_data()
+            # Cek perubahan jenis layanan
+            jenis_layanan_lama = kereta_info.get("jenis_layanan", "")
+            jenis_layanan_baru = layanan.lower()
+            format_berubah = jenis_layanan_lama != jenis_layanan_baru
 
-        QtWidgets.QMessageBox.information(self, "Sukses", "Data kereta berhasil diperbarui!")
+            # Update data informasi umum
+            for item in info_data:
+                if item.get("id_kereta") == id_kereta:
+                    item.update({
+                        "jenis_layanan": jenis_layanan_baru,
+                        "harga_tiket": harga,
+                        "jumlah_gerbong": jumlah_gerbong
+                    })
+                    break
+
+            # Update data jadwal
+            for item in jadwal_data:
+                if item.get("id_kereta") == id_kereta:
+                    item.update({
+                        "stasiun_transit": stasiun_list,
+                        "waktu_transit": waktu_list
+                    })
+                    break
+
+            # Update data kursi jika jenis layanan atau jumlah gerbong berubah
+            if format_berubah or (jumlah_gerbong != kereta_info.get("jumlah_gerbong", 0)):
+                format_gerbong = self.load_format_gerbong(jenis_layanan_baru)
+                if not format_gerbong:
+                    QtWidgets.QMessageBox.critical(self, "Error", "Format gerbong tidak ditemukan!")
+                    return
+                
+                # Update semua kursi untuk kereta ini
+                for k in kursi_data:
+                    if k.get("id_kereta") == id_kereta:
+                        k["gerbong"] = self.generate_gerbong(id_kereta, jumlah_gerbong, format_gerbong)
+
+            # Simpan semua perubahan
+            with open(INFOUMUM_DATABASE, 'w', encoding='utf-8') as f:
+                json.dump(info_data, f, indent=4, ensure_ascii=False)
+            
+            with open(JADWALKERETA_DATABASE, 'w', encoding='utf-8') as f:
+                json.dump(jadwal_data, f, indent=4, ensure_ascii=False)
+            
+            with open(KURSIKERETA_DATABASE, 'w', encoding='utf-8') as f:
+                json.dump(kursi_data, f, indent=4, ensure_ascii=False)
+
+            QtWidgets.QMessageBox.information(
+                self, 
+                "Sukses", 
+                f"Data kereta {id_kereta} berhasil diperbarui!\n"
+                f"Jenis layanan: {jenis_layanan_baru}\n"
+                f"Jumlah gerbong: {jumlah_gerbong}"
+            )
+            self.reset_form_edit_data()
+            self.load_data()
 
     def hapus_data_kereta(self):
-        id_kereta = self.ui.input_id_Hapus_kereta.text().strip().lower()
-            
-        # LOAD LAGI DATABASE
-        self.load_data()
-            
-        #MENYIMPAN DATA YANG BARU LOAD 
-        data = self.data
+        """Menghapus data kursi dengan penanganan error yang lebih robust"""
+        try:
+            id_kereta = self.ui.input_id_Hapus_kereta.text().strip().upper()
+            tanggal = self.ui.dateEdit_hapus_data_kereta.date().toString('yyyy-MM-dd')
 
-        # BUAT LIST BARU UNTUK SEMUA DATA KERETA KECUALI DATA YANG DIHAPUS
-        updated_data = [k for k in data if k.get("id_kereta", "").lower() != id_kereta]
+            if not id_kereta:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", "ID Kereta harus diisi!")
+                return
 
-        # VALIDASI DATA YANG AKAN DIHAPUS
-        if len(updated_data) == len(data):
-            QtWidgets.QMessageBox.information(self, "Info", "Kereta dengan ID tersebut tidak ditemukan.")
-            return
+            # 1. Baca data kursi
+            with open(KURSIKERETA_DATABASE, 'r', encoding='utf-8') as f:
+                try:
+                    kursi_data = json.load(f)
+                    if not isinstance(kursi_data, list):  # Pastikan ini list
+                        kursi_data = []
+                except (json.JSONDecodeError, FileNotFoundError):
+                    kursi_data = []
 
-        # SIMPAN ULANG DATABASE SESUDAH PENGHAPUSAN
-        self.save_data(updated_data)
+            # 2. Filter data yang akan dipertahankan
+            kursi_baru = []
+            for item in kursi_data:
+                try:
+                    # Pastikan item adalah dictionary dan memiliki key yang diperlukan
+                    if (isinstance(item, dict) and 
+                        item.get("id_kereta") != id_kereta or 
+                        item.get("tanggal") != tanggal):
+                        kursi_baru.append(item)
+                except Exception as e:
+                    print(f"Error processing item: {str(e)}")
+                    continue
+
+            # 3. Simpan ke log penghapusan
+            DELETED_RECORDS_LOG = "databases/deleted_records.json"
+            deleted_records = {"deleted": []}
             
-        # LOAD ULANG SESUDAH PENGHAPUSAN
-        self.load_data()
-            
-        # TAMPILAN LIHAT JADWAL DIPERBARUI
-        self.populate_table(self.data)
-        QtWidgets.QMessageBox.information(self, "Sukses", "Data kereta berhasil dihapus!")
+            try:
+                with open(DELETED_RECORDS_LOG, 'r', encoding='utf-8') as f:
+                    deleted_records = json.load(f)
+                    if not isinstance(deleted_records, dict):
+                        deleted_records = {"deleted": []}
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
 
-    def search_train_by_jenis_layanan(self):
-        # INPUT UI
-        jenis_layanan = self.ui.input_JenisLayananLihat_Jadwal.text().strip().lower()
+            deleted_records["deleted"].append({
+                "id_kereta": id_kereta,
+                "tanggal": tanggal,
+                "waktu_dihapus": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            })
+
+            with open(DELETED_RECORDS_LOG, 'w', encoding='utf-8') as f:
+                json.dump(deleted_records, f, indent=4, ensure_ascii=False)
+
+            # 4. Simpan data kursi yang sudah difilter
+            with open(KURSIKERETA_DATABASE, 'w', encoding='utf-8') as f:
+                json.dump(kursi_baru, f, indent=4, ensure_ascii=False)
+
+            # 5. Update UI
+            self.ui.tableWidget_Hapus_Data.clearContents()
+            self.ui.tableWidget_Hapus_Data.setRowCount(0)
+            
+            QtWidgets.QMessageBox.information(
+                self, 
+                "Sukses", 
+                f"Data kursi {id_kereta} pada {tanggal} berhasil dihapus!"
+            )
+
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Error",
+                f"Terjadi kesalahan saat menghapus data:\n{str(e)}"
+            )
+            print(f"Error detail: {str(e)}")
         
-        # PERBARUI TABEL
-        self.ui.tableWidget_Li.setRowCount(0)
+    def search_train_by_jenis_layanan(self):
+        """Mencari kereta berdasarkan jenis layanan dan tanggal dengan pengecekan data yang lebih akurat"""
+    
+        # Ambil input dari UI
+        jenis = self.ui.comboBox_Search_Data.currentText().strip().lower()
+        tanggal = self.ui.dateEdit_lihat_data_kereta.date().toString('yyyy-MM-dd')
+            
+            # Validasi input
+        if not jenis or not tanggal:
+                QtWidgets.QMessageBox.warning(
+                    self,
+                    "Input Tidak Lengkap",
+                    "Harap isi kedua field:\n- Jenis Layanan\n- Tanggal Pencarian"
+                )
+                return
 
-        # FILTER DATA
-        filtered_data = [k for k in self.data if k.get("jenis_layanan", "").strip().lower() == jenis_layanan]
+        # Muat data langsung dari sumber terpisah untuk akurasi
+        kursi_data = self.load_json(KURSIKERETA_DATABASE)
+        informasi_umum = self.load_json(INFOUMUM_DATABASE)
+        jadwal_kereta = self.load_json(JADWALKERETA_DATABASE)
+            
+            # Dictionary untuk mapping cepat
+        info_kereta = {item['id_kereta']: item for item in informasi_umum}
+        jadwal_kereta_dict = {item['id_kereta']: item for item in jadwal_kereta}
 
-        if not filtered_data:
-            QtWidgets.QMessageBox.information(self, "Hasil Pencarian", "Tidak ada kereta yang ditemukan.")
+        hasil = []
+        for kursi in kursi_data:
+                # Cari yang sesuai tanggal
+                if kursi['tanggal'] == tanggal:
+                    id_kereta = kursi['id_kereta']
+                    
+                    # Dapatkan info tambahan
+                    info = info_kereta.get(id_kereta)
+                    jadwal = jadwal_kereta_dict.get(id_kereta)
+                    
+                    # Cek jenis layanan dan kelengkapan data
+                    if info and jadwal and info.get('jenis_layanan', '').lower() == jenis:
+                        hasil.append({
+                            'id_kereta': id_kereta,
+                            'nama_kereta': info['nama_kereta'],
+                            'jenis_layanan': info['jenis_layanan'],
+                            'harga_tiket': info['harga_tiket'],
+                            'tanggal': kursi['tanggal'],
+                            'stasiun_transit': jadwal['stasiun_transit'],
+                            'waktu_transit': jadwal['waktu_transit'],
+                            'gerbong': kursi['gerbong']
+                        })
+
+        if not hasil:
+                # Pesan error lebih informatif
+                QtWidgets.QMessageBox.information(
+                    self,
+                    "Hasil Pencarian",
+                    f"Tidak ditemukan kereta {jenis.title()} pada tanggal {tanggal}.\n\n"
+                )
         else:
-            self.populate_table(filtered_data)
+            self.populate_table(hasil)
 
     def populate_table_hapus_data(self, filtered_data):
-        total_rows = sum(len(kereta.get("stasiun_transit", [])) for kereta in filtered_data)
+        """Mengisi tabel untuk halaman hapus data"""
+        self.ui.tableWidget_Hapus_Data.setRowCount(0)
         
-        self.ui.tableWidget_Hapus_Data.setRowCount(total_rows)
-        self.ui.tableWidget_Hapus_Data.setColumnCount(6)  # 5 Kolom: ID, Nama, Tanggal, Stasiun, Waktu
-
-        headers = ["ID Kereta", "Nama Kereta", "Tanggal", "Stasiun Transit", "Waktu Transit", "jenis layanan"]
+        if not filtered_data:
+            return
+            
+        headers = ["ID Kereta", "Nama Kereta", "Tanggal", "Stasiun Transit", "Waktu Transit", "Jenis Layanan"]
+        self.ui.tableWidget_Hapus_Data.setColumnCount(len(headers))
         self.ui.tableWidget_Hapus_Data.setHorizontalHeaderLabels(headers)
         self.ui.tableWidget_Hapus_Data.verticalHeader().setVisible(False)
-
+        
         row = 0
         for kereta in filtered_data:
-            id_kereta = kereta.get("id_kereta", "-")
-            nama_kereta = kereta.get("nama_kereta", "-")
-            tanggal = kereta.get("tanggal", "-")
             stasiun_transit = kereta.get("stasiun_transit", [])
-            waktu_transit = kereta.get("waktu_transit", [])
-            jenis_layanan = kereta.get("jenis_layanan", "-")
-
-            span_count = len(stasiun_transit)  # Hitung jumlah baris yang harus digabung
-
-            for i in range(len(stasiun_transit)):
-                self.ui.tableWidget_Hapus_Data.setItem(row, 3, QtWidgets.QTableWidgetItem(stasiun_transit[i]))
-                self.ui.tableWidget_Hapus_Data.setItem(row, 4, QtWidgets.QTableWidgetItem(waktu_transit[i] if i < len(waktu_transit) else "-"))
-                row += 1
-
-            # Menggabungkan sel untuk ID Kereta, Nama, Tanggal, dan Jenis Layanan
-            span_count = len(stasiun_transit)
-            self.ui.tableWidget_Hapus_Data.setItem(row - span_count, 0, QtWidgets.QTableWidgetItem(id_kereta))
-            self.ui.tableWidget_Hapus_Data.setItem(row - span_count, 1, QtWidgets.QTableWidgetItem(nama_kereta))
-            self.ui.tableWidget_Hapus_Data.setItem(row - span_count, 2, QtWidgets.QTableWidgetItem(tanggal))
-            self.ui.tableWidget_Hapus_Data.setItem(row - span_count, 5, QtWidgets.QTableWidgetItem(jenis_layanan))
-
-            self.ui.tableWidget_Hapus_Data.setSpan(row - span_count, 0, span_count, 1)  # ID Kereta
-            self.ui.tableWidget_Hapus_Data.setSpan(row - span_count, 1, span_count, 1)  # Nama Kereta
-            self.ui.tableWidget_Hapus_Data.setSpan(row - span_count, 2, span_count, 1)  # Tanggal
-            self.ui.tableWidget_Hapus_Data.setSpan(row - span_count, 5, span_count, 1)  # jenis layanan
-
-        # Atur tampilan tabel
+            span_count = len(stasiun_transit) or 1
+            
+            self.ui.tableWidget_Hapus_Data.setRowCount(self.ui.tableWidget_Hapus_Data.rowCount() + span_count)
+            
+            # Isi data stasiun dan waktu transit
+            for i in range(span_count):
+                self.ui.tableWidget_Hapus_Data.setItem(row + i, 3, QtWidgets.QTableWidgetItem(
+                    stasiun_transit[i] if i < len(stasiun_transit) else "-"))
+                self.ui.tableWidget_Hapus_Data.setItem(row + i, 4, QtWidgets.QTableWidgetItem(
+                    kereta.get("waktu_transit", [])[i] if i < len(kereta.get("waktu_transit", [])) else "-"))
+            
+            # Isi data umum
+            self.ui.tableWidget_Hapus_Data.setItem(row, 0, QtWidgets.QTableWidgetItem(kereta.get("id_kereta", "-")))
+            self.ui.tableWidget_Hapus_Data.setItem(row, 1, QtWidgets.QTableWidgetItem(kereta.get("nama_kereta", "-")))
+            self.ui.tableWidget_Hapus_Data.setItem(row, 2, QtWidgets.QTableWidgetItem(kereta.get("tanggal", "-")))
+            self.ui.tableWidget_Hapus_Data.setItem(row, 5, QtWidgets.QTableWidgetItem(kereta.get("jenis_layanan", "-")))
+            
+            # Gabungkan sel untuk data umum
+            if span_count > 1:
+                for col in [0, 1, 2, 5]:
+                    self.ui.tableWidget_Hapus_Data.setSpan(row, col, span_count, 1)
+            
+            row += span_count
+            
         self.ui.tableWidget_Hapus_Data.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.ui.tableWidget_Hapus_Data.resizeRowsToContents()
             
-    def search_train_by_id(self, data):
-        id_kereta = self.ui.input_id_Hapus_kereta.text().strip().lower()
-        data = self.data
-        filtered_data = [k for k in data if k.get("id_kereta", "").lower() == id_kereta.lower()]
-        
-        if not filtered_data:
-            QtWidgets.QMessageBox.information(self, "Hasil Pencarian", "Tidak ada kereta yang ditemukan.")
-        else:
-            self.populate_table_hapus_data(filtered_data)
+    def search_train_by_id(self):
+        """Mencari kereta berdasarkan ID dan tanggal dengan pengecekan lebih robust"""
+        try:
+            # Ambil input dari UI
+            id_kereta = self.ui.input_id_Hapus_kereta.text().strip().upper()
+            tanggal = self.ui.dateEdit_hapus_data_kereta.date().toString('yyyy-MM-dd')
             
- 
-    def clear_form(self):
-        self.ui.input_nama_kereta_TambahData.clear()
-        self.ui.input_Jenis_layanan_TambahData.clear()
-        self.ui.input_Tarif_Tiket_TambahData.clear()
+            # Validasi input
+            if not id_kereta:
+                QtWidgets.QMessageBox.warning(self, "Peringatan", "ID Kereta harus diisi!")
+                return
+                
+            # Muat data terbaru dari semua sumber
+            kursi_data = self.load_json(KURSIKERETA_DATABASE)
+            informasi_umum = self.load_json(INFOUMUM_DATABASE)
+            jadwal_kereta = self.load_json(JADWALKERETA_DATABASE)
+            
+            # Cari data yang sesuai
+            hasil = []
+            for kursi in kursi_data:
+                if kursi["id_kereta"] == id_kereta and kursi["tanggal"] == tanggal:
+                    # Cari informasi tambahan
+                    info = next((i for i in informasi_umum if i["id_kereta"] == id_kereta), None)
+                    jadwal = next((j for j in jadwal_kereta if j["id_kereta"] == id_kereta), None)
+                    
+                    if info and jadwal:
+                        hasil.append({
+                            "id_kereta": id_kereta,
+                            "nama_kereta": info["nama_kereta"],
+                            "jenis_layanan": info["jenis_layanan"],
+                            "tanggal": tanggal,
+                            "harga_tiket": info["harga_tiket"],
+                            "stasiun_transit": jadwal["stasiun_transit"],
+                            "waktu_transit": jadwal["waktu_transit"],
+                            "gerbong": kursi["gerbong"]
+                        })
+            
+            # Tampilkan hasil
+            if not hasil:
+                QtWidgets.QMessageBox.information(
+                    self, 
+                    "Hasil Pencarian",
+                    f"Tidak ditemukan kereta dengan ID {id_kereta} pada tanggal {tanggal}.\n"
+                )
+            else:
+                self.populate_table_hapus_data(hasil)
+                
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(
+                self, 
+                "Error",
+                f"Terjadi kesalahan saat mencari kereta:\n{str(e)}"
+            )
+            
+    def update_kursi_kereta(self):
+        """Memperbarui data kursi untuk 30 hari ke depan dengan penanganan error"""
+        try:
+            # 1. Baca semua data yang diperlukan
+            with open(KURSIKERETA_DATABASE, 'r', encoding='utf-8') as f:
+                kursi_kereta = json.load(f)
+            with open(INFOUMUM_DATABASE, 'r', encoding='utf-8') as f:
+                informasi_umum = json.load(f)
+            
+            # 2. Inisialisasi log penghapusan jika tidak ada
+            deleted_records = {"deleted": []}
+            try:
+                with open(DELETEDDATA, 'r', encoding='utf-8') as f:
+                    deleted_records = json.load(f)
+                    if not isinstance(deleted_records, dict) or "deleted" not in deleted_records:
+                        deleted_records = {"deleted": []}
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
+
+            # 3. Hitung rentang tanggal
+            today = datetime.today().date()
+            
+            # 4. Filter data kursi yang valid
+            kursi_kereta_baru = []
+            for kursi in kursi_kereta:
+                try:
+                    if isinstance(kursi, dict) and 'tanggal' in kursi:
+                        kursi_date = datetime.strptime(kursi['tanggal'], '%Y-%m-%d').date()
+                        if kursi_date >= today:
+                            kursi_kereta_baru.append(kursi)
+                except (ValueError, KeyError):
+                    continue
+
+            # 5. Proses pembaruan untuk setiap kereta aktif
+            for kereta in informasi_umum:
+                try:
+                    if not isinstance(kereta, dict):
+                        continue
+                        
+                    id_kereta = kereta.get('id_kereta')
+                    if not id_kereta:
+                        continue
+                    
+                    format_gerbong = self.load_format_gerbong(kereta.get('jenis_layanan', ''))
+                    if not format_gerbong:
+                        continue
+                    
+                    # 6. Generate data untuk 30 hari ke depan
+                    for i in range(31):
+                        tanggal = (today + timedelta(days=i)).strftime('%Y-%m-%d')
+                        
+                        # Skip jika di log penghapusan
+                        if any(d.get('id_kereta') == id_kereta and d.get('tanggal') == tanggal 
+                            for d in deleted_records.get('deleted', [])):
+                            continue
+                        
+                        # Cek apakah data sudah ada
+                        existing = next((k for k in kursi_kereta_baru 
+                                        if isinstance(k, dict) and 
+                                        k.get('id_kereta') == id_kereta and 
+                                        k.get('tanggal') == tanggal), None)
+                        
+                        # Skip jika bukan hari ini dan sudah ada
+                        if existing and i != 0:
+                            continue
+                        
+                        # Generate data baru
+                        gerbong = self.generate_gerbong(
+                            id_kereta,
+                            int(kereta.get('jumlah_gerbong', 0)),
+                            format_gerbong
+                        ) if isinstance(kereta.get('jumlah_gerbong'), (int, str)) else []
+                        
+                        new_data = {
+                            'id_kereta': id_kereta,
+                            'tanggal': tanggal,
+                            'gerbong': gerbong
+                        }
+                        
+                        if existing:
+                            kursi_kereta_baru[kursi_kereta_baru.index(existing)] = new_data
+                        else:
+                            kursi_kereta_baru.append(new_data)
+                            
+                except Exception as e:
+                    print(f"Error processing train {id_kereta}: {str(e)}")
+                    continue
+
+            # 7. Simpan perubahan
+            with open(KURSIKERETA_DATABASE, 'w', encoding='utf-8') as f:
+                json.dump(kursi_kereta_baru, f, indent=4, ensure_ascii=False)
+                
+            print(f"✅ Pembaruan selesai. Total data: {len(kursi_kereta_baru)}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Gagal memperbarui kursi kereta: {str(e)}")
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Error",
+                f"Terjadi kesalahan saat memperbarui data:\n{str(e)}"
+            )
+            return False

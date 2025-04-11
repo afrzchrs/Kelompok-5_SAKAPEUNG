@@ -1,12 +1,3 @@
-"""""
-Author: Roufiel Hadi
-NIM: 241524028
-Kelas: 1A
-Prodi: Sarjana Terapan Teknik Informatika
-Jurusan: Teknik Komputer dan Informatika
-Politeknik Negeri Bandung
-"""
-
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'dashboard_user.ui'
@@ -23,111 +14,584 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_dashboard_user_sakapeung(object):
     def setupUi(self, dashboard_user_sakapeung):
         dashboard_user_sakapeung.setObjectName("dashboard_user_sakapeung")
-        dashboard_user_sakapeung.resize(1107, 879)
+        dashboard_user_sakapeung.resize(1280, 766)
+        dashboard_user_sakapeung.setMaximumSize(QtCore.QSize(1280, 766))
         dashboard_user_sakapeung.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.centralwidget = QtWidgets.QWidget(dashboard_user_sakapeung)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_utama = QtWidgets.QFrame(self.centralwidget)
-        self.frame_utama.setGeometry(QtCore.QRect(30, 30, 1051, 781))
+        self.frame_utama.setGeometry(QtCore.QRect(0, 0, 1280, 771))
         self.frame_utama.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.frame_utama.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_utama.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_utama.setObjectName("frame_utama")
+        self.home_button = QtWidgets.QPushButton(self.frame_utama)
+        self.home_button.setGeometry(QtCore.QRect(40, 160, 231, 61))
+        self.home_button.setMouseTracking(True)
+        self.home_button.setTabletTracking(True)
+        self.home_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui/dashboard.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.home_button.setIcon(icon)
+        self.home_button.setIconSize(QtCore.QSize(32, 32))
+        self.home_button.setObjectName("home_button")
+        self.pembelian_tiket_button = QtWidgets.QPushButton(self.frame_utama)
+        self.pembelian_tiket_button.setGeometry(QtCore.QRect(40, 230, 231, 61))
+        self.pembelian_tiket_button.setMouseTracking(True)
+        self.pembelian_tiket_button.setTabletTracking(True)
+        self.pembelian_tiket_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("ui/ticket.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pembelian_tiket_button.setIcon(icon1)
+        self.pembelian_tiket_button.setIconSize(QtCore.QSize(32, 32))
+        self.pembelian_tiket_button.setObjectName("pembelian_tiket_button")
+        self.lihat_jadwal_kereta_button = QtWidgets.QPushButton(self.frame_utama)
+        self.lihat_jadwal_kereta_button.setGeometry(QtCore.QRect(40, 300, 231, 61))
+        self.lihat_jadwal_kereta_button.setMouseTracking(True)
+        self.lihat_jadwal_kereta_button.setTabletTracking(True)
+        self.lihat_jadwal_kereta_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("ui/schedule.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.lihat_jadwal_kereta_button.setIcon(icon2)
+        self.lihat_jadwal_kereta_button.setIconSize(QtCore.QSize(32, 32))
+        self.lihat_jadwal_kereta_button.setObjectName("lihat_jadwal_kereta_button")
+        self.tiket_saya_button = QtWidgets.QPushButton(self.frame_utama)
+        self.tiket_saya_button.setGeometry(QtCore.QRect(40, 370, 231, 61))
+        self.tiket_saya_button.setMouseTracking(True)
+        self.tiket_saya_button.setTabletTracking(True)
+        self.tiket_saya_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("ui/myticket.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tiket_saya_button.setIcon(icon3)
+        self.tiket_saya_button.setIconSize(QtCore.QSize(32, 32))
+        self.tiket_saya_button.setObjectName("tiket_saya_button")
+        self.dashboard_akun_button = QtWidgets.QPushButton(self.frame_utama)
+        self.dashboard_akun_button.setGeometry(QtCore.QRect(40, 440, 231, 61))
+        self.dashboard_akun_button.setMouseTracking(True)
+        self.dashboard_akun_button.setTabletTracking(True)
+        self.dashboard_akun_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("ui/account.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.dashboard_akun_button.setIcon(icon4)
+        self.dashboard_akun_button.setIconSize(QtCore.QSize(32, 32))
+        self.dashboard_akun_button.setObjectName("dashboard_akun_button")
+        self.dashboard_rekening_button = QtWidgets.QPushButton(self.frame_utama)
+        self.dashboard_rekening_button.setGeometry(QtCore.QRect(40, 510, 231, 61))
+        self.dashboard_rekening_button.setMouseTracking(True)
+        self.dashboard_rekening_button.setTabletTracking(True)
+        self.dashboard_rekening_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("ui/accounting.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.dashboard_rekening_button.setIcon(icon5)
+        self.dashboard_rekening_button.setIconSize(QtCore.QSize(32, 32))
+        self.dashboard_rekening_button.setObjectName("dashboard_rekening_button")
+        self.keluar_button = QtWidgets.QPushButton(self.frame_utama)
+        self.keluar_button.setGeometry(QtCore.QRect(40, 640, 231, 91))
+        self.keluar_button.setMouseTracking(True)
+        self.keluar_button.setTabletTracking(True)
+        self.keluar_button.setStyleSheet("QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: left;\n"
+"    border-radius: 20px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 30px;\n"
+"    font-size: 14pt;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 35px;\n"
+"}\n"
+"\n"
+"")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("ui/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.keluar_button.setIcon(icon6)
+        self.keluar_button.setIconSize(QtCore.QSize(32, 32))
+        self.keluar_button.setObjectName("keluar_button")
         self.user = QtWidgets.QStackedWidget(self.frame_utama)
-        self.user.setGeometry(QtCore.QRect(240, 0, 811, 781))
+        self.user.setGeometry(QtCore.QRect(289, 0, 991, 771))
         self.user.setStyleSheet("background : white;")
         self.user.setFrameShape(QtWidgets.QFrame.Box)
         self.user.setFrameShadow(QtWidgets.QFrame.Plain)
         self.user.setObjectName("user")
         self.user_dashboard = QtWidgets.QWidget()
         self.user_dashboard.setObjectName("user_dashboard")
-        self.home_user = QtWidgets.QTextEdit(self.user_dashboard)
-        self.home_user.setGeometry(QtCore.QRect(10, 120, 791, 651))
-        self.home_user.setObjectName("home_user")
-        self.home_title_user = QtWidgets.QTextBrowser(self.user_dashboard)
-        self.home_title_user.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.home_title_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
-"")
-        self.home_title_user.setObjectName("home_title_user")
+        self.label_4 = QtWidgets.QLabel(self.user_dashboard)
+        self.label_4.setGeometry(QtCore.QRect(-270, 0, 1321, 771))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.label_11 = QtWidgets.QLabel(self.user_dashboard)
+        self.label_11.setGeometry(QtCore.QRect(580, 340, 401, 391))
+        self.label_11.setStyleSheet("background : transparent;")
+        self.label_11.setText("")
+        self.label_11.setPixmap(QtGui.QPixmap("ui/4.png"))
+        self.label_11.setScaledContents(True)
+        self.label_11.setObjectName("label_11")
+        self.label = QtWidgets.QLabel(self.user_dashboard)
+        self.label.setGeometry(QtCore.QRect(30, 40, 631, 131))
+        self.label.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: transparent; /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */")
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.user_dashboard)
+        self.label_2.setGeometry(QtCore.QRect(30, 150, 631, 131))
+        self.label_2.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: transparent; /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */")
+        self.label_2.setObjectName("label_2")
         self.user.addWidget(self.user_dashboard)
         self.pembelian_tiket = QtWidgets.QWidget()
         self.pembelian_tiket.setObjectName("pembelian_tiket")
         self.pembelian_tiket_title_user = QtWidgets.QTextBrowser(self.pembelian_tiket)
-        self.pembelian_tiket_title_user.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.pembelian_tiket_title_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; \n"
+        self.pembelian_tiket_title_user.setGeometry(QtCore.QRect(100, 0, 811, 111))
+        self.pembelian_tiket_title_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: rgb(255, 255, 255); /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: transparent; /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
 "")
         self.pembelian_tiket_title_user.setObjectName("pembelian_tiket_title_user")
         self.pembelian_tiket_user = QtWidgets.QTextEdit(self.pembelian_tiket)
-        self.pembelian_tiket_user.setGeometry(QtCore.QRect(10, 120, 791, 651))
+        self.pembelian_tiket_user.setGeometry(QtCore.QRect(70, 130, 881, 561))
+        self.pembelian_tiket_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 20pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: rgb(255, 255, 255); /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.pembelian_tiket_user.setObjectName("pembelian_tiket_user")
+        self.label_14 = QtWidgets.QLabel(self.pembelian_tiket)
+        self.label_14.setGeometry(QtCore.QRect(-254, -8, 1291, 781))
+        self.label_14.setText("")
+        self.label_14.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_14.setScaledContents(True)
+        self.label_14.setObjectName("label_14")
+        self.label_14.raise_()
+        self.pembelian_tiket_title_user.raise_()
+        self.pembelian_tiket_user.raise_()
         self.user.addWidget(self.pembelian_tiket)
         self.lihat_jadwal_kereta = QtWidgets.QWidget()
         self.lihat_jadwal_kereta.setObjectName("lihat_jadwal_kereta")
         self.lihat_jadwal_kereta_title_user = QtWidgets.QTextBrowser(self.lihat_jadwal_kereta)
-        self.lihat_jadwal_kereta_title_user.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.lihat_jadwal_kereta_title_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; ")
+        self.lihat_jadwal_kereta_title_user.setGeometry(QtCore.QRect(110, 0, 811, 111))
+        self.lihat_jadwal_kereta_title_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: rgb(255, 255, 255); /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: transparent; /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.lihat_jadwal_kereta_title_user.setObjectName("lihat_jadwal_kereta_title_user")
-        self.lihat_jadwal_kereta_user = QtWidgets.QTextEdit(self.lihat_jadwal_kereta)
-        self.lihat_jadwal_kereta_user.setGeometry(QtCore.QRect(10, 120, 791, 651))
-        self.lihat_jadwal_kereta_user.setObjectName("lihat_jadwal_kereta_user")
+        self.verticalFrame_2 = QtWidgets.QFrame(self.lihat_jadwal_kereta)
+        self.verticalFrame_2.setGeometry(QtCore.QRect(260, 120, 511, 171))
+        self.verticalFrame_2.setStyleSheet("QFrame {\n"
+"    background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */\n"
+"    border: 2px solid #5C6BC0; /* Warna border */\n"
+"    border-radius: 10px; /* Membuat sudut melengkung */\n"
+"    padding: 10px; /* Memberikan jarak dalam frame */\n"
+"}\n"
+"\n"
+"QFrame#mainFrame {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang utama */\n"
+"    border: 3px solid #3F51B5; /* Warna border lebih tebal */\n"
+"    border-radius: 12px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QFrame#sidePanel {\n"
+"    background-color: #E1E1E1; /* Warna untuk panel samping */\n"
+"    border-right: 4px solid #3F51B5; /* Border hanya di sebelah kanan */\n"
+"}\n"
+"")
+        self.verticalFrame_2.setObjectName("verticalFrame_2")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalFrame_2)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.input_nama_kereta_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
+        self.input_nama_kereta_2.setStyleSheet("QLineEdit {\n"
+"    font-size: 14px;\n"
+"    padding: 8px;\n"
+"    border: 2px solid #5C6BC0; /* Warna border */\n"
+"    border-radius: 5px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB; /* Warna saat teks dipilih */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"")
+        self.input_nama_kereta_2.setText("")
+        self.input_nama_kereta_2.setObjectName("input_nama_kereta_2")
+        self.verticalLayout_2.addWidget(self.input_nama_kereta_2)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setContentsMargins(0, -1, 0, -1)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.input_stasiun_tujuan_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
+        self.input_stasiun_tujuan_2.setStyleSheet("QLineEdit {\n"
+"    min-width: 180px; /* Lebar minimum */\n"
+"    max-width: 200px; /* Lebar maksimum */\n"
+"    width: 50%; /* Lebar mengikuti parent */\n"
+"    padding: 8px; /* Jarak teks dari border */\n"
+"    border: 2px solid #3F51B5;\n"
+"    border-radius: 5px;\n"
+"    font-size: 14px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"")
+        self.input_stasiun_tujuan_2.setText("")
+        self.input_stasiun_tujuan_2.setObjectName("input_stasiun_tujuan_2")
+        self.horizontalLayout_3.addWidget(self.input_stasiun_tujuan_2)
+        self.label_3 = QtWidgets.QLabel(self.verticalFrame_2)
+        self.label_3.setMinimumSize(QtCore.QSize(20, 20))
+        self.label_3.setMaximumSize(QtCore.QSize(150, 150))
+        self.label_3.setStyleSheet("QLabel#label_2 {\n"
+"    background-image: url(E:/newPrefix/PYTHONN/ujiCoba1/icon/right-arrow.png);\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    background-size:10px 10px; /* Ubah ukuran sesuai kebutuhan */\n"
+"}\n"
+"")
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap(":/newPrefix/E:/PYTHONN/ujiCoba1/icon/right-arrow.png"))
+        self.label_3.setScaledContents(True)
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout_3.addWidget(self.label_3)
+        self.input_stasiunawal_2 = QtWidgets.QLineEdit(self.verticalFrame_2)
+        self.input_stasiunawal_2.setMaximumSize(QtCore.QSize(70, 16777215))
+        self.input_stasiunawal_2.setStyleSheet("QLineEdit {\n"
+"    min-width: 180px; /* Lebar minimum */\n"
+"    max-width: 200px; /* Lebar maksimum */\n"
+"    width: 50%; /* Lebar mengikuti parent */\n"
+"    padding: 8px; /* Jarak teks dari border */\n"
+"    border: 2px solid #3F51B5;\n"
+"    border-radius: 5px;\n"
+"    font-size: 14px;\n"
+"    background-color: #F3F4F6; /* Warna latar */\n"
+"    selection-background-color: #7986CB;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #3F51B5; /* Warna border saat fokus */\n"
+"    background-color: #FFFFFF; /* Warna latar saat fokus */\n"
+"}\n"
+"\n"
+"")
+        self.input_stasiunawal_2.setText("")
+        self.input_stasiunawal_2.setObjectName("input_stasiunawal_2")
+        self.horizontalLayout_3.addWidget(self.input_stasiunawal_2)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+        self.tombo_search_2 = QtWidgets.QPushButton(self.verticalFrame_2)
+        self.tombo_search_2.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.tombo_search_2.setStyleSheet("QPushButton {\n"
+"    background-color: #3F51B5; /* Warna biru */\n"
+"    color: white; /* Warna teks putih */\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #303F9F; /* Border biru tua */\n"
+"    border-radius: 8px; /* Membuat sudut tombol membulat */\n"
+"    padding: 8px 15px; /* Jarak dalam tombol */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #303F9F; /* Warna lebih gelap saat hover */\n"
+"    border: 2px solid #1A237E;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A237E; /* Warna lebih gelap saat ditekan */\n"
+"    border: 2px solid #000051;\n"
+"}\n"
+"")
+        self.tombo_search_2.setObjectName("tombo_search_2")
+        self.verticalLayout_2.addWidget(self.tombo_search_2)
+        self.verticalFrame_3 = QtWidgets.QFrame(self.lihat_jadwal_kereta)
+        self.verticalFrame_3.setGeometry(QtCore.QRect(60, 330, 921, 411))
+        self.verticalFrame_3.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.verticalFrame_3.setStyleSheet("QFrame {\n"
+"    background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */\n"
+"    border: 2px solid #5C6BC0; /* Warna border */\n"
+"    border-radius: 10px; /* Membuat sudut melengkung */\n"
+"    padding: 10px; /* Memberikan jarak dalam frame */\n"
+"}\n"
+"\n"
+"QFrame#mainFrame {\n"
+"    background-color: #FFFFFF; /* Warna latar belakang utama */\n"
+"    border: 3px solid #3F51B5; /* Warna border lebih tebal */\n"
+"    border-radius: 12px;\n"
+"    padding: 15px;\n"
+"}\n"
+"\n"
+"QFrame#sidePanel {\n"
+"    background-color: #E1E1E1; /* Warna untuk panel samping */\n"
+"    border-right: 4px solid #3F51B5; /* Border hanya di sebelah kanan */\n"
+"}\n"
+"")
+        self.verticalFrame_3.setObjectName("verticalFrame_3")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalFrame_3)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.verticalScrollBar_3 = QtWidgets.QScrollBar(self.verticalFrame_3)
+        self.verticalScrollBar_3.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.verticalScrollBar_3.setOrientation(QtCore.Qt.Vertical)
+        self.verticalScrollBar_3.setObjectName("verticalScrollBar_3")
+        self.verticalLayout_4.addWidget(self.verticalScrollBar_3)
+        self.label_12 = QtWidgets.QLabel(self.lihat_jadwal_kereta)
+        self.label_12.setGeometry(QtCore.QRect(-260, 0, 1291, 781))
+        self.label_12.setText("")
+        self.label_12.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_12.setScaledContents(True)
+        self.label_12.setObjectName("label_12")
+        self.label_12.raise_()
+        self.lihat_jadwal_kereta_title_user.raise_()
+        self.verticalFrame_2.raise_()
+        self.verticalFrame_3.raise_()
         self.user.addWidget(self.lihat_jadwal_kereta)
         self.tiket_saya = QtWidgets.QWidget()
         self.tiket_saya.setObjectName("tiket_saya")
         self.tiket_saya_tittle_user = QtWidgets.QTextBrowser(self.tiket_saya)
-        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(0, 0, 811, 111))
-        self.tiket_saya_tittle_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; ")
+        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(10, 30, 991, 111))
+        self.tiket_saya_tittle_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: rgb(255, 255, 255); /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: transparent; /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.tiket_saya_tittle_user.setObjectName("tiket_saya_tittle_user")
         self.tiket_saya_user = QtWidgets.QTextEdit(self.tiket_saya)
-        self.tiket_saya_user.setGeometry(QtCore.QRect(10, 120, 791, 651))
+        self.tiket_saya_user.setGeometry(QtCore.QRect(100, 130, 841, 551))
+        self.tiket_saya_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 20pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: rgb(255, 255, 255); /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 150); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.tiket_saya_user.setObjectName("tiket_saya_user")
+        self.label_13 = QtWidgets.QLabel(self.tiket_saya)
+        self.label_13.setGeometry(QtCore.QRect(-270, 0, 1301, 781))
+        self.label_13.setText("")
+        self.label_13.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_13.setScaledContents(True)
+        self.label_13.setObjectName("label_13")
+        self.label_13.raise_()
+        self.tiket_saya_tittle_user.raise_()
+        self.tiket_saya_user.raise_()
         self.user.addWidget(self.tiket_saya)
-        self.home_button = QtWidgets.QPushButton(self.frame_utama)
-        self.home_button.setGeometry(QtCore.QRect(10, 130, 221, 81))
-        self.home_button.setMouseTracking(True)
-        self.home_button.setTabletTracking(True)
-        self.home_button.setObjectName("home_button")
-        self.sakapeung = QtWidgets.QTextBrowser(self.frame_utama)
-        self.sakapeung.setGeometry(QtCore.QRect(10, 30, 251, 71))
-        self.sakapeung.setStyleSheet("  background: transparent;")
-        self.sakapeung.setObjectName("sakapeung")
-        self.pembelian_tiket_button = QtWidgets.QPushButton(self.frame_utama)
-        self.pembelian_tiket_button.setGeometry(QtCore.QRect(10, 220, 221, 81))
-        self.pembelian_tiket_button.setMouseTracking(True)
-        self.pembelian_tiket_button.setTabletTracking(True)
-        self.pembelian_tiket_button.setObjectName("pembelian_tiket_button")
-        self.lihat_jadwal_kereta_button = QtWidgets.QPushButton(self.frame_utama)
-        self.lihat_jadwal_kereta_button.setGeometry(QtCore.QRect(10, 310, 221, 81))
-        self.lihat_jadwal_kereta_button.setMouseTracking(True)
-        self.lihat_jadwal_kereta_button.setTabletTracking(True)
-        self.lihat_jadwal_kereta_button.setObjectName("lihat_jadwal_kereta_button")
-        self.tiket_saya_button = QtWidgets.QPushButton(self.frame_utama)
-        self.tiket_saya_button.setGeometry(QtCore.QRect(10, 400, 221, 81))
-        self.tiket_saya_button.setMouseTracking(True)
-        self.tiket_saya_button.setTabletTracking(True)
-        self.tiket_saya_button.setObjectName("tiket_saya_button")
-        self.dashboard_akun_button = QtWidgets.QPushButton(self.frame_utama)
-        self.dashboard_akun_button.setGeometry(QtCore.QRect(10, 490, 221, 81))
-        self.dashboard_akun_button.setMouseTracking(True)
-        self.dashboard_akun_button.setTabletTracking(True)
-        self.dashboard_akun_button.setObjectName("dashboard_akun_button")
-        self.dashboard_rekening_button = QtWidgets.QPushButton(self.frame_utama)
-        self.dashboard_rekening_button.setGeometry(QtCore.QRect(10, 580, 221, 81))
-        self.dashboard_rekening_button.setMouseTracking(True)
-        self.dashboard_rekening_button.setTabletTracking(True)
-        self.dashboard_rekening_button.setObjectName("dashboard_rekening_button")
-        self.keluar_button = QtWidgets.QPushButton(self.frame_utama)
-        self.keluar_button.setGeometry(QtCore.QRect(10, 670, 221, 81))
-        self.keluar_button.setMouseTracking(True)
-        self.keluar_button.setTabletTracking(True)
-        self.keluar_button.setObjectName("keluar_button")
-        self.sakapeung.raise_()
-        self.user.raise_()
+        self.label_5 = QtWidgets.QLabel(self.frame_utama)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/0.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame_utama)
+        self.lineEdit.setGeometry(QtCore.QRect(30, 600, 241, 20))
+        self.lineEdit.setStyleSheet("    font-family: \'Montserrat\';\n"
+"    font-size: 12pt;\n"
+"    font-weight: bold;")
+        self.lineEdit.setObjectName("lineEdit")
+        self.label_5.raise_()
         self.home_button.raise_()
         self.pembelian_tiket_button.raise_()
         self.lihat_jadwal_kereta_button.raise_()
@@ -135,6 +599,8 @@ class Ui_dashboard_user_sakapeung(object):
         self.dashboard_akun_button.raise_()
         self.dashboard_rekening_button.raise_()
         self.keluar_button.raise_()
+        self.user.raise_()
+        self.lineEdit.raise_()
         dashboard_user_sakapeung.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(dashboard_user_sakapeung)
@@ -144,69 +610,50 @@ class Ui_dashboard_user_sakapeung(object):
     def retranslateUi(self, dashboard_user_sakapeung):
         _translate = QtCore.QCoreApplication.translate
         dashboard_user_sakapeung.setWindowTitle(_translate("dashboard_user_sakapeung", "Dashboard SAKAPEUNG"))
-        self.home_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah dashboard user</p></body></html>"))
-        self.home_title_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Dashboard User</span></p></body></html>"))
+        self.home_button.setText(_translate("dashboard_user_sakapeung", " Dashboard"))
+        self.pembelian_tiket_button.setText(_translate("dashboard_user_sakapeung", " Beli Tiket"))
+        self.lihat_jadwal_kereta_button.setText(_translate("dashboard_user_sakapeung", " Lihat Jadwal"))
+        self.tiket_saya_button.setText(_translate("dashboard_user_sakapeung", " Tiket Saya"))
+        self.dashboard_akun_button.setText(_translate("dashboard_user_sakapeung", " Dashboard Akun"))
+        self.dashboard_rekening_button.setText(_translate("dashboard_user_sakapeung", " Rekening"))
+        self.keluar_button.setText(_translate("dashboard_user_sakapeung", " Keluar"))
+        self.label.setText(_translate("dashboard_user_sakapeung", "Selamat Datang di"))
+        self.label_2.setText(_translate("dashboard_user_sakapeung", "SAKAPEUNG!"))
         self.pembelian_tiket_title_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Pembelian Tiket Kereta Api</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:40pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:26pt;\"> </span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:26pt;\">Pembelian Tiket Kereta Api</span></p></body></html>"))
         self.pembelian_tiket_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu pembelian tiket</p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400;\">ini adalah halaman pembelian tiket</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400;\"><br /></p></body></html>"))
         self.lihat_jadwal_kereta_title_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Lihat Jadwal Kereta Api</span></p></body></html>"))
-        self.lihat_jadwal_kereta_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu lihat jadwal kereta api</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:40pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:28pt;\"> </span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:28pt;\">Lihat Jadwal Kereta Api</span></p></body></html>"))
+        self.input_nama_kereta_2.setPlaceholderText(_translate("dashboard_user_sakapeung", "Masukkan nama kereta"))
+        self.input_stasiun_tujuan_2.setPlaceholderText(_translate("dashboard_user_sakapeung", "Staisun Awal"))
+        self.input_stasiunawal_2.setPlaceholderText(_translate("dashboard_user_sakapeung", "Stasiun Tujuan"))
+        self.tombo_search_2.setText(_translate("dashboard_user_sakapeung", "Cari Kereta"))
         self.tiket_saya_tittle_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Tiket Saya</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:40pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:28pt;\">Tiket Saya</span></p></body></html>"))
         self.tiket_saya_user.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu tiket saya</p>\n"
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.home_button.setText(_translate("dashboard_user_sakapeung", "Home"))
-        self.sakapeung.setHtml(_translate("dashboard_user_sakapeung", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt;\">SAKAPEUNG</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:22pt;\"><br /></p></body></html>"))
-        self.pembelian_tiket_button.setText(_translate("dashboard_user_sakapeung", "Pembelian Tiket"))
-        self.lihat_jadwal_kereta_button.setText(_translate("dashboard_user_sakapeung", "Lihat Jadwal Kereta"))
-        self.tiket_saya_button.setText(_translate("dashboard_user_sakapeung", "Tiket Saya"))
-        self.dashboard_akun_button.setText(_translate("dashboard_user_sakapeung", "Dashboard Akun"))
-        self.dashboard_rekening_button.setText(_translate("dashboard_user_sakapeung", "Dashboard Rekening"))
-        self.keluar_button.setText(_translate("dashboard_user_sakapeung", "Keluar Dari Aplikasi"))
+        self.lineEdit.setText(_translate("dashboard_user_sakapeung", "-------------------------------------"))
 
 
 if __name__ == "__main__":

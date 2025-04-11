@@ -14,20 +14,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_dashboard_detail_tiket(object):
     def setupUi(self, dashboard_detail_tiket):
         dashboard_detail_tiket.setObjectName("dashboard_detail_tiket")
-        dashboard_detail_tiket.resize(1107, 879)
+        dashboard_detail_tiket.resize(1280, 766)
+        dashboard_detail_tiket.setMaximumSize(QtCore.QSize(1280, 766))
         dashboard_detail_tiket.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.centralwidget = QtWidgets.QWidget(dashboard_detail_tiket)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_utama = QtWidgets.QFrame(self.centralwidget)
-        self.frame_utama.setGeometry(QtCore.QRect(30, 30, 1051, 781))
+        self.frame_utama.setGeometry(QtCore.QRect(-10, 0, 1311, 821))
         self.frame_utama.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.frame_utama.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_utama.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_utama.setObjectName("frame_utama")
         self.user = QtWidgets.QStackedWidget(self.frame_utama)
-        self.user.setGeometry(QtCore.QRect(0, 0, 1051, 781))
+        self.user.setGeometry(QtCore.QRect(10, 0, 1281, 781))
         self.user.setStyleSheet("background : white;")
         self.user.setFrameShape(QtWidgets.QFrame.Box)
         self.user.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -70,12 +71,19 @@ class Ui_dashboard_detail_tiket(object):
         self.tiket_saya = QtWidgets.QWidget()
         self.tiket_saya.setObjectName("tiket_saya")
         self.tiket_saya_tittle_user = QtWidgets.QTextBrowser(self.tiket_saya)
-        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(0, 0, 1051, 111))
-        self.tiket_saya_tittle_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; ")
+        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(120, 40, 1031, 101))
+        self.tiket_saya_tittle_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: transparent; /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */")
         self.tiket_saya_tittle_user.setObjectName("tiket_saya_tittle_user")
         self.frame_detail_tiket = QtWidgets.QFrame(self.tiket_saya)
-        self.frame_detail_tiket.setGeometry(QtCore.QRect(270, 190, 491, 471))
+        self.frame_detail_tiket.setGeometry(QtCore.QRect(200, 190, 871, 471))
         self.frame_detail_tiket.setMinimumSize(QtCore.QSize(300, 400))
         self.frame_detail_tiket.setStyleSheet("/* Frame utama */\n"
 "QFrame#frame_detail_tiket {\n"
@@ -90,8 +98,7 @@ class Ui_dashboard_detail_tiket(object):
 "\n"
 "/* Header \"Detail Tiket\" */\n"
 "QLabel#label_header {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"                                stop:0 #007bff, stop:1 #0056b3);\n"
+"    background: rgb(158, 213, 255);\n"
 "    color: white;\n"
 "    font-size: 16px;\n"
 "    font-weight: bold;\n"
@@ -151,76 +158,84 @@ class Ui_dashboard_detail_tiket(object):
         self.frame_detail_tiket.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_detail_tiket.setObjectName("frame_detail_tiket")
         self.label_header = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_header.setGeometry(QtCore.QRect(190, 20, 121, 31))
+        self.label_header.setGeometry(QtCore.QRect(380, 20, 121, 31))
+        self.label_header.setStyleSheet("background : transparent;")
         self.label_header.setObjectName("label_header")
         self.label_2 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_2.setGeometry(QtCore.QRect(90, 70, 111, 21))
+        self.label_2.setGeometry(QtCore.QRect(90, 70, 121, 21))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_3.setGeometry(QtCore.QRect(90, 100, 111, 21))
+        self.label_3.setGeometry(QtCore.QRect(90, 100, 121, 21))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_4.setGeometry(QtCore.QRect(90, 130, 111, 21))
+        self.label_4.setGeometry(QtCore.QRect(90, 130, 121, 21))
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_5.setGeometry(QtCore.QRect(90, 160, 111, 21))
+        self.label_5.setGeometry(QtCore.QRect(90, 160, 121, 21))
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_6.setGeometry(QtCore.QRect(90, 190, 111, 21))
+        self.label_6.setGeometry(QtCore.QRect(90, 190, 121, 21))
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_7.setGeometry(QtCore.QRect(90, 220, 111, 21))
+        self.label_7.setGeometry(QtCore.QRect(90, 220, 121, 21))
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_8.setGeometry(QtCore.QRect(90, 250, 111, 21))
+        self.label_8.setGeometry(QtCore.QRect(90, 250, 121, 21))
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_9.setGeometry(QtCore.QRect(90, 280, 111, 21))
+        self.label_9.setGeometry(QtCore.QRect(90, 280, 121, 21))
         self.label_9.setObjectName("label_9")
         self.label_10 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_10.setGeometry(QtCore.QRect(90, 310, 111, 21))
+        self.label_10.setGeometry(QtCore.QRect(90, 310, 121, 21))
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_11.setGeometry(QtCore.QRect(90, 340, 111, 21))
+        self.label_11.setGeometry(QtCore.QRect(90, 340, 121, 21))
         self.label_11.setObjectName("label_11")
         self.label_13 = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_13.setGeometry(QtCore.QRect(90, 370, 111, 21))
+        self.label_13.setGeometry(QtCore.QRect(90, 370, 121, 21))
         self.label_13.setObjectName("label_13")
         self.label_namapenumpang = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_namapenumpang.setGeometry(QtCore.QRect(250, 70, 211, 21))
+        self.label_namapenumpang.setGeometry(QtCore.QRect(450, 70, 341, 21))
         self.label_namapenumpang.setObjectName("label_namapenumpang")
         self.label_idkereta = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_idkereta.setGeometry(QtCore.QRect(250, 100, 211, 21))
+        self.label_idkereta.setGeometry(QtCore.QRect(450, 100, 341, 21))
         self.label_idkereta.setObjectName("label_idkereta")
         self.label_namakereta = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_namakereta.setGeometry(QtCore.QRect(250, 130, 211, 21))
+        self.label_namakereta.setGeometry(QtCore.QRect(450, 130, 341, 21))
         self.label_namakereta.setObjectName("label_namakereta")
         self.label_stasiunawal = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_stasiunawal.setGeometry(QtCore.QRect(250, 160, 211, 21))
+        self.label_stasiunawal.setGeometry(QtCore.QRect(450, 160, 341, 21))
         self.label_stasiunawal.setObjectName("label_stasiunawal")
         self.label_stasiunakhir = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_stasiunakhir.setGeometry(QtCore.QRect(250, 190, 211, 21))
+        self.label_stasiunakhir.setGeometry(QtCore.QRect(450, 190, 341, 21))
         self.label_stasiunakhir.setObjectName("label_stasiunakhir")
         self.label_tanggal = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_tanggal.setGeometry(QtCore.QRect(250, 220, 211, 21))
+        self.label_tanggal.setGeometry(QtCore.QRect(450, 220, 341, 21))
         self.label_tanggal.setObjectName("label_tanggal")
         self.label_waktu = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_waktu.setGeometry(QtCore.QRect(250, 250, 211, 21))
+        self.label_waktu.setGeometry(QtCore.QRect(450, 250, 341, 21))
         self.label_waktu.setObjectName("label_waktu")
         self.label_jenislayanan = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_jenislayanan.setGeometry(QtCore.QRect(250, 280, 211, 21))
+        self.label_jenislayanan.setGeometry(QtCore.QRect(450, 280, 341, 21))
         self.label_jenislayanan.setObjectName("label_jenislayanan")
         self.label_idkursi = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_idkursi.setGeometry(QtCore.QRect(250, 310, 211, 21))
+        self.label_idkursi.setGeometry(QtCore.QRect(450, 310, 341, 21))
         self.label_idkursi.setObjectName("label_idkursi")
         self.label_tarif = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_tarif.setGeometry(QtCore.QRect(250, 340, 211, 21))
+        self.label_tarif.setGeometry(QtCore.QRect(450, 340, 341, 21))
         self.label_tarif.setObjectName("label_tarif")
         self.label_waktupemesanan = QtWidgets.QLabel(self.frame_detail_tiket)
-        self.label_waktupemesanan.setGeometry(QtCore.QRect(250, 370, 211, 21))
+        self.label_waktupemesanan.setGeometry(QtCore.QRect(450, 370, 341, 21))
         self.label_waktupemesanan.setObjectName("label_waktupemesanan")
+        self.label_12 = QtWidgets.QLabel(self.tiket_saya)
+        self.label_12.setGeometry(QtCore.QRect(0, 0, 1280, 766))
+        self.label_12.setMaximumSize(QtCore.QSize(1280, 766))
+        self.label_12.setText("")
+        self.label_12.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_12.setScaledContents(True)
+        self.label_12.setObjectName("label_12")
         self.button_kembali = QtWidgets.QPushButton(self.tiket_saya)
-        self.button_kembali.setGeometry(QtCore.QRect(470, 690, 81, 31))
+        self.button_kembali.setGeometry(QtCore.QRect(550, 670, 171, 31))
         self.button_kembali.setStyleSheet("QPushButton#button_kembali {\n"
 "    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
 "                                stop:0 #ff4d4d, stop:1 #b30000);\n"
@@ -248,6 +263,10 @@ class Ui_dashboard_detail_tiket(object):
 "}\n"
 "")
         self.button_kembali.setObjectName("button_kembali")
+        self.label_12.raise_()
+        self.tiket_saya_tittle_user.raise_()
+        self.frame_detail_tiket.raise_()
+        self.button_kembali.raise_()
         self.user.addWidget(self.tiket_saya)
         dashboard_detail_tiket.setCentralWidget(self.centralwidget)
 
@@ -261,47 +280,47 @@ class Ui_dashboard_detail_tiket(object):
         self.home_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Ini adalah dashboard user</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah dashboard user</p></body></html>"))
         self.home_title_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Dashboard User</span></p></body></html>"))
         self.pembelian_tiket_title_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Pembelian Tiket Kereta Api</span></p></body></html>"))
         self.pembelian_tiket_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Ini adalah menu pembelian tiket</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu pembelian tiket</p></body></html>"))
         self.lihat_jadwal_kereta_title_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Lihat Jadwal Kereta Api</span></p></body></html>"))
         self.lihat_jadwal_kereta_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Ini adalah menu lihat jadwal kereta api</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu lihat jadwal kereta api</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.tiket_saya_tittle_user.setHtml(_translate("dashboard_detail_tiket", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Tiket Saya</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:40pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:6pt;\"> </span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:24pt;\">Tiket Saya</span></p></body></html>"))
         self.label_header.setText(_translate("dashboard_detail_tiket", "Detail Tiket"))
         self.label_2.setText(_translate("dashboard_detail_tiket", "Nama Penumpang:"))
         self.label_3.setText(_translate("dashboard_detail_tiket", "ID Kereta:"))

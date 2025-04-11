@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1107</width>
-    <height>879</height>
+    <width>1280</width>
+    <height>766</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>766</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dashboard SAKAPEUNG</string>
@@ -21,10 +27,10 @@
    <widget class="QFrame" name="frame_utama">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>1051</width>
-      <height>781</height>
+      <x>-10</x>
+      <y>-5</y>
+      <width>1301</width>
+      <height>771</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,9 +46,9 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>300</x>
        <y>0</y>
-       <width>811</width>
+       <width>991</width>
        <height>781</height>
       </rect>
      </property>
@@ -56,108 +62,70 @@ border-radius: 15px; /* Membuat sudut melengkung */</string>
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="rekening">
-      <widget class="QTextEdit" name="home_rekening">
+      <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>791</width>
-         <height>651</height>
+         <x>-294</x>
+         <y>2</y>
+         <width>1291</width>
+         <height>781</height>
         </rect>
        </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ini adalah dashboard rekening&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="text">
+        <string/>
        </property>
-      </widget>
-      <widget class="QTextBrowser" name="home_title_rekening">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
-        </rect>
+       <property name="pixmap">
+        <pixmap>dashboard_rekening.png</pixmap>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; 
-</string>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Dashboard Rekening&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
      <widget class="QWidget" name="lihat_informasi_rekening">
-      <widget class="QTextBrowser" name="lihat_informasi_rekening_tittle_rekening">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; 
-</string>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Lihat Informasi Rekening&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
       <widget class="QTextEdit" name="lihat_informasi_rekening_rekening">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>280</y>
-         <width>791</width>
-         <height>491</height>
+         <x>70</x>
+         <y>390</y>
+         <width>841</width>
+         <height>281</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background : white;
+border-radius: 10px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="pin_konfirmasi_LIR_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>130</y>
+         <x>130</x>
+         <y>210</y>
          <width>731</width>
-         <height>61</height>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -174,22 +142,28 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="submit_pin_LIR">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>220</y>
-         <width>231</width>
-         <height>41</height>
+         <x>640</x>
+         <y>290</y>
+         <width>241</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Montserrat</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -201,47 +175,47 @@ QPushButton:hover {
         <string>Submit</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="edit_informasi_rekening">
-      <widget class="QTextBrowser" name="edit_informasi_rekening_tittle_rekening">
+      <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
+         <x>-294</x>
+         <y>2</y>
+         <width>1291</width>
+         <height>771</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; 
-</string>
+       <property name="text">
+        <string/>
        </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Edit Informasi Rekening&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="pixmap">
+        <pixmap>dashboard_rekening_pin.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
+      <zorder>label_3</zorder>
+      <zorder>lihat_informasi_rekening_rekening</zorder>
+      <zorder>pin_konfirmasi_LIR_input</zorder>
+      <zorder>submit_pin_LIR</zorder>
+     </widget>
+     <widget class="QWidget" name="edit_informasi_rekening">
       <widget class="QLineEdit" name="pin_konfirmasi_no_rekening_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>150</y>
-         <width>731</width>
-         <height>61</height>
+         <x>90</x>
+         <y>120</y>
+         <width>801</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -258,22 +232,28 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="submit_ganti_nomor_rekening">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>320</y>
-         <width>231</width>
+         <x>670</x>
+         <y>270</y>
+         <width>241</width>
          <height>41</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Montserrat</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -288,18 +268,19 @@ QPushButton:hover {
       <widget class="QLineEdit" name="nomor_rekening_baru_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>220</y>
-         <width>731</width>
-         <height>61</height>
+         <x>90</x>
+         <y>200</y>
+         <width>811</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -313,18 +294,19 @@ QPushButton:hover {
       <widget class="QLineEdit" name="pin_baru_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>470</y>
-         <width>731</width>
+         <x>90</x>
+         <y>490</y>
+         <width>801</width>
          <height>61</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -338,18 +320,19 @@ QPushButton:hover {
       <widget class="QLineEdit" name="konfirmasi_pin_baru_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>530</y>
-         <width>731</width>
-         <height>61</height>
+         <x>90</x>
+         <y>580</y>
+         <width>801</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -363,18 +346,19 @@ QPushButton:hover {
       <widget class="QLineEdit" name="pin_konfirmasi_pin_input">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>90</x>
          <y>410</y>
-         <width>731</width>
-         <height>61</height>
+         <width>801</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -391,22 +375,28 @@ QPushButton:hover {
       <widget class="QPushButton" name="submit_ganti_pin">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>610</y>
-         <width>231</width>
+         <x>670</x>
+         <y>650</y>
+         <width>241</width>
          <height>41</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Montserrat</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -418,47 +408,51 @@ QPushButton:hover {
         <string>Ganti Pin</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="top_up">
-      <widget class="QTextBrowser" name="top_up_title_rekening">
+      <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>811</width>
-         <height>111</height>
+         <x>-294</x>
+         <y>2</y>
+         <width>1291</width>
+         <height>771</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);
-border-radius: 0px; 
-</string>
+       <property name="text">
+        <string/>
        </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Top Up Saldo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="pixmap">
+        <pixmap>dashboard_rekening_edit.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
+      <zorder>label_5</zorder>
+      <zorder>pin_konfirmasi_no_rekening_input</zorder>
+      <zorder>submit_ganti_nomor_rekening</zorder>
+      <zorder>nomor_rekening_baru_input</zorder>
+      <zorder>pin_baru_input</zorder>
+      <zorder>konfirmasi_pin_baru_input</zorder>
+      <zorder>pin_konfirmasi_pin_input</zorder>
+      <zorder>submit_ganti_pin</zorder>
+     </widget>
+     <widget class="QWidget" name="top_up">
       <widget class="QLineEdit" name="pin_konfirmasi_TU_input">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>140</y>
+         <x>90</x>
+         <y>240</y>
          <width>731</width>
-         <height>61</height>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -475,22 +469,28 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="submit_saldo_topup">
        <property name="geometry">
         <rect>
-         <x>280</x>
-         <y>340</y>
-         <width>231</width>
-         <height>41</height>
+         <x>720</x>
+         <y>450</y>
+         <width>201</width>
+         <height>71</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Montserrat</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #007BFF;
+    background-color: rgb(44, 181, 255);
     color: white;
     border-radius: 10px;
+	font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14pt; 
     padding: 8px;
 }
 QPushButton:hover {
@@ -499,24 +499,25 @@ QPushButton:hover {
 </string>
        </property>
        <property name="text">
-        <string>Submit</string>
+        <string>SUBMIT</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="Saldo_topup_input">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>220</y>
-         <width>731</width>
-         <height>61</height>
+         <x>90</x>
+         <y>350</y>
+         <width>801</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">    border: none;
-    border-bottom: 2px solid black;
 	border-radius: 0px;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 16pt; 
     padding: 5px;
     background: transparent;</string>
        </property>
@@ -527,15 +528,38 @@ QPushButton:hover {
         <string>masukkan jumlah saldo yang akan di top up.....</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>-294</x>
+         <y>2</y>
+         <width>1291</width>
+         <height>771</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>topup.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>label_4</zorder>
+      <zorder>pin_konfirmasi_TU_input</zorder>
+      <zorder>submit_saldo_topup</zorder>
+      <zorder>Saldo_topup_input</zorder>
      </widget>
     </widget>
     <widget class="QPushButton" name="home_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>210</y>
-       <width>221</width>
-       <height>81</height>
+       <x>40</x>
+       <y>180</y>
+       <width>241</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -544,38 +568,56 @@ QPushButton:hover {
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
-     <property name="text">
-      <string>Home</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="sakapeung">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>251</width>
-       <height>71</height>
-      </rect>
-     </property>
      <property name="styleSheet">
-      <string notr="true">  background: transparent;</string>
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;	
+
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
      </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;SAKAPEUNG&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:22pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <property name="text">
+      <string> Home</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/home.png</normaloff>../../../SAKAPEUNGAPP/ui/home.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="lihat_informasi_rekening_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>300</y>
-       <width>221</width>
-       <height>81</height>
+       <x>40</x>
+       <y>250</y>
+       <width>241</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -584,17 +626,56 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 11pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;	
+
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Lihat Informasi Rekening</string>
+      <string> Informasi Rekening</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/liatrek.png</normaloff>../../../SAKAPEUNGAPP/ui/liatrek.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="edit_informasi_rekening_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>390</y>
-       <width>221</width>
-       <height>81</height>
+       <x>40</x>
+       <y>320</y>
+       <width>241</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -603,17 +684,56 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;	
+
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Edit Informasi Rekening</string>
+      <string> Edit Rekening</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/editwallet.png</normaloff>../../../SAKAPEUNGAPP/ui/editwallet.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="top_up_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>480</y>
-       <width>221</width>
-       <height>81</height>
+       <x>40</x>
+       <y>390</y>
+       <width>241</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -622,17 +742,56 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;	
+
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Top Up Saldo</string>
+      <string> Top Up Saldo</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/wallettopup.png</normaloff>../../../SAKAPEUNGAPP/ui/wallettopup.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="kembali_button">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>570</y>
-       <width>221</width>
-       <height>81</height>
+       <x>30</x>
+       <y>640</y>
+       <width>251</width>
+       <height>101</height>
       </rect>
      </property>
      <property name="mouseTracking">
@@ -641,17 +800,94 @@ p, li { white-space: pre-wrap; }
      <property name="tabletTracking">
       <bool>true</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 30px;
+	font-size: 14pt;	
+
+}
+
+QPushButton:pressed {
+    background-color: #1A73E8;
+    color: white; /* Warna biru Google */
+    border-radius: 35px;
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>Kembali Ke Dashboard Utama</string>
+      <string> Dashboard Utama</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../SAKAPEUNGAPP/ui/dashboard.png</normaloff>../../../SAKAPEUNGAPP/ui/dashboard.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
-    <zorder>sakapeung</zorder>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>1281</width>
+       <height>781</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>0.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>490</y>
+       <width>241</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	font-family: 'Montserrat';
+	font-size: 12pt;
+    font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>-------------------------------------</string>
+     </property>
+    </widget>
+    <zorder>label</zorder>
     <zorder>stackedWidget</zorder>
     <zorder>home_button</zorder>
     <zorder>lihat_informasi_rekening_button</zorder>
     <zorder>edit_informasi_rekening_button</zorder>
     <zorder>top_up_button</zorder>
     <zorder>kembali_button</zorder>
+    <zorder>lineEdit</zorder>
    </widget>
   </widget>
  </widget>

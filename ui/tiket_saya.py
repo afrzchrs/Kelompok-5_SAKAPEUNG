@@ -14,20 +14,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_dashboard_tiket_saya(object):
     def setupUi(self, dashboard_tiket_saya):
         dashboard_tiket_saya.setObjectName("dashboard_tiket_saya")
-        dashboard_tiket_saya.resize(1107, 879)
+        dashboard_tiket_saya.resize(1280, 766)
+        dashboard_tiket_saya.setMaximumSize(QtCore.QSize(1280, 766))
         dashboard_tiket_saya.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.centralwidget = QtWidgets.QWidget(dashboard_tiket_saya)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_utama = QtWidgets.QFrame(self.centralwidget)
-        self.frame_utama.setGeometry(QtCore.QRect(30, 30, 1051, 781))
+        self.frame_utama.setGeometry(QtCore.QRect(0, 0, 1281, 811))
         self.frame_utama.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */")
         self.frame_utama.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_utama.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_utama.setObjectName("frame_utama")
         self.user = QtWidgets.QStackedWidget(self.frame_utama)
-        self.user.setGeometry(QtCore.QRect(0, -10, 1061, 781))
+        self.user.setGeometry(QtCore.QRect(0, -30, 1281, 801))
         self.user.setStyleSheet("background : white;")
         self.user.setFrameShape(QtWidgets.QFrame.Box)
         self.user.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -70,63 +71,149 @@ class Ui_dashboard_tiket_saya(object):
         self.tiket_saya = QtWidgets.QWidget()
         self.tiket_saya.setObjectName("tiket_saya")
         self.tiket_saya_tittle_user = QtWidgets.QTextBrowser(self.tiket_saya)
-        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(-80, 10, 1131, 111))
-        self.tiket_saya_tittle_user.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
-"border-radius: 0px; ")
+        self.tiket_saya_tittle_user.setGeometry(QtCore.QRect(0, 40, 1281, 111))
+        self.tiket_saya_tittle_user.setStyleSheet("font-family: \'Montserrat\';\n"
+"font-size: 40pt; /* atau sesuaikan ukuran */   \n"
+"color: #333333;  /* warna teks opsional */   \n"
+"background-color: transparent; /* background opsional */\n"
+"    border: none;\n"
+"font-weight: bold;\n"
+"\n"
+" background-color: rgba(255, 255, 255, 0); /* semi-transparan putih */\n"
+"    color: #000000;  /* teks tetap hitam/solid */\n"
+"")
         self.tiket_saya_tittle_user.setObjectName("tiket_saya_tittle_user")
         self.button_detail = QtWidgets.QPushButton(self.tiket_saya)
         self.button_detail.setEnabled(True)
-        self.button_detail.setGeometry(QtCore.QRect(350, 690, 101, 31))
-        self.button_detail.setStyleSheet("QPushButton#button_detail {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                stop:0 #007bff, stop:1 #0056b3);\n"
-"    color: white;\n"
-"    font-size: 12px;\n"
+        self.button_detail.setGeometry(QtCore.QRect(530, 230, 111, 31))
+        self.button_detail.setStyleSheet("QPushButton {\n"
+"    background-color: blue;\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: center;\n"
+"    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 9pt;\n"
 "    font-weight: bold;\n"
-"    border-radius: 8px;\n"
-"    padding: 6px 12px;\n"
-"    border: 2px solid #0056b3;\n"
-"    transition: background 0.3s, transform 0.2s;\n"
 "}\n"
 "\n"
-"/* Hover effect */\n"
-"QPushButton#button_detail:hover {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                stop:0 #0056b3, stop:1 #004494);\n"
-"    transform: scale(1.05);\n"
+"QPushButton:hover {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 15px;\n"
 "}\n"
 "\n"
-"/* Saat ditekan */\n"
-"QPushButton#button_detail:pressed {\n"
-"    background-color: #003366;\n"
-"    border: 2px solid #002244;\n"
-"    transform: scale(0.95);\n"
+"QPushButton:pressed {\n"
+"    background-color: #1A73E8;\n"
+"    color: white; /* Warna biru Google */\n"
 "}\n"
+"\n"
 "")
         self.button_detail.setObjectName("button_detail")
-        self.table_tiket_saya = QtWidgets.QTableWidget(self.tiket_saya)
-        self.table_tiket_saya.setGeometry(QtCore.QRect(180, 210, 661, 341))
+        self.lineEdit = QtWidgets.QLineEdit(self.tiket_saya)
+        self.lineEdit.setGeometry(QtCore.QRect(530, 190, 211, 31))
+        self.lineEdit.setStyleSheet("QLineEdit {\n"
+"    background-color: rgb(255, 255, 255, 100);\n"
+"    border: 3px solid #4A90E2;  /* Warna biru elegan */\n"
+"    border-radius: 8px;\n"
+"    padding: 6px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"    color: #333;  /* Warna teks gelap agar mudah dibaca */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #7B68EE;  /* Warna ungu lembut saat fokus */\n"
+"    background-color: #F0F8FF;  /* Biru muda untuk efek fokus */\n"
+"}\n"
+"")
+        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Normal)
+        self.lineEdit.setObjectName("lineEdit")
+        self.textEdit = QtWidgets.QTextEdit(self.tiket_saya)
+        self.textEdit.setGeometry(QtCore.QRect(480, 160, 321, 71))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setBold(True)
+        font.setWeight(75)
+        self.textEdit.setFont(font)
+        self.textEdit.setStyleSheet("background : Transparent;")
+        self.textEdit.setObjectName("textEdit")
+        self.button_kembali = QtWidgets.QPushButton(self.tiket_saya)
+        self.button_kembali.setGeometry(QtCore.QRect(650, 230, 91, 31))
+        self.button_kembali.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(184, 0, 0);\n"
+"    color: black;\n"
+"    border: none;\n"
+"    padding: 10px 20px;\n"
+"    text-align: center;\n"
+"    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-size: 9pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(255, 0, 0);\n"
+"    color: white; /* Warna biru Google */\n"
+"    border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(255, 0, 0);\n"
+"    color: white; /* Warna biru Google */\n"
+"}\n"
+"\n"
+"")
+        self.button_kembali.setObjectName("button_kembali")
+        self.label = QtWidgets.QLabel(self.tiket_saya)
+        self.label.setGeometry(QtCore.QRect(0, 30, 1280, 766))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.frame = QtWidgets.QFrame(self.tiket_saya)
+        self.frame.setGeometry(QtCore.QRect(80, 300, 1121, 411))
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.label_header = QtWidgets.QLabel(self.frame)
+        self.label_header.setGeometry(QtCore.QRect(10, 0, 111, 51))
+        self.label_header.setStyleSheet("/* Header \"Detail Tiket\" */\n"
+"QLabel#label_header {\n"
+"    background: transparent;\n"
+"    color: black;\n"
+"    font-size: 16px;\n"
+"    font-weight: bold;\n"
+"    text-align: center;\n"
+"    padding: 8px;\n"
+"    border-top-left-radius: 12px;\n"
+"    border-top-right-radius: 12px;\n"
+"}")
+        self.label_header.setObjectName("label_header")
+        self.table_tiket_saya = QtWidgets.QTableWidget(self.frame)
+        self.table_tiket_saya.setGeometry(QtCore.QRect(0, 50, 1121, 361))
         self.table_tiket_saya.setStyleSheet("/* ==================== QTableWidget ==================== */\n"
 "QTableWidget {\n"
 "    background-color: #ffffff; /* Background putih */\n"
-"    border: 2px solid #007bff; /* Border biru */\n"
 "    border-radius: 8px; /* Sudut membulat */\n"
 "    gridline-color: #d1d1d1; /* Warna garis antar sel */\n"
 "    font-size: 14px;\n"
-"    selection-background-color: #007bff; /* Warna saat dipilih */\n"
+"    selection-background-color: #8dc4ff; /* Warna saat dipilih */\n"
 "    selection-color: white; /* Warna teks saat dipilih */\n"
 "    alternate-background-color: #f2f2f2; /* Warna baris selang-seling */\n"
 "}\n"
 "\n"
 "/* ==================== Header (Kolom Atas) ==================== */\n"
 "QHeaderView::section {\n"
-"    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #007bff, stop:1 #0056b3);\n"
-"    color: white;\n"
+"    background-color:rgb(202, 202, 202);\n"
+"    color: black;\n"
 "    padding: 10px;\n"
 "    border: none;\n"
 "    font-weight: bold;\n"
 "    text-align: center;\n"
-"    border-bottom: 3px solid #004085; /* Garis bawah tegas */\n"
+"    border-bottom: 1px solid #004085; /* Garis bawah tegas */\n"
 "    font-size: 12px;\n"
 "}\n"
 "\n"
@@ -197,84 +284,13 @@ class Ui_dashboard_tiket_saya(object):
         self.table_tiket_saya.setHorizontalHeaderItem(4, item)
         self.table_tiket_saya.horizontalHeader().setDefaultSectionSize(120)
         self.table_tiket_saya.horizontalHeader().setStretchLastSection(True)
-        self.lineEdit = QtWidgets.QLineEdit(self.tiket_saya)
-        self.lineEdit.setGeometry(QtCore.QRect(430, 610, 111, 31))
-        self.lineEdit.setStyleSheet("QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 2px solid #4A90E2;  /* Warna biru elegan */\n"
-"    border-radius: 8px;\n"
-"    padding: 6px;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"    color: #333;  /* Warna teks gelap agar mudah dibaca */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #7B68EE;  /* Warna ungu lembut saat fokus */\n"
-"    background-color: #F0F8FF;  /* Biru muda untuk efek fokus */\n"
-"}\n"
-"")
-        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Normal)
-        self.lineEdit.setObjectName("lineEdit")
-        self.textEdit = QtWidgets.QTextEdit(self.tiket_saya)
-        self.textEdit.setGeometry(QtCore.QRect(330, 580, 321, 71))
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setBold(True)
-        font.setWeight(75)
-        self.textEdit.setFont(font)
-        self.textEdit.setObjectName("textEdit")
-        self.button_kembali = QtWidgets.QPushButton(self.tiket_saya)
-        self.button_kembali.setGeometry(QtCore.QRect(550, 690, 91, 31))
-        self.button_kembali.setStyleSheet("QPushButton#button_kembali {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                stop:0 #ff4d4d, stop:1 #b30000);\n"
-"    color: white;\n"
-"    font-size: 12px;\n"
-"    font-weight: bold;\n"
-"    border-radius: 8px;\n"
-"    padding: 6px 12px;\n"
-"    border: 2px solid #b30000;\n"
-"    transition: background 0.3s, transform 0.2s;\n"
-"}\n"
-"\n"
-"/* Hover effect */\n"
-"QPushButton#button_kembali:hover {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
-"                                stop:0 #b30000, stop:1 #800000);\n"
-"    transform: scale(1.05);\n"
-"}\n"
-"\n"
-"/* Saat ditekan */\n"
-"QPushButton#button_kembali:pressed {\n"
-"    background-color: #660000;\n"
-"    border: 2px solid #4d0000;\n"
-"    transform: scale(0.95);\n"
-"}\n"
-"")
-        self.button_kembali.setObjectName("button_kembali")
-        self.label_header = QtWidgets.QLabel(self.tiket_saya)
-        self.label_header.setGeometry(QtCore.QRect(430, 150, 111, 41))
-        self.label_header.setStyleSheet("/* Header \"Detail Tiket\" */\n"
-"QLabel#label_header {\n"
-"    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"                                stop:0 #007bff, stop:1 #0056b3);\n"
-"    color: white;\n"
-"    font-size: 16px;\n"
-"    font-weight: bold;\n"
-"    text-align: center;\n"
-"    padding: 8px;\n"
-"    border-top-left-radius: 12px;\n"
-"    border-top-right-radius: 12px;\n"
-"}")
-        self.label_header.setObjectName("label_header")
+        self.label.raise_()
+        self.frame.raise_()
         self.tiket_saya_tittle_user.raise_()
         self.button_detail.raise_()
-        self.table_tiket_saya.raise_()
         self.textEdit.raise_()
         self.lineEdit.raise_()
         self.button_kembali.raise_()
-        self.label_header.raise_()
         self.user.addWidget(self.tiket_saya)
         dashboard_tiket_saya.setCentralWidget(self.centralwidget)
 
@@ -288,48 +304,54 @@ class Ui_dashboard_tiket_saya(object):
         self.home_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>"))
         self.home_title_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" dir=\'rtl\' style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" dir=\'rtl\' style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p>\n"
 "<p align=\"center\" dir=\'rtl\' style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:24pt;\"><br /></p>\n"
 "<p align=\"center\" dir=\'rtl\' style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Tiket Saya</span></p></body></html>"))
         self.pembelian_tiket_title_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Pembelian Tiket Kereta Api</span></p></body></html>"))
         self.pembelian_tiket_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Ini adalah menu pembelian tiket</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu pembelian tiket</p></body></html>"))
         self.lihat_jadwal_kereta_title_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Lihat Jadwal Kereta Api</span></p></body></html>"))
         self.lihat_jadwal_kereta_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Ini adalah menu lihat jadwal kereta api</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ini adalah menu lihat jadwal kereta api</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.tiket_saya_tittle_user.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Tiket Saya</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Montserrat\'; font-size:40pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:28pt;\">Tiket Saya</span></p></body></html>"))
         self.button_detail.setText(_translate("dashboard_tiket_saya", "Lihat Detail"))
+        self.textEdit.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:7.8pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" dir=\'rtl\' style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Masukkan ID Kereta</span></p></body></html>"))
+        self.button_kembali.setText(_translate("dashboard_tiket_saya", "Kembali"))
+        self.label_header.setText(_translate("dashboard_tiket_saya", "Tiket Saya"))
         item = self.table_tiket_saya.horizontalHeaderItem(0)
         item.setText(_translate("dashboard_tiket_saya", "ID Kereta"))
         item = self.table_tiket_saya.horizontalHeaderItem(1)
@@ -340,13 +362,6 @@ class Ui_dashboard_tiket_saya(object):
         item.setText(_translate("dashboard_tiket_saya", "Stasiun Akhir"))
         item = self.table_tiket_saya.horizontalHeaderItem(4)
         item.setText(_translate("dashboard_tiket_saya", "Tanggal"))
-        self.textEdit.setHtml(_translate("dashboard_tiket_saya", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Arial\'; font-size:8pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" dir=\'rtl\' style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\';\">Masukkan ID Kereta</span></p></body></html>"))
-        self.button_kembali.setText(_translate("dashboard_tiket_saya", "Kembali"))
-        self.label_header.setText(_translate("dashboard_tiket_saya", "Tiket Saya"))
 
 
 if __name__ == "__main__":

@@ -14,30 +14,31 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_kereta_eksekutif(object):
     def setupUi(self, kereta_eksekutif):
         kereta_eksekutif.setObjectName("kereta_eksekutif")
-        kereta_eksekutif.resize(1109, 918)
+        kereta_eksekutif.resize(1280, 766)
+        kereta_eksekutif.setMaximumSize(QtCore.QSize(1280, 766))
         kereta_eksekutif.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6a11cb, stop:1 #2575fc);\n"
 "")
         self.kereta_box = QtWidgets.QFrame(kereta_eksekutif)
-        self.kereta_box.setGeometry(QtCore.QRect(30, 70, 1051, 821))
-        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 180); /* Transparansi */\n"
+        self.kereta_box.setGeometry(QtCore.QRect(50, 30, 1181, 711))
+        self.kereta_box.setStyleSheet("background-color: rgba(255, 255, 255, 150); /* Transparansi */\n"
 "border-radius: 15px; /* Membuat sudut melengkung */\n"
 "")
         self.kereta_box.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.kereta_box.setFrameShadow(QtWidgets.QFrame.Raised)
         self.kereta_box.setObjectName("kereta_box")
         self.kursi_kereta_box = QtWidgets.QWidget(self.kereta_box)
-        self.kursi_kereta_box.setGeometry(QtCore.QRect(30, 90, 991, 601))
+        self.kursi_kereta_box.setGeometry(QtCore.QRect(60, 80, 1051, 611))
         self.kursi_kereta_box.setStyleSheet("background : white;")
         self.kursi_kereta_box.setObjectName("kursi_kereta_box")
         self.scrollArea_kursi = QtWidgets.QScrollArea(self.kursi_kereta_box)
-        self.scrollArea_kursi.setGeometry(QtCore.QRect(109, 110, 781, 651))
+        self.scrollArea_kursi.setGeometry(QtCore.QRect(120, 70, 781, 421))
         self.scrollArea_kursi.setWidgetResizable(True)
         self.scrollArea_kursi.setObjectName("scrollArea_kursi")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 781, 651))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 781, 421))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.widget_container_kursi = QtWidgets.QWidget(self.scrollAreaWidgetContents_2)
-        self.widget_container_kursi.setGeometry(QtCore.QRect(10, 10, 111, 101))
+        self.widget_container_kursi.setGeometry(QtCore.QRect(110, 10, 111, 101))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -52,7 +53,7 @@ class Ui_kereta_eksekutif(object):
         self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
         self.scrollArea_kursi.setWidget(self.scrollAreaWidgetContents_2)
         self.frame_data_kereta = QtWidgets.QFrame(self.kursi_kereta_box)
-        self.frame_data_kereta.setGeometry(QtCore.QRect(110, 29, 781, 61))
+        self.frame_data_kereta.setGeometry(QtCore.QRect(120, 10, 781, 51))
         self.frame_data_kereta.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_data_kereta.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_data_kereta.setObjectName("frame_data_kereta")
@@ -77,31 +78,21 @@ class Ui_kereta_eksekutif(object):
         self.nama_kereta.setFont(font)
         self.nama_kereta.setAlignment(QtCore.Qt.AlignCenter)
         self.nama_kereta.setObjectName("nama_kereta")
-        self.button_keluar = QtWidgets.QPushButton(self.kereta_box)
-        self.button_keluar.setGeometry(QtCore.QRect(30, 760, 991, 41))
+        self.button_pilihkursi = QtWidgets.QPushButton(self.kursi_kereta_box)
+        self.button_pilihkursi.setGeometry(QtCore.QRect(30, 510, 991, 41))
         font = QtGui.QFont()
-        font.setPointSize(10)
-        self.button_keluar.setFont(font)
-        self.button_keluar.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
-"    color: white;\n"
-"    border-radius: 10px;\n"
-"    padding: 8px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #0056b3;\n"
-"}\n"
-"")
-        self.button_keluar.setObjectName("button_keluar")
-        self.button_pilihkursi = QtWidgets.QPushButton(self.kereta_box)
-        self.button_pilihkursi.setGeometry(QtCore.QRect(30, 710, 991, 41))
-        font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
         self.button_pilihkursi.setFont(font)
         self.button_pilihkursi.setStyleSheet("QPushButton {\n"
-"    background-color: #007BFF;\n"
+"    background-color: rgb(44, 181, 255);\n"
 "    color: white;\n"
 "    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
 "    padding: 8px;\n"
 "}\n"
 "QPushButton:hover {\n"
@@ -109,8 +100,30 @@ class Ui_kereta_eksekutif(object):
 "}\n"
 "")
         self.button_pilihkursi.setObjectName("button_pilihkursi")
+        self.button_keluar = QtWidgets.QPushButton(self.kursi_kereta_box)
+        self.button_keluar.setGeometry(QtCore.QRect(30, 560, 991, 41))
+        font = QtGui.QFont()
+        font.setFamily("Montserrat")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.button_keluar.setFont(font)
+        self.button_keluar.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(44, 181, 255);\n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"    font-family: \'Montserrat\';\n"
+"    font-weight: bold;\n"
+"    font-size: 14pt; \n"
+"    padding: 8px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #0056b3;\n"
+"}\n"
+"")
+        self.button_keluar.setObjectName("button_keluar")
         self.label_pilih_kursi = QtWidgets.QLabel(self.kereta_box)
-        self.label_pilih_kursi.setGeometry(QtCore.QRect(30, 20, 991, 61))
+        self.label_pilih_kursi.setGeometry(QtCore.QRect(60, 10, 1041, 61))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -118,6 +131,14 @@ class Ui_kereta_eksekutif(object):
         self.label_pilih_kursi.setFont(font)
         self.label_pilih_kursi.setAlignment(QtCore.Qt.AlignCenter)
         self.label_pilih_kursi.setObjectName("label_pilih_kursi")
+        self.label_5 = QtWidgets.QLabel(kereta_eksekutif)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 1611, 771))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("ui/3.png"))
+        self.label_5.setScaledContents(True)
+        self.label_5.setObjectName("label_5")
+        self.label_5.raise_()
+        self.kereta_box.raise_()
 
         self.retranslateUi(kereta_eksekutif)
         QtCore.QMetaObject.connectSlotsByName(kereta_eksekutif)
@@ -127,8 +148,8 @@ class Ui_kereta_eksekutif(object):
         kereta_eksekutif.setWindowTitle(_translate("kereta_eksekutif", "Dialog"))
         self.pilih_gerbong.setText(_translate("kereta_eksekutif", "PILIH GERBONG KERETA "))
         self.nama_kereta.setText(_translate("kereta_eksekutif", "NAMA KERETA"))
-        self.button_keluar.setText(_translate("kereta_eksekutif", "KELUAR"))
         self.button_pilihkursi.setText(_translate("kereta_eksekutif", "PILIH"))
+        self.button_keluar.setText(_translate("kereta_eksekutif", "KELUAR"))
         self.label_pilih_kursi.setText(_translate("kereta_eksekutif", "PILIH KURSI ANDA"))
 
 
